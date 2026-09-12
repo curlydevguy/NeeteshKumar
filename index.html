@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Dr. Neetesh Kumar</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+   <!-- Google Fonts Links -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+   <!-- UPDATED: makes sure this page (the homepage) always opens scrolled to the
+        very top / Home section, even if the browser arrives here with a leftover
+        #about or #contact in the address bar from an earlier visit. -->
+   <script>
+      if (window.location.hash) {
+         window.history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+      window.scrollTo(0, 0);
+   </script>
+
+   <!--================== Header + Nav-Bar SECTION ==================-->
+
+  <header class="site-header">
+    <div class="site-header__brand">
+      <!-- UPDATED (header redesign): IIT Roorkee logo - kept same image, spacing/size adjusted to new layout -->
+      <img src="./images/iit-logo-official.jpg" alt="IIT Roorkee" class="site-header__logo">
+    </div>
+    <div class="site-header__titles">
+      <h1 class="site-header__hindi">भारतीय प्रौद्योगिकी संस्थान रुड़की</h1>
+      <h1 class="site-header__english">INDIAN INSTITUTE OF TECHNOLOGY ROORKEE</h1>
+    </div>
+    <div class="site-header__photo">
+      <!-- Header building illustration: line-art sketch of the IIT Roorkee building (images/iit-building2.png). To change it, replace that file (keep the same filename) or update the src below. -->
+      <img src="./images/iit-building2.png" alt="IIT Roorkee Campus">
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="main-nav__brand">
+      <span class="main-nav__name">Dr. Neetesh Kumar</span>
+      <span class="main-nav__title">Associate Professor</span>
+    </div>
+    <label for="btn" class="icon">
+      <span class="fa fa-bars"></span>
+    </label>
+    <input type="checkbox" id="btn" />
+    <ul>
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <label for="btn-1" class="show">About <i class="fa fa-angle-down"></i></label>
+        <a href="#about">About <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-1" />
+        <ul>
+          <li><a href="edu.html">Education</a></li>
+          <li><a href="exp.html">Experience</a></li>
+          <li><a href="awards.html">Awards</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="team.html">Team</a>
+      </li>
+      <li>
+        <label for="btn-2" class="show">Research <i class="fa fa-angle-down"></i></label>
+        <a href="#">Research <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-2" />
+        <ul>
+          <li><a href="postDoc.html">Prospective Researchers</a></li>
+          <li><a href="rarea.html">Research Area</a></li>
+          <li><a href="research_facilities.html">Research Facilities</a></li>
+          <li><a href="S.projects.html">Sponsored Projects</a></li>
+          <li><a href="patents.html">Patents</a></li>
+          <li><a href="prototypes.html">Prototype</a></li>
+          <li><a href="internationalcollab.html">International Collaborations</a></li>
+        </ul>
+      </li>
+      <li>
+        <label for="btn-3" class="show">Publications <i class="fa fa-angle-down"></i></label>
+        <a href="#">Publications <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-3" />
+        <ul>
+          <li><a href="summary.html">Summary</a></li>
+          <li><a href="Rjournal.html">Referred Journal</a></li>
+          <li><a href="cpaper.html">Conference Paper</a></li>
+          <li><a href="book_chapter.html">Books/Book Chapter</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="teach.html">Teaching</a>
+      </li>
+      <li>
+        <a href="os_contri.html">Open Source Contributions</a>
+      </li>
+      <li>
+        <a href="admin.html">Professional Activities</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+   <script>
+      $('.icon').click(function () {
+         $('span').toggleClass("cancel");
+      });
+   </script>
+
+   <!--================== HOME SECTION ==================-->
+
+   <div class="home-section" id="home">
+      <div class="image-container">
+         <!-- ===================================================================
+              HOME PAGE PHOTO - HOW TO UPDATE
+              ===================================================================
+              Set as a CSS background-image in style.css, pointing at
+              ./images/profile1.jpg (see .image-container rule).
+              TO CHANGE THE PHOTO: replace the file at images/profile1.jpg with
+              a new image but KEEP THE SAME FILENAME "profile1.jpg" - this box
+              picks it up automatically, no HTML/CSS edits needed. If the new
+              photo is a wide group shot, check how it crops (background-size:
+              cover) - the box is roughly square, so a very wide photo may need
+              background-position adjusted in style.css to keep everyone in frame.
+              =================================================================== -->
+      </div>
+
+      <div class="bio-container" id="about">
+         <div class="work-container">
+            <div class="work-container__main" style="text-align: center;">
+               <h1 style="font-family: Poppins, sans-serif; font-size: 1.2rem;">News & Events</h1>
+
+               <!-- ======================================================================
+                    NEWS & EVENTS - HOW TO UPDATE
+                    ======================================================================
+                    This box auto-scrolls smoothly downward on its own, with the
+                    scrollbar hidden. Hover your mouse over it (or touch it on
+                    mobile) and it PAUSES so you can scroll it manually; move the
+                    mouse away (or lift your finger) and it resumes. This is
+                    handled by the small script right after this block - you do
+                    not need to touch that script to add/remove/edit news items.
+
+                    TO ADD A NEW ITEM: copy one whole <div class="news-ticker__item">
+                    ... </div> block and paste it as the FIRST item inside
+                    #newsTrack (so it's treated as newest), then edit the
+                    <p> text. Use
+                    <span class="work-container__main__highlight">...</span>
+                    around any name/title you want bolded in blue.
+
+                    The "New" badge is automatic - it always applies to whichever
+                    2 items are currently first in the list, so you never need to
+                    add/remove it by hand.
+
+                    TO REMOVE AN ITEM: delete its whole
+                    <div class="news-ticker__item"> ... </div> block.
+                    ====================================================================== -->
+
+               <div class="news-ticker" id="newsTicker">
+                 <div class="news-ticker__track" id="newsTrack">
+                   <div class="news-ticker__item">
+                     <p> Heartfelt Congratulations to <span class="work-container__main__highlight">Mani Varma</span>  on the Successful Completion of His Ph.D. .</p>
+                  </div>
+                   <div class="news-ticker__item">
+                     <p> Heartfelt Congratulations to <span class="work-container__main__highlight">Shikhar Singh Lodhi</span>  on the Successful Completion of His Ph.D. </p>
+                  </div>
+                  <div class="news-ticker__item">
+                     <p> Heartfelt Congratulations to <span class="work-container__main__highlight">Shikhar Vashistha</span> and <span class="work-container__main__highlight">Neetesh Kumar</span> for getting acceptance of the paper, "DAGGER: Dynamic Agentic Graph-Guided Efficient Reasoner for Container Image Dependency Optimization", at the 41st IEEE/ACM International Conference on Automated Software Engineering 2026 (ASE'26) [Core A*].</p>
+                  </div>
+
+                  <div class="news-ticker__item">
+                     <p> Heartfelt Congratulations to <span class="work-container__main__highlight">Dr. Anuj Sachan</span> for joining as Assistant Professor at JNU (Jawaharlal Nehru University)!</p>
+                  </div>
+
+                  <div class="news-ticker__item">
+                     <p> Heartfelt Congratulations to <span class="work-container__main__highlight">Dr.Nisha Singh Chauhan  </span> for joining as Assistant Professor at NIT Delhi (National Institute of Technology Delhi)!</p>
+                  </div>
+
+                  <div class="news-ticker__item">
+                     <p> <span class="work-container__main__highlight">Google Research Sponsored Mentorship Program </span> by <span class="work-container__main__highlight">Prof. Neetesh Kumar </span> and team - an excellent opportunity offering valuable research experience for undergraduate and postgraduate students.
+                        The program begins on 20th January, 2024. For more details: <span class="content-highlight"> <a href="https://explorecsriccn.github.io/"> click here</a></span></p>
+                  </div>
+
+                  <div class="news-ticker__item">
+                     <p> Anuj Sachan, <span class="work-container__main__highlight">Neetesh Kumar</span>,"SDN-enabled Quantized LQR for Smart Traffic Light Controller to Optimize Congestion", in ACM Transactions on Internet Technology, Status: Accepted.</p>
+                  </div>
+
+                  <div class="news-ticker__item">
+                     <p> Google Research (exploreCSR) Award (2023-24) for <span class="work-container__main__highlight">Prof. Neetesh Kumar</span>.</p>
+                  </div>
+
+                  <div class="news-ticker__item">
+                     <p> Congratulations to Ph.D. Scholar Vibha Bharilya on Being Awarded the Prestigious PMRF Fellowship</p>
+                  </div>
+
+                  <div class="news-ticker__item">
+                     <p> Qualcomm Faculty Researcher Award, 2023 for <span class="work-container__main__highlight">Prof. Neetesh Kumar</span>, under Qualcomm 6G University Research India Program </p>
+                  </div>
+
+                  <div class="news-ticker__item">
+                     <p> Ravjot Singh, Naman Jain, Prakhar Gupta, <span class="work-container__main__highlight">Neetesh Kumar</span>, Pravendra Singh, "A Host Kernel-Based Approach for Tracing and Analyzing vCPUs in Virtual Machines", in IEEE Global Communications Conference (IEEE GLOBCOM 2023), Status: Accepted </p>
+                  </div>
+
+                  <div class="news-ticker__item">
+                     <p> Shikhar Singh Lodhi,<span class="work-container__main__highlight">Neetesh Kumar</span>,"Autonomous Vehicular Overtaking Maneuver: A Survey and Taxonomy", Journal of Vehicular Communications (2023), Status: Accepted.</p>
+                  </div>
+
+                  <div class="news-ticker__item">
+                     <p> Anuj Sachan,<span class="work-container__main__highlight">Neetesh Kumar</span>,"S-Edge: Heterogeneity Aware, Light-weighted, and Edge Computing Integrated Adaptive Traffic Light Control Framework", The Journal of Supercomputing (2023), Status: Accepted.</p>
+                  </div>
+
+                  <div class="news-ticker__item">
+                     <p> Anuj Sachan, Nisha Singh Chauhan,<span class="work-container__main__highlight">Neetesh Kumar</span> "Congestion Minimization using Fog-deployed DRL-Agent Feedback enabled Traffic Light Cooperative Framework", in The 23rd International Symposium on Cluster, Cloud and Internet Computing (CCGrid 2023) [CORE-A], Status: Accepted.</p>
+                  </div>
+
+                 </div>
+               </div>
+
+               <script>
+                 // News & Events auto-scroll (self-contained - does not depend on
+                 // main.js). Advances one whole item at a time with a smooth
+                 // animated scroll, loops back to the first item after the
+                 // last, and pauses on hover/touch so visitors can read or
+                 // scroll manually. Because it always targets a specific
+                 // item's exact position, it can never stop mid-line.
+                 (function () {
+                   var ticker = document.getElementById('newsTicker');
+                   var track = document.getElementById('newsTrack');
+                   if (!ticker || !track) return;
+
+                   var items = track.querySelectorAll('.news-ticker__item');
+                   if (!items.length) return;
+
+                   var isPaused = false;
+                   var resumeTimeout = null;
+                   var currentIndex = 0;
+                   var INTERVAL_MS = 3500; // time spent on each item before advancing
+
+                   function goToItem(index) {
+                     ticker.scrollTo({ top: items[index].offsetTop, behavior: 'smooth' });
+                   }
+
+                   function advance() {
+                     if (isPaused) return;
+                     currentIndex = (currentIndex + 1) % items.length;
+                     goToItem(currentIndex);
+                   }
+
+                   ticker.addEventListener('mouseenter', function () {
+                     isPaused = true;
+                   });
+                   ticker.addEventListener('mouseleave', function () {
+                     isPaused = false;
+                   });
+                   ticker.addEventListener('touchstart', function () {
+                     isPaused = true;
+                     if (resumeTimeout) clearTimeout(resumeTimeout);
+                   }, { passive: true });
+                   ticker.addEventListener('touchend', function () {
+                     resumeTimeout = setTimeout(function () { isPaused = false; }, 1500);
+                   });
+
+                   setInterval(advance, INTERVAL_MS);
+                 })();
+               </script>
+            </div>
+         </div>
+      </div> 
+         
+
+
+      
+   </div>
+
+   <!--================== Work Area ==================-->
+   <div class="line2">
+      <span class="line3"></span>
+   </div>
+   <!--================== Bio-Sketch SECTION ================-->
+
+   <div class="bio-box">
+      <div class="bio-box__header">
+         <h2 class="bio-box__title">Biography</h2>
+      </div>
+      <div class="bio-box__divider"></div>
+      <div class="content-bio">
+         <p>
+            Dr. N. Kumar received his M.Tech and Ph.D. degrees from the School of Computer and Systems Sciences, Jawaharlal Nehru University, New Delhi.
+         </p>
+
+         <p>
+            He has received the Qualcomm Faculty Award (QFA)-2023 under the Qualcomm 6G University Research India-2023 with $60,000 from Qualcomm, and the Google explore-CSR-2023 with $32,000.
+            He has also received a Special Mention Award from Xerox Research Centre Bangalore, several Best Paper Awards, and a Travel Grant Award from the IEEE IPDPS International Society.
+         </p>
+
+         <p>
+            He currently works as an Associate Professor at IIT Roorkee, India, and as Program Director of AI Engineering on Cloud and AIOps.
+            He has published 90+ research papers in top-tier venues, including IEEE/ACM journals and transactions (IEEE-TITS, IEEE-TVT, IEEE-TGCN, IEEE-TCSS, etc.), Elsevier journals (FGCS, IS, JNCA, EAAI, etc.), and Springer journals.
+         </p>
+
+         <p>
+            He serves as Associate Editor for IEEE Transactions on Intelligent Transportation Systems, and as an active reviewer for top-ranked journals including Nature Communications, IEEE TITS, IEEE TIV, IEEE TVT, IEEE TPDS, IEEE IoT, IEEE TNSM, IEEE TGCN, IEEE TSC, IEEE Sensors Journal, FGCS, and others.
+         </p>
+
+         <p>
+            He is Lead PI on several sponsored projects and Co-PI on one, funded by IIT Roorkee, DST, CSIR, SERB, DST-TIHs, Qualcomm, Google, Infineon, and other agencies of the Government of India, with several more proposals currently under review.
+            He has sanctioned approx. INR 120 million in total funding, holds several granted and filed patents (individually and in collaboration), and has served as a technical program committee member at multiple conferences.
+         </p>
+
+         <p class="content-bio__cta">
+            I am looking for highly motivated research scholars to work in any of the above research domains. Interested candidates are advised to apply for the B.Tech, M.Tech, and Ph.D programs through the IITR channel.
+            Full-time Ph.D. candidates should first check their eligibility as per Institute norms and write to me at neetesh@cs.iitr.ac.in.
+            For more details, <span class="content-highlight"><a href="postDoc.html">click here</a></span>.
+         </p>
+      </div>
+   </div>
+   <div id="exp"></div>
+   <br>
+   <br>
+   <br>
+
+
+
+         <!--============== FOOTER SECTION ====================-->
+         <div id="contact" class="footer-section">
+            <div class="footer-top">
+               <h1 id="footer-heading">Contact Us</h1>
+            </div>
+            <div class="contact-container">
+               <div class="section1">
+                  <!-- <p style="font-weight: bold;">Prof. Neetesh Kumar</p>
+               <p style="font-weight: bold;"> Assistant Professor</p> -->
+                  <div class="footer-address">
+                     <p>W-203,</p>
+                     <p>Department of Computer Science and Engineering, </p>
+                     <p>Indian Institute of Technology,</p>
+                     <p id="state-name">Roorkee- 247667</p>
+                     <P style="margin-top: 3px;">Uttarakhand, India</P>
+                  </div>
+                  <div class="footer-reach">
+                     <p><i class="fa fa-envelope"></i> neetesh@cs.iitr.ac.in</p>
+                     <p><i class="fa fa-phone"></i> 01332-284977</p>
+                  </div>
+               </div>
+               <div class="section2">
+                  <iframe
+                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13839.6311869656!2d77.88688626753348!3d29.866932819020487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eb3d3e44a815f%3A0x874c399a4ee5bb81!2sIIT%20Roorkee!5e0!3m2!1sen!2sin!4v1631692039121!5m2!1sen!2sin"
+                     width="400" height="210" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                  <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query=IIT+Roorkee" target="_blank" rel="noopener">
+                     <i class="fa fa-map-marker"></i>
+                     Get Directions
+                  </a>
+               </div>
+               <div class="section3">
+                  <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13839.6311869656!2d77.88688626753348!3d29.866932819020487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eb3d3e44a815f%3A0x874c399a4ee5bb81!2sIIT%20Roorkee!5e0!3m2!1sen!2sin!4v1631692039121!5m2!1sen!2sin"
+                  width="270" height="150" style="border:0;" 
+                  allowfullscreen="" loading="lazy"></iframe>
+                  <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query=IIT+Roorkee" target="_blank" rel="noopener">
+                     <i class="fa fa-map-marker"></i>
+                     Get Directions
+                  </a>   
+               </div>
+            </div>
+         </div>
+         <button id="backToTopBtn" class="back-to-top" aria-label="Scroll to top" title="Back to top"><i class="fa fa-angle-up"></i></button>
+         <script src="main.js"></script>
+</body>
+
+</html>

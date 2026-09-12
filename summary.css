@@ -1,0 +1,514 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*<-======================== Summary of Publications ===========================->*/
+
+
+.experience-container {
+  width: 50%;
+  margin-top: 7rem;
+}
+
+.title-heading {
+  font-size: 1.8rem;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: #212529;
+  margin-bottom: 30px;
+}
+
+.experience-details-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--brand-bg-card, #f8fbff);
+  border-radius: 8px;
+  border: 1px solid var(--brand-border, #dbe7f3);
+  border-left: 4px solid var(--brand-navy, #0d3b66);
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 10px rgba(13, 59, 102, 0.08);
+  transition: 0.2s ease;
+}
+
+.experience-details-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(13, 59, 102, 0.14);
+}
+
+.experience-container .grand-total {
+  background-color: var(--brand-bg-tint, #eef6ff);
+}
+
+.experience-details-container .span-bold {
+  font-weight: bold;
+}
+
+.experience-details-container .bolder {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.experience-details-container span {
+  font-family: "Open Sans", sans-serif;
+  /* color: white; */
+  line-height: 1.5;
+}
+
+.experience-detail_book1 {
+  width: 60%;
+  display: flex;
+  text-align: center;
+  justify-content: top;
+  font-size: 0.8rem;
+}
+.experience-detail_book2 {
+  width: 60%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.experience-detail1 {
+  width: 10%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.experience-detail2 {
+  width: 10%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.experience-detail3 {
+  width: 20%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.experience-detail4 {
+  width: 30%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.experience-detail5 {
+  width: 30%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.experience-detail6 {
+  width: 10%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.experienceSummary-detail1 {
+  width: 20%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.experienceSummary-detail2 {
+  width: 15%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.experienceSummary-detail3 {
+  width: 15%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.experienceSummary-detail4 {
+  width: 10%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.experienceSummary-detail5 {
+  width: 15%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.experienceSummary-detail6 {
+  width: 10%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 1400px) {
+  .title-heading {
+    font-size: 2.7rem;
+  }
+  .experience-detail1,
+  .experience-detail2,
+  .experience-detail3,
+  .experience-detail4,
+  .experience-detail5,
+  .experience-detail6 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .experience-details-container .span-bold {
+    font-size: 0.65rem;
+  }
+}
+
+/*<========================== Footer Section =========================>*/
+/* REMOVED: this file used to redefine .footer-section, #footer-heading,
+   .contact-container, .section1, #state-name, #location, #location-pin__icon
+   and .section2 with the old dark (#222) pre-redesign footer look (plus a
+   1400px media query re-positioning the old #location pin). Since this
+   stylesheet loads after style.css on book_chapter.html, those rules were
+   silently overriding the current footer design, so book_chapter.html's
+   footer looked different from the rest of the site. The footer now uses
+   only style.css's rules everywhere. #location/#location-pin__icon don't
+   exist in the current markup at all, so nothing here was even targeting
+   real elements anymore. .externallink is kept below - it's used outside
+   the footer, on summary.html's external-link section. */
+
+.externallink {
+  text-align: center;
+  color: #222222;
+  font-size: 1.3rem;
+  font-family: "Poppins", sans-serif;
+}
+/* ===========================================================
+                    PUBLICATION SECTION V2
+   =========================================================== */
+
+.pubx-wrapper{
+    width:90%;
+    max-width:1150px;
+    margin:70px auto;
+    font-family:"Poppins",sans-serif;
+}
+
+.pubx-header{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.pubx-header h1{
+    font-size:2.8rem;
+    color:#0d3b66;
+    margin-bottom:10px;
+    font-weight:700;
+}
+
+.pubx-header p{
+    color:#666;
+    font-size:1rem;
+    max-width:700px;
+    margin:auto;
+    line-height:1.7;
+}
+
+/* ================= Cards ================= */
+
+.pubx-card{
+
+    background:#ffffff;
+
+    border-radius:16px;
+
+    margin-bottom:35px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s ease;
+
+}
+
+.pubx-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+
+}
+
+.pubx-card-header{
+
+    background:#0d3b66;
+
+    color:white;
+
+    padding:18px 30px;
+
+}
+
+.pubx-card-header h2{
+
+    font-size:1.45rem;
+
+    font-weight:600;
+
+}
+
+/* ================= Summary Table ================= */
+
+.pubx-summary{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.pubx-summary td{
+
+    padding:20px 30px;
+
+    border-bottom:1px solid #ececec;
+
+    font-size:16px;
+
+}
+
+.pubx-summary td:last-child{
+
+    text-align:right;
+
+    font-weight:700;
+
+    color:#0d3b66;
+
+}
+
+.pubx-summary tr:hover{
+
+    background:#f8fbff;
+
+}
+
+.pubx-total{
+
+    background:#eef6ff;
+
+    font-size:17px;
+
+    font-weight:700;
+
+}
+
+/* ================= Journal Table ================= */
+
+.pubx-journal{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.pubx-journal th{
+
+    background:#f4f7fb;
+
+    padding:18px;
+
+    color:#0d3b66;
+
+    font-size:15px;
+
+    border-bottom:2px solid #e2e2e2;
+
+}
+
+.pubx-journal td{
+
+    padding:18px;
+
+    border-bottom:1px solid #ececec;
+
+    font-size:15px;
+
+}
+
+.pubx-journal td:nth-child(2),
+
+.pubx-journal td:nth-child(3){
+
+    text-align:center;
+
+    font-weight:600;
+
+}
+
+.pubx-journal tbody tr:hover{
+
+    background:#f7fbff;
+
+}
+
+/* ================= Trend ================= */
+
+.pubx-bars{
+
+    padding:30px;
+
+}
+
+.pubx-bar{
+
+    display:grid;
+
+    grid-template-columns:70px 1fr 50px;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:18px;
+
+}
+
+.pubx-bar span{
+
+    font-weight:600;
+
+    color:#444;
+
+}
+
+.pubx-progress{
+
+    width:100%;
+
+    height:14px;
+
+    background:#dfe6ef;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.pubx-progress div{
+
+    height:100%;
+
+    background:linear-gradient(90deg,#0d6efd,#5fa8ff);
+
+    border-radius:50px;
+
+}
+
+.pubx-bar strong{
+
+    text-align:right;
+
+    color:#0d3b66;
+
+}
+
+/* ================= Responsive ================= */
+
+@media(max-width:900px){
+
+.pubx-header h1{
+
+font-size:2.2rem;
+
+}
+
+.pubx-summary td,
+
+.pubx-journal td,
+
+.pubx-journal th{
+
+padding:14px;
+
+font-size:14px;
+
+}
+
+}
+
+@media(max-width:650px){
+
+.pubx-wrapper{
+
+width:95%;
+
+}
+
+.pubx-bar{
+
+grid-template-columns:55px 1fr 35px;
+
+gap:10px;
+
+}
+
+.pubx-card-header{
+
+padding:15px 20px;
+
+}
+
+.pubx-summary td{
+
+padding:15px;
+
+}
+
+.pubx-journal td{
+
+padding:12px;
+
+}
+
+.pubx-header h1{
+
+font-size:1.8rem;
+
+}
+
+.pubx-header p{
+
+font-size:.9rem;
+
+}
+
+}

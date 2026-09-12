@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*<======================= RESEARCH INTEREST SECTION ==============================>*/
+
+body {
+  overflow-x: hidden;
+}
+
+.ri-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.ri-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  color: var(--brand-navy);
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.ri-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.ri-card {
+  background-color: var(--brand-bg-card);
+  border: 1px solid var(--brand-border);
+  border-top: 4px solid var(--brand-navy);
+  border-radius: 12px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 4px 12px var(--brand-shadow);
+  transition: 0.25s ease;
+}
+
+.ri-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(13, 59, 102, 0.16);
+  border-top-color: var(--brand-blue);
+}
+
+.ri-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--brand-navy);
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.ri-card h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.05rem;
+  color: var(--brand-navy);
+  margin-bottom: 10px;
+  line-height: 1.4rem;
+}
+
+.ri-card p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.95rem;
+  color: #445;
+  line-height: 1.55rem;
+  margin: 0;
+}
+
+@media only screen and (max-width: 992px) {
+  .ri-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .ri-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}

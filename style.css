@@ -1,0 +1,2485 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*<=============================== Global Color Palette ===========================>*/
+/* Single source of truth for the site's colors. Reused across every page's
+   card / box / link styling so everything matches the Summary page. */
+:root {
+  --brand-navy: #0d3b66;      /* primary dark blue - headers, nav, headings */
+  --brand-blue: #0d6efd;      /* accent blue - links, buttons, highlights */
+  --brand-blue-light: #5fa8ff;
+  --brand-bg-tint: #f4f7fb;   /* very light blue-gray background */
+  --brand-bg-card: #f8fbff;   /* card body background */
+  --brand-border: #dbe7f3;    /* card / divider border */
+  --brand-shadow: rgba(13, 59, 102, 0.1);
+  --text-dark: #1a1a1a;
+  --text-muted: #555555;
+}
+
+/*<=============================== Site Header Section ===========================>*/
+/* UPDATED (header redesign v3): swapped the panoramic campus photo for a clean
+   line-art elevation drawing of the building. The drawing has its own white
+   background, so object-fit is "contain" (not "cover") to show the whole
+   building instead of cropping it. The ::before gradient now fades wider/softer
+   so the illustration dissolves into the title block instead of having a
+   visible starting edge next to the institute name. */
+
+.site-header {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  background: #ffffff;
+  height: 210px;
+  overflow: hidden;
+}
+
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding-left: 3%;
+  z-index: 2;
+}
+
+.site-header__logo {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.site-header__titles {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+  margin-left: 80px;   /* nudges the title block toward the middle, away from the logo */
+}
+
+.site-header__titles h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin: 0;
+  color: #0c2f5e;
+  line-height: 1.35;
+}
+
+.site-header__hindi {
+  font-size: 1.75rem;
+}
+
+.site-header__english {
+  font-size: 2rem;
+  letter-spacing: 0.3px;
+}
+
+.site-header__photo {
+  position: relative;
+  flex-shrink: 0;
+  width: 38%;
+  max-width: 620px;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0;   /* was 1.5% — this is the only change */
+}
+
+.site-header__photo img {
+  width: auto;
+  height: 78%;
+  object-fit: contain;
+  display: block;
+}
+
+/*<=============================== Nav-Bar Section ===========================>*/
+
+.main-nav {
+  background: #0c2f5e;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  z-index: 50;
+}
+
+.main-nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.main-nav__brand {
+  float: left;
+  padding: 12px 1.5%;
+  line-height: 1.35;
+}
+
+.main-nav__name {
+  display: block;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.main-nav__title {
+  display: block;
+  color: #b9cbe6;
+  font-size: 0.8rem;
+}
+
+.main-nav ul {
+  float: right;
+  margin-right: 1%;
+  list-style: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav ul li {
+  position: relative;
+  margin: 0 2px;
+}
+
+.main-nav ul li a {
+  display: block;
+  color: #eef3fb;
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 24px 12px;
+  transition: color 0.2s ease;
+}
+
+.main-nav ul li a:hover {
+  color: #8ec1ff;
+}
+
+.main-nav ul li label.show {
+  display: none;
+}
+
+.main-nav ul ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 240px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 14px 30px rgba(10, 30, 60, 0.2);
+  padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+
+.main-nav ul li:hover > ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.main-nav ul ul li {
+  margin: 0;
+}
+
+.main-nav ul ul li a {
+  color: #1f2d44;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-nav ul ul li a:hover {
+  background: #eef3fb;
+  color: #0c2f5e;
+}
+
+.main-nav ul ul li a i.fa {
+  color: #0c2f5e;
+  width: 16px;
+  text-align: center;
+}
+
+.main-nav .icon,
+.main-nav input {
+  display: none;
+}
+
+@media screen and (min-width: 1400px) {
+  .site-header {
+    height: 250px;
+  }
+  .site-header__logo {
+    width: 165px;
+    height: 165px;
+  }
+  .site-header__hindi {
+    font-size: 1.9rem;
+  }
+  .site-header__english {
+    font-size: 2.2rem;
+  }
+  .main-nav__name {
+    font-size: 1.3rem;
+  }
+  .main-nav__title {
+    font-size: 0.95rem;
+  }
+  .main-nav ul li a {
+    font-size: 1rem;
+    padding: 28px 16px;
+  }
+}
+
+@media all and (max-width: 968px) {
+  .site-header {
+    flex-direction: column;
+    height: auto;
+    padding: 16px 5%;
+  }
+  .site-header__brand {
+    padding-left: 0;
+    justify-content: center;
+  }
+  .site-header__titles {
+    margin-top: 10px;
+    margin-left: 0;
+    padding: 0;
+  }
+  .site-header__photo {
+    display: none;
+  }
+
+  .main-nav__brand {
+    float: none;
+    padding: 14px 5%;
+  }
+
+  .main-nav .icon {
+    display: block;
+    position: absolute;
+    top: 14px;
+    right: 5%;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 60;
+  }
+
+  .main-nav ul,
+  .main-nav ul ul {
+    display: none;
+    position: static;
+    float: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    background: #0c2f5e;
+    box-shadow: none;
+    border-radius: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .main-nav ul li {
+    width: 100%;
+    margin: 0;
+  }
+
+  .main-nav ul li a {
+    padding: 14px 5%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .main-nav ul li a[href="#"] {
+    display: none;
+  }
+
+  .main-nav ul li label.show {
+    display: block;
+    padding: 14px 5%;
+    color: #eef3fb;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+  }
+
+  .main-nav ul ul {
+    background: #0a2650;
+  }
+
+  .main-nav ul ul li a {
+    padding-left: 11%;
+    color: #cfdcf0;
+  }
+
+  .main-nav ul ul li a:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+  }
+
+  .main-nav [id^="btn"]:checked + ul {
+    display: flex;
+  }
+
+  .section2 {
+    display: none;
+  }
+}
+
+.content {
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+header {
+  font-size: 35px;
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+/*<=============================== Home Section ===========================>*/
+
+.home-section {
+  /* Stacked layout: full-width banner photo on top, the News & Events
+     card centered below it at a fixed, readable width - not stretched
+     edge to edge (that's what looked off before). */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  background-color: white;
+  margin: 0 5%;
+  padding: 20px 0;
+}
+
+.image-container {
+  /* ===================================================================
+     HOME PAGE PHOTO - HOW TO UPDATE
+     ===================================================================
+     Full-width banner photo, set as a CSS background-image (not an
+     <img> tag), pointing at ./images/profile1.jpeg
+     TO CHANGE THE PHOTO: replace the file at images/profile1.jpg with a
+     new image but KEEP THE SAME FILENAME "profile1.jpg" - this box will
+     pick it up automatically, no HTML/CSS edits needed.
+     background-size is 100% 100% (stretched to fill, not cropped) per
+     your request - swap to "cover" here if a future photo looks warped.
+     =================================================================== */
+  width: 100%;
+  height: 380px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-image: url(./images/profile2.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.image-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(13, 59, 102, 0.2);
+}
+
+.bio-container {
+  /* UPDATED (fix for empty gap next to News & Events): this used to be
+     capped at max-width: 820px, which left a big empty strip to the
+     right of the box on wider screens (nothing was ever meant to fill
+     it). Simplest fix per your request: let the News & Events box run
+     the full width of .home-section, same as the photo above it,
+     instead of inventing a second panel to fill the gap. */
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@media all and (max-width: 968px) {
+  .image-container {
+    height: 220px;
+  }
+}
+
+/* UPDATED: responsive sizing for individual News & Events items - smaller
+   padding/gap/font and a shorter viewport height on narrow screens so the
+   items don't feel cramped or oversized on phones/tablets, and the hover
+   lift stays subtle at that size. */
+@media screen and (max-width: 640px) {
+  .news-ticker {
+    height: 300px;
+  }
+  .news-ticker__item {
+    gap: 8px;
+    padding: 10px 12px;
+  }
+  .news-ticker__item p {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+  .news-ticker__item:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .news-ticker {
+    height: 420px;
+  }
+  .news-ticker__item {
+    padding: 18px 18px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .image-container {
+    height: 460px;
+  }
+  .bio-container {
+    /* was capped at max-width: 980px - same fix as above, kept full width
+       on large screens too so it stays consistent with the photo. */
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .work-container__main .work-container-main__heading {
+    font-size: 300px;
+  }
+
+  .work-container__main span p,
+  .news-ticker__item p {
+    font-family: "Open sans", sans-serif;
+    font-size: 1.1rem;
+  }
+
+  #name {
+    font-size: 3rem;
+    margin-top: 13%;
+  }
+
+  .bio-container p {
+    font-size: 2rem;
+  }
+
+  .details-container span {
+    font-size: 1.4rem;
+  }
+
+  .details-cont {
+    margin-left: 44%;
+    margin-right: 10%;
+    margin-top: -20.4%;
+    line-height: 2rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
+  }
+}
+
+/*<--================== Work Area ==================-->*/
+
+.work-container {
+  font-family: "Open snas", sans-serif;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-container__main {
+  padding: 20px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 12px;
+  background-color: var(--brand-bg-card);
+  border: 1px solid var(--brand-border);
+  border-left: 5px solid var(--brand-navy);
+  box-shadow: 0 4px 12px var(--brand-shadow);
+  box-sizing: border-box;
+  /* FIX: cursor:pointer above was promising interactivity with no hover
+     effect to back it up - that's why the home page hover felt "broken".
+     Added the transition + :hover rule below to match the lift-and-glow
+     pattern already used site-wide (.rarea-card, .details, .flex-item). */
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
+}
+
+.work-container__main:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(13, 59, 102, 0.16);
+  border-left-color: var(--brand-blue);
+}
+
+.work-container__main .work-container-main__heading {
+  display: block;
+  margin-bottom: 1.4rem;
+  margin-top: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: var(--brand-navy);
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.work-container__main__highlight {
+  font-weight: 600;
+  font-size: 1em;
+  color: var(--brand-blue);
+}
+
+.work-container__main p {
+  font-family: "Open sans", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+/*<======================= News & Events Ticker (auto-scroll) ======================>*/
+/* .news-ticker is the visible viewport (fixed height, scrollable, scrollbar
+   hidden). Its scrollTop is advanced automatically by the inline script in
+   index.html (search "News & Events auto-scroll" there). Hovering / touching
+   the box pauses the auto-scroll so a visitor can read or scroll manually;
+   because this is still a normal overflow:auto box under the hood, manual
+   wheel/trackpad/touch scrolling always works even while paused. */
+.news-ticker {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow-y: auto;
+  scrollbar-width: none;       /* Firefox: hides the scrollbar, scrolling still works */
+  -ms-overflow-style: none;    /* old Edge / IE */
+  /* Real fade mask at both edges (the old ::after trick didn't render
+     reliably inside a scrolling flex box). The bottom fade signals more
+     content below; the top fade matters just as much now that the
+     auto-scroll animates smoothly between items - mid-transition it can
+     briefly show a partial line at the top edge, and this fade blends
+     that into the card instead of a hard, glitchy-looking cut. */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24px, #000 calc(100% - 40px), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 24px, #000 calc(100% - 40px), transparent 100%);
+}
+
+.news-ticker::-webkit-scrollbar {
+  display: none;
+}
+
+.news-ticker__track {
+  display: flex;
+  flex-direction: column;
+}
+
+/* REDESIGNED: each item is now a row (colored left accent + inline "New"
+   badge + text) instead of a dense paragraph under a dashed divider.
+   display:flex on the item makes the ::before badge (see below) lay out
+   as a real inline element to the left of the paragraph instead of an
+   absolutely-positioned overlay - so we no longer need to reserve
+   right-hand padding on any item. */
+.news-ticker__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 14px;
+  border-left: 4px solid var(--brand-border);
+  border-bottom: 1px solid var(--brand-border);
+  border-radius: 8px;
+  background: #fff;
+  transition: background 0.2s ease, border-left-color 0.2s ease,
+    transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* UPDATED: each item now lifts slightly and gains a soft shadow on hover,
+   in addition to the existing tint/accent change, so it reads as a small
+   floating card rather than a flat highlighted row. */
+.news-ticker__item:hover {
+  background: var(--brand-bg-tint);
+  border-left-color: var(--brand-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px var(--brand-shadow);
+}
+
+.news-ticker__item:last-child {
+  border-bottom: none;
+}
+
+.news-ticker__item p {
+  margin: 0;
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* UPDATED: the "New" badge on the latest 2 items has been removed per
+   request - every item now looks the same until hovered. */
+
+/*<======================= Bio-Sketch Section ==============================>*/
+.bio-sketch {
+  text-align: start;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  color: #212529;
+  margin-left: 4%;
+}
+.content-bio {
+  font-family: "Open Sans", sans-serif;
+  color: #778899;
+  font-size: 1rem;
+  text-align: start;
+  margin-left: 5%;
+  margin-right: 6%;
+  line-height: 1.8rem;
+}
+/* Each fact in the bio now lives in its own <p>, so give them real
+   breathing room instead of running together as one block. */
+.content-bio p {
+  margin: 0 0 1.1rem;
+}
+.content-bio p:last-child {
+  margin-bottom: 0;
+}
+.content-bio .content-bio__cta {
+  margin-top: 1.4rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--brand-border);
+  font-style: italic;
+  color: var(--text-dark);
+}
+
+.bio-box {
+  background-color: #fff;
+  border: 1px solid var(--brand-border);
+  border-left: 5px solid var(--brand-blue);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--brand-shadow);
+  padding: 1.75rem 2rem;
+  margin: 0 5% 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
+}
+.bio-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(13, 59, 102, 0.16);
+  border-left-color: var(--brand-navy);
+}
+/* Bio card heading + divider, styled to match the rest of the site's
+   card headers (bold navy title, thin full-width rule beneath it). */
+.bio-box__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bio-box__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--brand-navy);
+  margin: 0;
+}
+.bio-box__divider {
+  height: 1px;
+  background: var(--brand-border);
+  margin: 0.9rem 0 1.25rem;
+}
+.bio-box .content-bio {
+  margin: 0;
+}
+@media screen and (max-width: 968px) {
+  .bio-box {
+    margin: 0 4% 1.5rem;
+    padding: 1.25rem 1.25rem;
+  }
+  .bio-box__title {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .bio-sketch {
+    font-size: 1.7rem;
+  }
+  .content-bio {
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    text-align: start;
+    margin-left: 3%;
+    margin-right: 6%;
+  }
+  .bio-box__title {
+    font-size: 1.7rem;
+  }
+}
+
+/*<======================= Experience Section ==============================>*/
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.experience-container {
+  width: 90%;
+}
+
+.title-heading {
+  font-size: 1.8rem;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: #212529;
+  margin-bottom: 30px;
+}
+
+/* ==================== RESEARCH AREA CARD GRID ==================== */
+.rarea-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.rarea-card {
+  background-color: var(--brand-bg-card);
+  border: 1px solid var(--brand-border);
+  border-top: 4px solid var(--brand-navy);
+  border-radius: 12px;
+  padding: 24px 26px;
+  box-shadow: 0 4px 12px var(--brand-shadow);
+  transition: 0.25s ease;
+}
+
+.rarea-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(13, 59, 102, 0.16);
+  border-top-color: var(--brand-blue);
+}
+
+.rarea-card h3 {
+  font-family: "Poppins", sans-serif;
+  color: var(--brand-navy);
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.rarea-card p {
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-dark, #333);
+  line-height: 1.6rem;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .rarea-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.experience-details-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--brand-bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--brand-border);
+  border-left: 4px solid var(--brand-navy);
+  padding: 18px 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 10px var(--brand-shadow);
+  transition: 0.2s ease;
+}
+
+.experience-details-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(13, 59, 102, 0.16);
+  border-left-color: var(--brand-blue);
+}
+
+.experience-details-container .span-bold {
+  font-weight: bold;
+}
+
+.experience-details-container span {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+}
+
+.experience-detail1 {
+  width: 5%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.experience-detail2 {
+  width: 20%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.experience-detail3 {
+  width: 20%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.experience-detail4 {
+  width: 40%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 1400px) {
+  .title-heading {
+    font-size: 2.7rem;
+  }
+  .experience-detail1,
+  .experience-detail2,
+  .experience-detail3,
+  .experience-detail4 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Numbering removed from the Professional Experience page only -
+   the SR.NO column is hidden and the remaining 3 columns are rebalanced to
+   fill the row. Scoped to .exp-page so rarea.html (which reuses the same
+   .experience-detail classes) is unaffected. */
+.exp-page .experience-detail1 {
+  display: none;
+}
+
+.exp-page .experience-detail2 {
+  width: 25%;
+}
+
+.exp-page .experience-detail3 {
+  width: 25%;
+}
+
+.exp-page .experience-detail4 {
+  width: 50%;
+}
+
+/*<========================== Award Section =============================>*/
+
+.awards {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #212529;
+}
+.awardstxt {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  color: #777777;
+  font-size: 0.7rem;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* FIXED: was a hardcoded width: 360px plus a 2% margin on each side, so
+   the card was always at least 360px + margin wide - wider than the
+   viewport itself on any phone narrower than ~390px, causing horizontal
+   scroll/overflow on the Awards page. Now responsive - full width on
+   phones, capped at 360px on larger screens, same pattern already used
+   for .flex-item-pro above. */
+.flex-item {
+  background-color: var(--brand-bg-card);
+  border: 1px solid var(--brand-border);
+  border-left: 5px solid var(--brand-navy);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--brand-shadow);
+  padding: 3%;
+  width: 100%;
+  max-width: 360px;
+  min-height: 180px;
+  margin: 2%;
+  color: var(--text-dark);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.flex-item .head {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  color: var(--brand-navy);
+  font-weight: 700;
+}
+.flex-item .time {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.flex-item .uni {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.flex-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(13, 59, 102, 0.16);
+  border-left-color: var(--brand-blue);
+  transition: all 0.3s ease-in-out;
+}
+.flex-item:hover .time,
+.flex-item:hover .uni {
+  color: var(--brand-blue);
+}
+
+@media screen and (min-width: 1400px) {
+  .awards {
+    font-size: 1.7rem;
+  }
+  .awardstxt {
+    font-size: 1.1rem;
+  }
+  .flex-item .head {
+    font-size: 1.15rem;
+  }
+  .flex-item .time {
+    font-size: 0.95rem;
+  }
+  .flex-item .uni {
+    font-size: 0.95rem;
+  }
+  .flex-container {
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .flex-item {
+    width: 100%;
+    max-width: 380px;
+    min-height: auto;
+  }
+}
+
+/*<=========================== Education Section =========================>*/
+
+.education {
+  text-align: center;
+  padding: 36px 5% 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.education .eduhead {
+  width: 100%;
+}
+
+.education .edu-cards-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.education .edu-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  min-height: auto;
+  box-sizing: border-box;
+  gap: 14px;
+  padding: 40px 40px 32px;
+}
+
+.edu-card {
+  display: inline-block;
+  text-align: center;
+  background: var(--brand-bg-card);
+  border: 1px solid var(--brand-border);
+  border-top: 4px solid var(--brand-navy);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--brand-shadow);
+  transition: 0.25s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(13, 59, 102, 0.16);
+  border-top-color: var(--brand-blue);
+}
+
+.line {
+  display: inline-block;
+  width: 25%;
+  border-top: 2px solid grey;
+}
+
+.line1 {
+  text-align: center;
+}
+.eduhead {
+  margin-bottom: 20px;
+}
+.eduhead h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.eduhead1 h2,
+.eduhead2 h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand-navy);
+  margin: 0;
+  line-height: 1.3;
+}
+.edutime h4 {
+  color: var(--brand-blue);
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  font-weight: 600;
+  margin: 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--brand-border);
+  width: 25%;
+}
+.eduuniv h4 {
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0;
+}
+.eduthesis h4 {
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-style: italic;
+  font-weight: 400;
+  max-width: 100%;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media screen and (max-width: 380px) {
+  .education .edu-card {
+    padding: 28px 20px 24px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .eduhead h1 {
+    font-size: 2.2rem;
+  }
+  .eduhead1 h2 {
+    font-size: 1.7rem;
+  }
+  .eduhead2 h2 {
+    font-size: 1.5rem;
+  }
+  .edutime h4 {
+    font-size: 1.2rem;
+  }
+}
+
+/*<======================== Research Project =========================>*/
+.prohead {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  color: var(--brand-navy, #212529);
+  width: 100%;
+}
+.flex-container-pro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+/* FIXED: was width: 45rem (fixed width pushed cards off-center / overflowed
+   on smaller screens). Now responsive - full width on phones, capped at
+   45rem on desktop, always centered. */
+.flex-item-pro {
+  background-color: var(--brand-bg-card);
+  border: 1px solid var(--brand-border);
+  border-left: 5px solid var(--brand-navy);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--brand-shadow);
+  padding: 40px;
+  width: 100%;
+  max-width: 45rem;
+  min-height: 200px;
+  margin: 2%;
+  color: var(--text-dark);
+  transition: 0.25s ease;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+.flex-item-pro:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(13, 59, 102, 0.16);
+  border-left-color: var(--brand-blue);
+}
+.flex-item-pro .detail {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--brand-navy);
+}
+.flex-item-pro .head {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+.flex-item-pro .patent-link a {
+  color: var(--brand-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+.flex-item-pro .patent-link a:hover {
+  color: var(--brand-navy);
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 1400px) {
+  .prohead {
+    font-size: 1.4rem;
+  }
+  .flex-item-pro .detail {
+    font-size: 1.6rem;
+  }
+  .flex-item-pro .head {
+    font-size: 1.5rem;
+  }
+  .flex-container-pro {
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .flex-item-pro {
+    width: 100%;
+    max-width: 70rem;
+    min-height: 300px;
+  }
+}
+
+/* ================ OLD PROTOTYPE LINK-CARD STYLES (legacy, kept in case
+   any other page still links out to videos the old way instead of using
+   the slideshow) ========================== */
+.prototype-container .prototype-heading {
+  font-size: 45px;
+  font-weight: bold;
+  margin: 2rem 0;
+  text-transform: capitalize;
+  color: var(--brand-navy);
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.video-container > a {
+  display: inline-block;
+  background: var(--brand-bg-card);
+  border: 1px solid var(--brand-border);
+  border-left: 5px solid var(--brand-navy);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--brand-shadow);
+  padding: 18px 28px;
+  margin: 1rem;
+  color: var(--brand-blue);
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.video-container > a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(13, 59, 102, 0.16);
+  border-left-color: var(--brand-blue);
+  color: var(--brand-navy);
+}
+
+.video-container .video {
+  height: 20rem;
+  width: 25rem;
+  margin: 2rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.video-container .video iframe {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1400px) {
+  .video-container .video {
+    height: 30rem;
+    width: 40rem;
+  }
+}
+
+
+/*<======================== Distinguish Talks Section ===================>*/
+
+.distinguish-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+.margin-bottom {
+  margin-bottom: 30px;
+  font-size: 1.9rem;
+}
+
+.main {
+  color: #000000;
+  font-weight: bold;
+  font-size: large;
+}
+
+.main_container {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.rows {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #f8f8ff;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #f5f5f5;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.rows .title {
+  width: 40%;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.rows .title p {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.rows .place {
+  width: 35%;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.rows .place p {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.rows .date {
+  width: 10%;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.rows .date p {
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 1400px) {
+  .margin-bottom {
+    font-size: 2rem;
+  }
+  .rows .title p {
+    font-size: 1rem;
+  }
+  .rows .place p {
+    font-size: 1rem;
+  }
+  .rows .date p {
+    font-size: 1rem;
+  }
+}
+
+/*================== PATENT SECTION ======================*/
+.patent-link {
+  cursor: pointer;
+  color: rgb(100, 149, 237);
+}
+
+.patent-link:hover {
+  color: rgb(20, 52, 164);
+}
+
+/*<==================== Refereed Journal Papers Section ================>*/
+
+.publication-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;         /* ✅ fixed */
+  flex-direction: column;
+  width: 90%;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.content-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* content-area needs an explicit width, otherwise as a flex child with
+     align-items:center it shrink-wraps to the length of its longest line
+     of text, so sections with longer sentences render visibly wider than
+     ones with shorter text even though they share this exact CSS. */
+  width: 100%;
+  box-sizing: border-box;
+  background-color: transparent;
+  padding: 10px 0 20px;
+  border-radius: 10px;
+}
+
+.details {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 18px 22px;
+  font-size: 1rem;
+  background: var(--brand-bg-card);
+  border: 1px solid var(--brand-border);
+  border-left: 5px solid var(--brand-navy);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--brand-shadow);
+  transition: 0.25s ease;
+}
+
+.details:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(13, 59, 102, 0.16);
+  border-left-color: var(--brand-blue);
+}
+
+.details span.s-no {
+  /* Numbered badge on the side of each entry - reused across Referred Journal,
+     Conference Paper, Open Source Contributions and Professional Activities
+     pages (all share this same .details/.s-no markup) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 4px;
+  background: var(--brand-navy);
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px var(--brand-shadow);
+  transition: 0.25s ease;
+}
+
+.details:hover span.s-no {
+  background: var(--brand-blue);
+}
+
+.details p {
+  width: 100%;
+  line-height: 23px;
+  letter-spacing: 0.3px;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-family: "Open Sans", sans-serif;
+}
+
+.details .highlight {
+  font-weight: 600;
+}
+
+.details .name-highlight {
+  color: var(--brand-navy);
+  font-weight: 700;
+}
+
+.details .link-style {
+  text-decoration: none;
+  color: var(--brand-blue);
+  font-weight: 600;
+}
+
+.details .link-style:hover {
+  color: var(--brand-navy);
+  text-decoration: underline;
+}
+
+/*<======================= View More / Show More link =======================>*/
+.view-more-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1.75rem 0 0.75rem;
+}
+
+.view-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  color: var(--brand-navy);
+  background-color: var(--brand-bg-card);
+  border: 1px solid var(--brand-border);
+  border-radius: 999px;
+  padding: 10px 26px;
+  box-shadow: 0 4px 12px var(--brand-shadow);
+  transition: all 0.2s ease-in-out;
+}
+
+.view-more-btn i {
+  font-size: 0.85rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.view-more-btn:hover {
+  color: #ffffff;
+  background-color: var(--brand-navy);
+  border-color: var(--brand-navy);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--brand-shadow);
+}
+
+.view-more-btn:hover i {
+  transform: translateX(4px);
+}
+
+hr {
+  width: 50%;
+  border-top: 1px solid black;
+  box-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 40px #000;
+}
+
+#honor {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+/*<==================== Conference Paper Section ====================>*/
+.conference-paper-section {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+/*<==================== Research Area Section (pie charts) ====================>*/
+
+.pie {
+  margin-top: -22vh;
+  margin-left: 3vw;
+  width: 20vw;
+  height: 35vh;
+  background-image: conic-gradient(
+    green 220deg,
+    brown 160deg 320deg,
+    yellow 40deg
+  );
+  border-radius: 50%;
+}
+.pie2 {
+  margin-top: -23vh;
+  margin-left: 3vw;
+  width: 20vw;
+  height: 35vh;
+  background-image: conic-gradient(
+    yellow 120deg,
+    green 120deg 240deg,
+    brown 240deg
+  );
+  border-radius: 50%;
+}
+.pie-subHeading {
+  font-size: 1.4rem;
+  font-weight: bolder;
+  letter-spacing: 1.2px;
+  display: block;
+  text-align: center;
+  font-family: "poppins", sans-serif;
+}
+.pie-chart-1 {
+  padding-left: 30vw;
+  padding-top: 10vh;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 3px;
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+@media screen and (min-width: 1400px) {
+  .pie-subHeading {
+    font-size: 1.8rem;
+  }
+  .pie-chart-1 {
+    font-size: 1.6rem;
+    line-height: 3.5rem;
+  }
+}
+
+/*<========================== List Section =========================>*/
+.pie-chart-container ul {
+  list-style: none;
+}
+.pie-chart-container ul li::before {
+  content: "\25AA"; /* CSS code for a filled square bullet */
+  display: inline-block;
+  width: 1rem;
+  margin-left: -1em;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.chart1-1 ul li::before {
+  color: green;
+}
+.chart1-2 ul li::before {
+  color: brown;
+}
+.chart1-3 ul li::before {
+  color: yellow;
+}
+
+/*<========================== Reusable Info Card =========================>*/
+/* Generic blue-boxed card for prose blocks (international collaborations,
+   notices, etc.) so the whole site shares one visual language. */
+.info-card {
+  background-color: var(--brand-bg-card);
+  border: 1px solid var(--brand-border);
+  border-left: 5px solid var(--brand-navy);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--brand-shadow);
+  padding: 20px 24px;
+  margin: 0 auto 20px;
+  max-width: 90%;
+  line-height: 1.7;
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-dark);
+  transition: 0.25s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(13, 59, 102, 0.16);
+  border-left-color: var(--brand-blue);
+}
+
+.info-card a {
+  color: var(--brand-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.info-card a:hover {
+  color: var(--brand-navy);
+  text-decoration: underline;
+}
+
+/*<========================== Footer Section =========================>*/
+/* UPDATED (footer redesign v2): the old "Location" badge and pin icon were
+   absolute-positioned spans hand-tuned per breakpoint (top/right in vh/vw) -
+   fragile and part of why it looked disorganized. Replaced with a normal
+   flex row (.footer-top) that lays itself out and reflows naturally at any
+   width. Also fixed the E-mail/phone icons: this site loads FontAwesome 4.7
+   (font-family "FontAwesome"), not 5 - the earlier "Font Awesome 5 Free"
+   rule silently failed to render any glyph. Icons are now on real <i> tags
+   in the HTML matching what the rest of the site already uses (see the
+   Contact Us pin icon), so no font-family guessing is needed. */
+.footer-section {
+  padding: 48px 6% 40px;
+  background: linear-gradient(160deg, #0c2f5e 0%, #081f42 100%);
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+.footer-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand-blue-light), var(--brand-blue));
+}
+
+/* UPDATED (footer redesign v4): moved out of .footer-top. Sitting up next
+   to "Contact Us" put it far from the map it actually links to, so it read
+   as floating/misplaced rather than connected to anything. It's now
+   .footer-map-link, placed directly under the map iframe it opens - see
+   below. */
+.footer-top {
+  display: flex;
+  align-items: center;
+  padding-bottom: 18px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+#footer-heading {
+  color: #ffffff;
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Sits directly under the map iframe (see .section2/.section3 below) so
+   it's visually tied to the map it opens, instead of floating up in the
+   header row unrelated to any map content. */
+.footer-map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  background: var(--brand-blue);
+  padding: 7px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+  text-decoration: none;
+  margin-top: 12px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.footer-map-link:hover {
+  background: var(--brand-blue-light);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.footer-map-link i {
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin-right: 2px;
+}
+
+/* ==========================================================
+   Back-to-top button
+   Fixed bottom-right by default. When the footer scrolls into
+   view, main.js shifts its "bottom" offset so it always stops
+   just above the footer instead of overlapping it.
+========================================================== */
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: var(--brand-navy);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(13, 59, 102, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease, visibility 0.25s;
+  z-index: 900;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--brand-blue);
+}
+
+@media screen and (max-width: 480px) {
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    right: 16px;
+    bottom: 16px;
+    font-size: 1rem;
+  }
+}
+
+.footer-section p {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  color: #c7d7ef;
+  margin: 0;
+}
+
+/* UPDATED: grid instead of flex - with only 2 visible children at any
+   given breakpoint (.section1 + whichever of .section2/.section3 is
+   showing), a 2-column grid with align-items:center vertically centers
+   the shorter address column against the taller map instead of leaving
+   dead space below it (flex + justify-content:space-between left the
+   info column pinned to the top). */
+.contact-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) auto;
+  align-items: center;
+  gap: 40px;
+}
+
+.section1 {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.section1 p {
+  font-size: 0.9rem;
+}
+
+.footer-address p + p {
+  margin-top: 4px;
+}
+
+#state-name {
+  margin-top: 8px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Email / phone as a small pair of rows with real icon tags (matches the
+   pin icon used in .footer-map-link instead of a separate approach). */
+.footer-reach {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-reach p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.footer-reach i {
+  color: var(--brand-blue-light);
+  font-size: 0.85rem;
+  width: 16px;
+  text-align: center;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+/* NEW: hover animation on every footer text box - address lines, the
+   state name, and the email/phone rows. Each one nudges right and
+   brightens on hover, matching the lift-and-glow language used by
+   .rarea-card / .details / .flex-item elsewhere on the site. Negative
+   margin-left offsets the added padding so text doesn't shift position
+   while NOT hovered. */
+.footer-address p,
+#state-name,
+.footer-reach p {
+  padding: 4px 8px;
+  margin-left: -8px;
+  border-radius: 6px;
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.footer-address p:hover,
+#state-name:hover,
+.footer-reach p:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(4px);
+  color: #ffffff;
+}
+
+.footer-reach p:hover i {
+  color: #ffffff;
+}
+
+/* Map embeds sit inside a rounded, bordered frame that matches the site's
+   card language instead of a bare grey iframe straight on the dark bg. */
+.section2 iframe,
+.section3 iframe {
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  max-width: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.section2 iframe:hover,
+.section3 iframe:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  border-color: var(--brand-blue-light);
+}
+
+.section2,
+.section3 {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 969px) {
+  .section3 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .footer-section {
+    padding: 40px 6% 32px;
+  }
+  .footer-top {
+    text-align: center;
+  }
+  .contact-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+  .section1 {
+    align-items: center;
+  }
+  .footer-reach p {
+    justify-content: center;
+  }
+  .section3 iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+  /* .section2 (desktop map) is hidden on mobile back at the top of this
+     stylesheet (max-width: 968px block), but the unscoped ".section2,
+     .section3 { display: flex; }" rule further down the file has higher
+     source order and was winning the cascade, so both the desktop map
+     AND the mobile map (.section3) were rendering stacked on top of each
+     other on mobile. Re-assert display:none here, after that rule. */
+  .section2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #footer-heading {
+    font-size: 1.15rem;
+  }
+  .footer-map-link {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+  .section1 p,
+  .footer-reach p {
+    font-size: 0.82rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .footer-section {
+    padding: 64px 6% 54px;
+  }
+  #footer-heading {
+    font-size: 1.9rem;
+  }
+  .footer-map-link {
+    font-size: 1.05rem;
+    padding: 9px 20px;
+  }
+  .section1 p,
+  .footer-reach p {
+    font-size: 1.15rem;
+  }
+  .section2 iframe {
+    width: 480px;
+    height: 260px;
+  }
+}
+
+/*<========================== Publications: Year Grouping =========================>*/
+.publication-year {
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--brand-navy);
+  text-align: center;
+  margin: 40px 0 20px;
+  border-bottom: 2px solid var(--brand-navy);
+  padding-bottom: 8px;
+}
+
+.pub-year-group {
+  width: 100%;
+  background-color: var(--brand-bg-tint);
+  border: 1px solid var(--brand-border);
+  border-radius: 14px;
+  padding: 28px 26px 8px;
+  margin: 0 0 34px;
+  box-shadow: 0 4px 14px var(--brand-shadow);
+}
+
+.pub-year-heading {
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--brand-navy);
+  padding: 6px 22px;
+  border-radius: 999px;
+  margin: 0 0 22px;
+  text-align: center;
+}
+
+.pub-year-group .details {
+  background: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .pub-year-group {
+    padding: 20px 16px 6px;
+    border-radius: 10px;
+  }
+  .pub-year-heading {
+    font-size: 1.1rem;
+    padding: 5px 16px;
+  }
+}
+
+/* DOI / external links inside publication cards */
+.details p a,
+.details p a:visited {
+  color: var(--brand-blue) !important;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.details p a:hover {
+  text-decoration: underline;
+  color: var(--brand-navy) !important;
+}
+
+/*<========================== Generic Centered Page Heading =========================>*/
+/* Matches the centered page-title convention used elsewhere on the site
+   (e.g. .title-heading on Research Area, .prohead on Patents). Used by
+   e.g. Research Facilities. */
+.heading {
+  text-align: center;
+}
+
+.heading h1 {
+  font-size: 1.8rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--brand-navy);
+}
+
+/*<========================== Research Facilities Video =========================>*/
+/* Container for the locally-hosted research facilities video
+   (see videos/README.txt). Centered card matching the site's existing
+   card look (rounded corners, soft shadow, navy accent border). */
+.facility-video-container {
+  display: flex;
+  justify-content: center;
+  padding: 0 5%;
+}
+
+.facility-video {
+  width: 100%;
+  max-width: 900px;
+  border: 1px solid var(--brand-border);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--brand-shadow);
+  background: #000;
+}
+
+@media screen and (min-width: 1400px) {
+  .facility-video {
+    max-width: 1100px;
+  }
+}
+
+/*<========================== Prototype Slideshow =========================>*
+  Single, de-duplicated definition (previously this block existed twice in
+  the file with conflicting values - that's gone now).
+
+  Arrow-spacing fix: the wrapper carries horizontal padding so the prev/next
+  buttons float in that empty margin instead of sitting flush against the
+  video edge. Only #protoSlideshowInner clips the sliding track, so the
+  padding around it is never cut off.
+*/
+
+.prototype-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.prototype-container .prototype-heading {
+  font-size: 45px;
+  font-weight: bold;
+  margin: 2rem 0;
+  text-transform: capitalize;
+  color: var(--brand-navy);
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+
+.proto-slideshow-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 46px;        /* room for arrows to float outside the video */
+  box-sizing: border-box;
+}
+
+#protoSlideshowInner {
+  overflow: hidden;        /* clipping happens here, not on the outer wrapper */
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+}
+
+.proto-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.proto-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.proto-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.proto-media iframe,
+.proto-video-el {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  object-fit: contain;
+  background: #000;
+}
+
+.proto-caption {
+  padding: 16px 24px 22px;
+  background: #fff;
+  text-align: center;
+}
+
+.proto-caption h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--brand-navy);
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+}
+
+.proto-caption p {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Prev/next arrows - floating circular buttons that sit in the wrapper's
+   side padding, clear of the video itself. */
+.proto-nav-btn {
+  position: absolute;
+  top: 50%;   /* fallback; JS repositions vertically to stay centered on the media */
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: background 0.25s ease, transform 0.25s ease;
+  backdrop-filter: blur(2px);
+}
+
+.proto-nav-btn:hover {
+  background: rgba(0, 0, 0, 0.75);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.proto-prev {
+  left: 0;   /* sits inside the wrapper's left padding, off the video */
+}
+
+.proto-next {
+  right: 0;  /* sits inside the wrapper's right padding, off the video */
+}
+
+.proto-dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.proto-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--brand-border);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.proto-dot:hover {
+  background: var(--brand-blue-light);
+}
+
+.proto-dot.active {
+  background: var(--brand-navy);
+  transform: scale(1.25);
+}
+
+/* Small phones */
+@media screen and (max-width: 480px) {
+  .prototype-container {
+    padding: 0 3%;
+  }
+  .proto-slideshow-wrapper {
+    padding: 0 30px;
+  }
+  .proto-nav-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+  .proto-caption h3 {
+    font-size: 0.95rem;
+  }
+  .proto-caption p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablets / small laptops */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .proto-slideshow-wrapper {
+    padding: 0 38px;
+  }
+  .proto-nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .proto-nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.05rem;
+  }
+}
+
+/* Large desktop screens */
+@media screen and (min-width: 1400px) {
+  .prototype-container .prototype-heading {
+    font-size: 2.7rem;
+  }
+  .proto-slideshow-wrapper {
+    max-width: 1100px;
+    padding: 0 56px;
+  }
+  .proto-caption h3 {
+    font-size: 1.4rem;
+  }
+  .proto-caption p {
+    font-size: 1.05rem;
+  }
+  .proto-nav-btn {
+    width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+  }
+}
+/* ==========================================================================
+   SITE-WIDE MOTION SYSTEM
+   ----------------------------------------------------------------------
+   Global scroll-reveal, hover, and page-transition animations. Purely
+   additive - lives at the end of style.css so it loads on every page
+   (style.css is already linked everywhere) and can't collide with
+   earlier rules. Paired with the "reveal engine" appended to main.js,
+   which does the DOM/IntersectionObserver work and just toggles the
+   ".is-visible" class defined below - no per-page markup needed.
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Respect users who've asked for less motion - turns every animation/
+   transition on the site into an instant, no-motion version. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- Page load: soft fade, whole page ----
+   FIXED: this used to also animate `transform: translateY(...)` on
+   <body>. Any element with a transform (even a settled translateY(0)
+   left behind by "animation-fill-mode: forwards") becomes the
+   containing block for any `position: fixed` descendant - so the
+   team "Read More" modal (which is a direct child of <body>) was
+   centering itself against the whole tall <body> element instead of
+   the actual viewport, making it land in the middle of the page
+   instead of centered on-screen wherever the user had scrolled to.
+   Dropped the transform/rise and kept only the opacity fade so
+   <body> never has a transform, fixing the modal along with it. */
+body {
+  opacity: 0;
+  animation: pageFadeIn 0.7s ease forwards;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ---- Scroll-reveal targets ----
+   main.js finds elements matching .reveal-up / .reveal-fade / .reveal-zoom
+   (added automatically to common content blocks) and flips on
+   .is-visible when they scroll into view. */
+.reveal-up, .reveal-fade, .reveal-zoom {
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(34px);
+}
+.reveal-fade {
+  opacity: 0;
+}
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+.reveal-up.is-visible,
+.reveal-fade.is-visible,
+.reveal-zoom.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- Hover lift for card / image style blocks ---- */
+.team-card,
+.flex-item-pro,
+.flex-item,
+.research-info,
+.pub-year-group,
+.experience-details-container,
+.proto-slideshow-wrapper,
+.contact-container .section2,
+.contact-container .section3 {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease;
+}
+
+.team-card:hover,
+.flex-item-pro:hover,
+.flex-item:hover,
+.research-info:hover,
+.pub-year-group:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 34px rgba(10, 30, 60, 0.16);
+}
+
+.team-image img,
+.site-header__photo img {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.team-card:hover .team-image img {
+  transform: scale(1.08) rotate(-1deg);
+}
+
+/* Gentle continuous drift on the header building illustration - subtle,
+   not distracting, gives the header some life. */
+.site-header__photo img {
+  animation: headerFloat 6s ease-in-out infinite;
+}
+@keyframes headerFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(-6px) scale(1.015); }
+}
+
+/* ---- Nav link underline sweep ---- */
+.main-nav > ul > li > a {
+  position: relative;
+}
+.main-nav > ul > li > a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--brand-blue-light, #6fb3ff);
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.main-nav > ul > li > a:hover::after {
+  width: 100%;
+}
+
+/* ---- Buttons / clickable pill elements: soft scale + shadow pop ---- */
+.read-btn,
+.footer-map-link,
+.back-to-top {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.25s ease, background 0.25s ease;
+}
+.read-btn:hover,
+.footer-map-link:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 10px 22px rgba(10, 30, 60, 0.22);
+}
+.back-to-top:hover {
+  transform: scale(1.12);
+}
+
+/* ---- Staggered reveal delays, set inline by main.js on siblings so
+   grids/lists cascade in one after another instead of popping together ---- */
+.reveal-up[data-delay="1"], .reveal-fade[data-delay="1"], .reveal-zoom[data-delay="1"] { transition-delay: 0.08s; }
+.reveal-up[data-delay="2"], .reveal-fade[data-delay="2"], .reveal-zoom[data-delay="2"] { transition-delay: 0.16s; }
+.reveal-up[data-delay="3"], .reveal-fade[data-delay="3"], .reveal-zoom[data-delay="3"] { transition-delay: 0.24s; }
+.reveal-up[data-delay="4"], .reveal-fade[data-delay="4"], .reveal-zoom[data-delay="4"] { transition-delay: 0.32s; }
+.reveal-up[data-delay="5"], .reveal-fade[data-delay="5"], .reveal-zoom[data-delay="5"] { transition-delay: 0.4s; }

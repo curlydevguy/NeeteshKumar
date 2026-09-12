@@ -1,0 +1,240 @@
+/* ==========================================================================
+   RESEARCH FACILITIES - PHOTO GALLERY
+   --------------------------------------------------------------------------
+   Standalone component, only linked from research_facilities.html.
+   Intentionally namespaced "facgal-" so it can never collide with the
+   existing video slideshow on this same page (.proto-*, #facility*) or
+   with the prototypes.html slideshow it was originally modeled on.
+
+   Behaviour (all driven by facilities-gallery.js):
+   - Auto-scrolls on its own, pauses on hover / touch / focus
+   - No visible arrow buttons - the left ~40% and right ~40% of the
+     photo itself are click targets for prev/next
+   - Caption sits BELOW the photo, not overlaid on it
+   - Slow "Ken Burns" zoom drift on the active photo while it's showing
+   ========================================================================== */
+
+.facgal-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.facgal-heading {
+  font-size: 45px;
+  font-weight: bold;
+  margin: 2rem 0 0.6rem;
+  text-transform: capitalize;
+  color: var(--brand-navy);
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+
+.facgal-subheading {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-muted);
+  margin: 0 0 1.6rem;
+  font-size: 1rem;
+}
+
+.facgal-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  background: #0d1526;
+}
+
+.facgal-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+
+.facgal-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.65s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.facgal-slide {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.facgal-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform 6.5s ease-out;
+}
+
+/* Slow zoom-drift ("Ken Burns") while a slide is the active one */
+.facgal-slide.is-active img {
+  transform: scale(1.09);
+}
+
+/* Invisible left/right click zones over the photo - no arrow icons,
+   just a subtle cursor + very light hover tint so it's still discoverable. */
+.facgal-hit {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 42%;
+  cursor: pointer;
+  background: linear-gradient(90deg, rgba(0,0,0,0.16), rgba(0,0,0,0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.facgal-hit-left {
+  left: 0;
+}
+
+.facgal-hit-right {
+  right: 0;
+  background: linear-gradient(270deg, rgba(0,0,0,0.16), rgba(0,0,0,0));
+}
+
+.facgal-viewport:hover .facgal-hit {
+  opacity: 1;
+}
+
+.facgal-hit::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  opacity: 0.9;
+}
+
+.facgal-hit-left::after {
+  left: 22px;
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.facgal-hit-right::after {
+  right: 22px;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* Progress bar for the autoplay timer - fills up, resets each slide */
+.facgal-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.18);
+  z-index: 4;
+}
+
+.facgal-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--brand-blue-light, #6fb3ff);
+}
+
+.facgal-progress-bar.animating {
+  transition: width linear;
+}
+
+.facgal-caption {
+  padding: 18px 26px 24px;
+  background: #fff;
+  text-align: center;
+}
+
+.facgal-caption h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--brand-navy);
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+}
+
+.facgal-caption p {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.facgal-dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.facgal-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--brand-border);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.facgal-dot:hover {
+  background: var(--brand-blue-light);
+}
+
+.facgal-dot.active {
+  background: var(--brand-navy);
+  transform: scale(1.25);
+}
+
+/* Small phones */
+@media screen and (max-width: 480px) {
+  .facgal-container {
+    padding: 0 3%;
+  }
+  .facgal-caption h3 {
+    font-size: 0.95rem;
+  }
+  .facgal-caption p {
+    font-size: 0.8rem;
+  }
+  .facgal-hit::after {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Large desktop screens */
+@media screen and (min-width: 1400px) {
+  .facgal-heading {
+    font-size: 2.7rem;
+  }
+  .facgal-wrapper {
+    max-width: 1100px;
+  }
+  .facgal-caption h3 {
+    font-size: 1.4rem;
+  }
+  .facgal-caption p {
+    font-size: 1.05rem;
+  }
+}

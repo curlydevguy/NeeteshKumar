@@ -1,0 +1,254 @@
+/* ==========================================================
+                    RESEARCH TEAM SECTION
+========================================================== */
+.research-team-section{
+    width:100%;
+    max-width:1400px;
+    margin:0 auto;
+    padding:35px 3% 15px;
+    background:#fff;
+    font-family:"Poppins",sans-serif;
+}
+
+.research-team-heading{
+    font-size:2rem;
+    font-weight:600;
+    color:var(--text-dark);
+    margin-bottom:22px;
+    text-align:center;
+}
+
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:16px;
+    align-items:start;
+}
+
+.team-card{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.25s;
+}
+
+.team-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.team-image{
+    width:100%;
+    aspect-ratio:4/5;
+    height:auto;
+    object-fit:cover;
+    object-position:center top;
+    display:block;
+}
+
+.card-heading{
+    text-align:center;
+    margin-top:12px;
+    padding:0 10px;
+    font-size:1.05rem;
+    font-weight:600;
+    color:var(--text-dark);
+}
+
+.card-detils{
+    text-align:center;
+    padding:0 15px;
+    margin-top:8px;
+    color:#666;
+    line-height:1.5;
+    font-size:.83rem;
+    min-height:58px;
+}
+
+.card-detils p{margin:0;}
+
+.team-card .read-btn{
+    margin:16px;
+    border:none;
+    border-radius:8px;
+    padding:10px;
+    font-size:13px;
+    color:#fff;
+    background:var(--brand-blue);
+    cursor:pointer;
+}
+
+.team-card .read-btn:hover{background:var(--brand-navy);}
+
+.card-hidden{display:none;padding:0 18px 18px;}
+
+.about-text{
+    text-align:justify;
+    line-height:1.65;
+    color:#555;
+    font-size:.9rem;
+}
+
+.research-info{
+    margin-top:15px;
+    padding-top:12px;
+    border-top:1px solid #ececec;
+}
+
+.research-info p{margin:6px 0;}
+.container{
+    margin-top:20px !important;
+    margin-bottom:25px !important;
+}
+
+.title-heading{
+    font-size:1.8rem !important;
+    margin-bottom:20px !important;
+}
+
+.experience-details-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 20px !important;
+    min-height:80px;
+    border-radius:10px;
+}
+
+.experienceSummary-detail1,
+.experienceSummary-detail2,
+.experienceSummary-detail3,
+.experienceSummary-detail4,
+.experienceSummary-detail5{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-family:"Poppins",sans-serif;
+    font-size:.95rem;
+}
+
+.experienceSummary-detail1{width:18%;}
+.experienceSummary-detail2{width:34%;}
+.experienceSummary-detail3{width:25%;}
+.experienceSummary-detail4{width:12%;}
+.experienceSummary-detail5{width:11%;}
+
+.experience-details-container h2{
+    font-size:1.15rem;
+}
+
+.experience-details-container span{
+    font-size:.95rem;
+    line-height:1.5;
+}
+
+@media(max-width:992px){
+    .team-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:650px){
+    .team-grid{
+        grid-template-columns:1fr;
+    }
+
+    .research-team-heading{
+        text-align:center;
+        font-size:1.8rem;
+    }
+
+    .team-image{
+        height:230px;
+    }
+}
+.atul-img{
+    object-position: center top;
+}
+
+/* Non-available link placeholder (kept honest instead of a dead href) */
+.no-link{
+    color:#999;
+    font-style:italic;
+    text-decoration:none;
+}
+
+/* ==========================================================
+                TEAM "READ MORE" MODAL
+========================================================== */
+.team-modal-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(13,59,102,.55);
+    z-index:1000;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.team-modal-overlay.open{
+    display:flex;
+}
+
+.team-modal{
+    background:#fff;
+    border-radius:14px;
+    width:100%;
+    max-width:600px;
+    max-height:85vh;
+    overflow-y:auto;
+    padding:34px 30px 30px;
+    position:relative;
+    box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+
+.team-modal__close{
+    position:absolute;
+    top:12px;
+    right:16px;
+    background:none;
+    border:none;
+    font-size:1.9rem;
+    line-height:1;
+    color:#888;
+    cursor:pointer;
+    padding:4px 8px;
+}
+
+.team-modal__close:hover{
+    color:var(--brand-navy);
+}
+
+.team-modal .card-heading{
+    text-align:left;
+    margin-top:0;
+    padding:0;
+    font-size:1.3rem;
+}
+
+.team-modal .card-detils{
+    text-align:left;
+    padding:0;
+    min-height:0;
+    margin-top:6px;
+}
+
+.team-modal .card-hidden{
+    padding:0;
+    margin-top:16px;
+}
+
+body.modal-open{
+    overflow:hidden;
+}
+
+@media (max-width:650px){
+    .team-modal{
+        padding:28px 20px 22px;
+    }
+}

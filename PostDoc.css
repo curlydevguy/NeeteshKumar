@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*<-================================ PostDoc Style =================================-> */
+
+.postdoc-position {
+  margin-top: 30px;
+  width: auto;
+  height: auto;
+}
+
+/* UPDATED: font sizes increased across this page for better readability */
+.postdoc-position__heading {
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: var(--brand-navy);
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+.postdoc-position__information {
+  margin-top: 1.8rem;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+/* Soft-corner photo, no added border/color ring - the rounded edges and
+   gentle shadow read as part of the photo itself rather than a frame
+   placed on top of it. Shadow color reuses the site's brand-shadow token
+   for consistency with the card look used elsewhere. */
+.postdoc-photo-frame {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px var(--brand-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.postdoc-photo-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(13, 59, 102, 0.18);
+}
+
+.postdoc-photo-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.postdoc-position__information .postdoc-position__information__details {
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  margin-left: 2%;
+  font-size: 1rem;
+}
+
+.postdoc-position__information__details span {
+  font-size: 1.05rem;
+}
+
+.postdoc-position__information__details span b {
+  padding-bottom: 5px;
+}
+
+.postdoc-position__information__details span a {
+  padding-left: 5px;
+  text-decoration: none;
+  color: #000;
+}
+
+.postdoc-position__contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  color: #000;
+  font-weight: 500;
+  font-size: 1.05rem;
+  font-family: "Open sans", sans-serif;
+}
+
+.postdoc-position__content {
+  padding: 20px 24px;
+  letter-spacing: 0.3px;
+  background: var(--brand-bg-card);
+  border: 1px solid var(--brand-border);
+  border-left: 5px solid var(--brand-navy);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--brand-shadow);
+  margin-bottom: 18px;
+  display: block;
+  transition: 0.25s ease;
+}
+
+.postdoc-position__content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(13, 59, 102, 0.16);
+  border-left-color: var(--brand-blue);
+}
+
+.postdoc-position__content .content-highlight {
+  color: var(--brand-blue);
+  font-weight: 700;
+}
+
+.postdoc-position__content a {
+  text-decoration: none;
+  color: var(--brand-blue);
+  font-weight: 700;
+}
+
+.postdoc-position__content a:hover {
+  color: var(--brand-navy);
+}
+
+@media screen and (min-width: 1400px) {
+  .postdoc-photo-frame {
+    width: 190px;
+    height: 190px;
+  }
+
+  .postdoc-position__heading {
+    font-size: 1.7rem;
+  }
+
+  .postdoc-position__information__details span {
+    font-size: 1.4rem;
+  }
+
+  .postdoc-position__content {
+    font-size: 1.25rem;
+  }
+}

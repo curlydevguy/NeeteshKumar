@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Neetesh Kumar</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Google Fonts Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--================== Header + Nav-Bar SECTION ==================-->
+
+  <header class="site-header">
+    <div class="site-header__brand">
+      <!-- UPDATED (header redesign): IIT Roorkee logo - kept same image, spacing/size adjusted to new layout -->
+      <img src="./images/iit-logo-official.jpg" alt="IIT Roorkee" class="site-header__logo">
+    </div>
+    <div class="site-header__titles">
+      <h1 class="site-header__hindi">भारतीय प्रौद्योगिकी संस्थान रुड़की</h1>
+      <h1 class="site-header__english">INDIAN INSTITUTE OF TECHNOLOGY ROORKEE</h1>
+    </div>
+    <div class="site-header__photo">
+      <!-- Header building illustration: line-art sketch of the IIT Roorkee building (images/iit-building2.png). To change it, replace that file (keep the same filename) or update the src below. -->
+      <img src="./images/iit-building2.png" alt="IIT Roorkee Campus">
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="main-nav__brand">
+      <span class="main-nav__name">Dr. Neetesh Kumar</span>
+      <span class="main-nav__title">Associate Professor</span>
+    </div>
+    <label for="btn" class="icon">
+      <span class="fa fa-bars"></span>
+    </label>
+    <input type="checkbox" id="btn" />
+    <ul>
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <label for="btn-1" class="show">About <i class="fa fa-angle-down"></i></label>
+        <a href="#about">About <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-1" />
+        <ul>
+          <li><a href="edu.html">Education</a></li>
+          <li><a href="exp.html">Experience</a></li>
+          <li><a href="awards.html">Awards</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="team.html">Team</a>
+      </li>
+      <li>
+        <label for="btn-2" class="show">Research <i class="fa fa-angle-down"></i></label>
+        <a href="#">Research <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-2" />
+        <ul>
+          <li><a href="postDoc.html">Prospective Researchers</a></li>
+          <li><a href="rarea.html">Research Area</a></li>
+          <li><a href="research_facilities.html">Research Facilities</a></li>
+          <li><a href="S.projects.html">Sponsored Projects</a></li>
+          <li><a href="patents.html">Patents</a></li>
+          <li><a href="prototypes.html">Prototype</a></li>
+          <li><a href="internationalcollab.html">International Collaborations</a></li>
+        </ul>
+      </li>
+      <li>
+        <label for="btn-3" class="show">Publications <i class="fa fa-angle-down"></i></label>
+        <a href="#">Publications <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-3" />
+        <ul>
+          <li><a href="summary.html">Summary</a></li>
+          <li><a href="Rjournal.html">Referred Journal</a></li>
+          <li><a href="cpaper.html">Conference Paper</a></li>
+          <li><a href="book_chapter.html">Books/Book Chapter</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="teach.html">Teaching</a>
+      </li>
+      <li>
+        <a href="os_contri.html">Open Source Contributions</a>
+      </li>
+      <li>
+        <a href="admin.html">Professional Activities</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+    <script>
+      $(".icon").click(function () {
+        $("span").toggleClass("cancel");
+      });
+    </script>
+
+  <!--================== EXPERIENCE SECTION ================-->
+
+<div class="container">
+  <div class="experience-container">
+    <h1 class="title-heading">Research Area</h1>
+
+    <div class="rarea-grid">
+      <div class="rarea-card">
+        <h3>Agentic AI</h3>
+        <p>
+          Agentic AI pipelines and autonomous reasoning frameworks for
+          context-aware, real-world decision-making systems.
+        </p>
+      </div>
+
+      <div class="rarea-card">
+        <h3>Autonomous Systems</h3>
+        <p>
+          Autonomous Vehicles and Unmanned Aerial Vehicles (UAVs),
+          covering perception, navigation, and safety-critical autonomy.
+        </p>
+      </div>
+
+      <div class="rarea-card">
+        <h3>Containerized Microservices</h3>
+        <p>
+          Container orchestration, zero-trust microservice architectures,
+          and secure, scalable service deployment.
+        </p>
+      </div>
+
+      <div class="rarea-card">
+        <h3>Software Defined Networking (SDN)</h3>
+        <p>
+          Software Defined Wireless Sensor Networks, Software Defined
+          Internet of Vehicles, and Security, Cloud/Fog Computing, etc.
+        </p>
+      </div>
+
+      <div class="rarea-card">
+        <h3>Cyber Physical Systems</h3>
+        <p>
+          Security and resilience of cyber-physical systems spanning
+          connected vehicles, IoT, and next-generation networked infrastructure.
+        </p>
+      </div>
+
+      <div class="rarea-card">
+        <h3>Intelligent Transportation Systems (ITS)</h3>
+        <p>
+          Intelligent Traffic Light Controllers, Traffic Flow Prediction,
+          Autonomous Vehicles, Applied Machine Learning, Battery Electric
+          Vehicle Charging Infrastructure Optimisations, etc.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- 
+        <div class="experience-details-container">
+          <div class="experience-detail1">
+            <span class="span-bold">SR.NO</span>
+          </div>
+          <div class="experience-detail2">
+            <span class="span-bold">Particulars</span>
+          </div>
+          <div class="experience-detail3">
+            <span class="span-bold">Quantity</span>
+          </div>
+
+          <div class="experience-detail4">
+            <span class="span-bold">Remark </span>
+          </div>
+        </div>
+
+        <div class="experience-details-container">
+          <div class="experience-detail1">
+            <span>1.</span>
+          </div>
+          <div class="experience-detail2">
+            <span
+              >SCI Journals <span class="highlight">(Published)</span>
+            </span>
+          </div>
+          <div class="experience-detail3">
+            <span>12</span>
+          </div>
+
+          <div class="experience-detail4">
+            <span> Core Area Journals </span>
+          </div>
+        </div>
+
+        <div class="experience-details-container">
+          <div class="experience-detail1">
+            <span>2.</span>
+          </div>
+          <div class="experience-detail2">
+            <span>Non-SCI Journals (Published) </span>
+          </div>
+          <div class="experience-detail3">
+            <span>1</span>
+          </div>
+
+          <div class="experience-detail4">
+            <span> IEEE Transactions on GCN </span>
+          </div>
+        </div>
+
+        <div class="experience-details-container">
+          <div class="experience-detail1">
+            <span>3.</span>
+          </div>
+          <div class="experience-detail2">
+            <span>Posters & Conference Publications </span>
+          </div>
+          <div class="experience-detail3">
+            <span>12</span>
+          </div>
+
+          <div class="experience-detail4">
+            <span> 3 Awards </span>
+          </div>
+        </div>
+
+        <div class="experience-details-container">
+          <div class="experience-detail1">
+            <span>4.</span>
+          </div>
+          <div class="experience-detail2">
+            <span>SCI Journals (Under Revision) </span>
+          </div>
+          <div class="experience-detail3">
+            <span>2</span>
+          </div>
+
+          <div class="experience-detail4">
+            <span> R1/R2 </span>
+          </div>
+        </div>
+
+        <div class="experience-details-container">
+          <div class="experience-detail1">
+            <span>5.</span>
+          </div>
+          <div class="experience-detail2">
+            <span>SCI Journals (Under Review) </span>
+          </div>
+          <div class="experience-detail3">
+            <span>7</span>
+          </div>
+
+          <div class="experience-detail4">
+            <span> Top tier Journals/Transactions </span>
+          </div>
+        </div>
+        <div class="experience-details-container">
+          <div class="experience-detail1">
+            <span>6.</span>
+          </div>
+          <div class="experience-detail2">
+            <span>Patent</span>
+          </div>
+          <div class="experience-detail3">
+            <span>2</span>
+          </div>
+
+          <div class="experience-detail4">
+            <span> Under Process</span>
+          </div>
+        </div>
+        <div class="experience-details-container">
+          <div class="experience-detail1">
+            <span>7.</span>
+          </div>
+          <div class="experience-detail2">
+            <span>Funded Research Projects as PI (DST/SERB/CSIR) </span>
+          </div>
+          <div class="experience-detail3">
+            <span>3</span>
+          </div>
+
+          <div class="experience-detail4">
+            <span> Total Funding (65 Lakhs Approx.)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+
+    <div class="pie-chart-container">
+      <div class="pie-subHeading">
+        Classification of 12 SCI Journal Publications
+      </div>
+      <div class="pie-chart-1">
+        <div class="chart1-1">
+          <ul>
+            <li>Scheduling in Parallel Computing (Multi/Many-core Systems)</li>
+          </ul>
+        </div>
+        <div class="chart1-2">
+          <ul>
+            <li>
+              Applied Evolutionary Computing (AEC) to Solve routing problems
+            </li>
+          </ul>
+        </div>
+        <div class="chart1-3">
+          <ul>
+            <li>Intelligent Transportation System (ITS)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pie"></div>
+      <br />
+      <br />
+      <div class="pie-subHeading">Three Research Sponsored Projects (PI)</div>
+      <div class="pie-chart-1">
+        <div class="chart1-1">
+          <ul>
+            <li>ITS</li>
+          </ul>
+        </div>
+        <div class="chart1-2">
+          <ul>
+            <li>ITS + Scheduling</li>
+          </ul>
+        </div>
+        <div class="chart1-3">
+          <ul>
+            <li>ITS + AEC + Scheduling</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pie2"></div>
+    </div>
+
+    <br />
+-->
+     <!--============== FOOTER SECTION ====================-->
+         <div id="contact" class="footer-section">
+            <div class="footer-top">
+               <h1 id="footer-heading">Contact Us</h1>
+            </div>
+            <div class="contact-container">
+               <div class="section1">
+                  <!-- <p style="font-weight: bold;">Prof. Neetesh Kumar</p>
+               <p style="font-weight: bold;"> Assistant Professor</p> -->
+                  <div class="footer-address">
+                     <p>W-203,</p>
+                     <p>Department of Computer Science and Engineering, </p>
+                     <p>Indian Institute of Technology,</p>
+                     <p id="state-name">Roorkee- 247667</p>
+                     <P style="margin-top: 3px;">Uttarakhand, India</P>
+                  </div>
+                  <div class="footer-reach">
+                     <p><i class="fa fa-envelope"></i> neetesh@cs.iitr.ac.in</p>
+                     <p><i class="fa fa-phone"></i> 01332-284977</p>
+                  </div>
+               </div>
+               <div class="section2">
+                  <iframe
+                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13839.6311869656!2d77.88688626753348!3d29.866932819020487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eb3d3e44a815f%3A0x874c399a4ee5bb81!2sIIT%20Roorkee!5e0!3m2!1sen!2sin!4v1631692039121!5m2!1sen!2sin"
+                     width="400" height="210" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                  <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query=IIT+Roorkee" target="_blank" rel="noopener">
+                     <i class="fa fa-map-marker"></i>
+                     Get Directions
+                  </a>
+               </div>
+               <div class="section3">
+                  <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13839.6311869656!2d77.88688626753348!3d29.866932819020487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eb3d3e44a815f%3A0x874c399a4ee5bb81!2sIIT%20Roorkee!5e0!3m2!1sen!2sin!4v1631692039121!5m2!1sen!2sin"
+                  width="270" height="150" style="border:0;" 
+                  allowfullscreen="" loading="lazy"></iframe>
+                  <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query=IIT+Roorkee" target="_blank" rel="noopener">
+                     <i class="fa fa-map-marker"></i>
+                     Get Directions
+                  </a>   
+               </div>
+            </div>
+         </div>
+         <button id="backToTopBtn" class="back-to-top" aria-label="Scroll to top" title="Back to top"><i class="fa fa-angle-up"></i></button>
+         <script src="main.js"></script>
+</body>
+</html>

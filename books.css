@@ -1,0 +1,314 @@
+/* ===========================================================
+                    BOOKS PAGE
+    Dr. Neetesh Kumar Website
+=========================================================== */
+
+*{
+    box-sizing:border-box;
+}
+
+.books-page{
+    width:95%;
+    max-width:1200px;
+    margin:60px auto 90px;
+    font-family:"Poppins",sans-serif;
+}
+
+.books-section{
+    margin-bottom:55px;
+}
+
+.books-heading{
+
+    text-align:center;
+
+    font-size:2.35rem;
+
+    font-weight:600;
+
+    color:var(--brand-navy);
+
+    margin-bottom:35px;
+
+    letter-spacing:.3px;
+}
+
+.book-card{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+    background:#ffffff;
+
+    padding:22px 26px;
+
+    border-radius:14px;
+
+    border-left:6px solid var(--brand-blue);
+
+    box-shadow:0 8px 20px rgba(15,23,42,.08);
+
+    transition:all .30s ease;
+}
+
+.book-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 40px rgba(15,23,42,.13);
+}
+
+.book-number{
+
+    /* UPDATED: numbering removed per request */
+
+    display:none;
+}
+
+.book-content{
+
+    flex:1;
+}
+
+/* UPDATED: font sizes reduced slightly so this page matches the rest of the site */
+.book-content h2{
+
+    margin:0;
+
+    font-size:1.2rem;
+
+    font-weight:600;
+
+    color:var(--text-dark);
+
+    line-height:1.45;
+}
+
+.book-title{
+
+    margin:10px 0 20px;
+
+    color:var(--text-muted);
+
+    font-size:0.92rem;
+
+    line-height:1.7;
+}
+
+.book-chip{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:5px 14px;
+
+    border-radius:18px;
+
+    background:var(--brand-bg-tint);
+
+    color:var(--brand-blue);
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+
+    letter-spacing:.2px;
+}
+
+.book-divider{
+
+    display:none;
+}
+
+/* Optional spacing for Book Chapter card */
+
+.books-section:last-child .book-content h2{
+
+    margin-top:8px;
+}
+
+/* ======================================
+        Responsive
+====================================== */
+
+@media(max-width:900px){
+
+.book-card{
+
+    gap:25px;
+}
+
+.book-content h2{
+
+    font-size:1.5rem;
+}
+
+}
+
+@media(max-width:768px){
+
+.books-page{
+
+    width:94%;
+}
+
+.books-heading{
+
+    font-size:2rem;
+}
+
+.book-card{
+
+    flex-direction:column;
+
+    gap:20px;
+
+    padding:26px;
+}
+
+.book-number{
+
+    width:58px;
+
+    height:58px;
+
+    min-width:58px;
+
+    font-size:1.2rem;
+}
+
+.book-content h2{
+
+    font-size:1.25rem;
+}
+
+.book-title{
+
+    font-size:1rem;
+}
+
+}
+
+@media(max-width:480px){
+
+.books-heading{
+
+    font-size:1.7rem;
+}
+
+.book-card{
+
+    padding:22px;
+}
+
+.book-number{
+
+    width:54px;
+
+    height:54px;
+
+    min-width:54px;
+}
+
+}
+/* ==========================================
+        ACTIVITY CARD (Phase 1)
+========================================== */
+
+.activity-card{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:32px;
+
+    background:#fff;
+
+    padding:34px;
+
+    border-radius:16px;
+
+    border-left:6px solid var(--brand-blue);
+
+    box-shadow:0 10px 26px rgba(15,23,42,.08);
+
+    margin-bottom:28px;
+
+    transition:.3s ease;
+}
+
+.activity-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 18px 40px rgba(15,23,42,.12);
+}
+
+.activity-number{
+
+    width:62px;
+
+    height:62px;
+
+    min-width:62px;
+
+    border-radius:14px;
+
+    background:var(--brand-blue);
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:700;
+
+    font-size:1.3rem;
+}
+
+.activity-content{
+
+    flex:1;
+}
+
+.activity-chip{
+
+    display:inline-block;
+
+    background:var(--brand-bg-tint);
+
+    color:var(--brand-blue);
+
+    padding:5px 14px;
+
+    border-radius:18px;
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+}
+
+.activity-content p{
+
+    margin:0;
+
+    color:var(--text-muted);
+
+    line-height:1.8;
+
+    font-size:1.05rem;
+}

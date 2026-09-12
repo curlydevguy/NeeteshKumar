@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr Neetesh Kumar</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Google Fonts Links -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!--================== Header + Nav-Bar SECTION ==================-->
+
+  <header class="site-header">
+    <div class="site-header__brand">
+      <!-- UPDATED (header redesign): IIT Roorkee logo - kept same image, spacing/size adjusted to new layout -->
+      <img src="./images/iit-logo-official.jpg" alt="IIT Roorkee" class="site-header__logo">
+    </div>
+    <div class="site-header__titles">
+      <h1 class="site-header__hindi">भारतीय प्रौद्योगिकी संस्थान रुड़की</h1>
+      <h1 class="site-header__english">INDIAN INSTITUTE OF TECHNOLOGY ROORKEE</h1>
+    </div>
+    <div class="site-header__photo">
+      <!-- Header building illustration: line-art sketch of the IIT Roorkee building (images/iit-building2.png). To change it, replace that file (keep the same filename) or update the src below. -->
+      <img src="./images/iit-building2.png" alt="IIT Roorkee Campus">
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="main-nav__brand">
+      <span class="main-nav__name">Dr. Neetesh Kumar</span>
+      <span class="main-nav__title">Associate Professor</span>
+    </div>
+    <label for="btn" class="icon">
+      <span class="fa fa-bars"></span>
+    </label>
+    <input type="checkbox" id="btn" />
+    <ul>
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <label for="btn-1" class="show">About <i class="fa fa-angle-down"></i></label>
+        <a href="#about">About <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-1" />
+        <ul>
+          <li><a href="edu.html">Education</a></li>
+          <li><a href="exp.html">Experience</a></li>
+          <li><a href="awards.html">Awards</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="team.html">Team</a>
+      </li>
+      <li>
+        <label for="btn-2" class="show">Research <i class="fa fa-angle-down"></i></label>
+        <a href="#">Research <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-2" />
+        <ul>
+          <li><a href="postDoc.html">Prospective Researchers</a></li>
+          <li><a href="rarea.html">Research Area</a></li>
+          <li><a href="research_facilities.html">Research Facilities</a></li>
+          <li><a href="S.projects.html">Sponsored Projects</a></li>
+          <li><a href="patents.html">Patents</a></li>
+          <li><a href="prototypes.html">Prototype</a></li>
+          <li><a href="internationalcollab.html">International Collaborations</a></li>
+        </ul>
+      </li>
+      <li>
+        <label for="btn-3" class="show">Publications <i class="fa fa-angle-down"></i></label>
+        <a href="#">Publications <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-3" />
+        <ul>
+          <li><a href="summary.html">Summary</a></li>
+          <li><a href="Rjournal.html">Referred Journal</a></li>
+          <li><a href="cpaper.html">Conference Paper</a></li>
+          <li><a href="book_chapter.html">Books/Book Chapter</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="teach.html">Teaching</a>
+      </li>
+      <li>
+        <a href="os_contri.html">Open Source Contributions</a>
+      </li>
+      <li>
+        <a href="admin.html">Professional Activities</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    $(".icon").click(function () {
+      $("span").toggleClass("cancel");
+    });
+  </script>
+
+  <!--=================== REFEREED JOURNAL PAPERS SECTION ===================-->
+  <div class="publication-container">
+    <div class="main-container">
+      <h1 class="title-heading">Open Source Contributions and Projects by ICCN Lab Students</h1>
+      <div class="content-area">
+        <hr class="margin-bottom margin-top" />
+
+
+        <div class="details">
+          <span class="s-no">1.</span>
+          <p>
+            Core contributor to <span class="name-highlight">Stillwater-sc/universal</span>, focusing on
+            high-performance computing and numerical accuracy.
+            <span class="highlight"><a class="link-style"
+                href="https://github.com/stillwater-sc/universal/graphs/contributors" target="_blank">View
+                Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">2.</span>
+          <p>
+            Core contributor to <span class="name-highlight">boost::numeric::uBlas</span>, also completed (Google Summer
+            of Code) GSoC'21.
+            <span class="highlight"><a class="link-style" href="https://github.com/BoostGSoC21/ublas"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">3.</span>
+          <p>
+            Core contributor to <span class="name-highlight">syslog-ng</span>, also completed (Google Summer of Code)
+            GSoC'22.
+            <span class="highlight"><a class="link-style" href="https://github.com/syslog-ng/syslog-ng/pull/4145"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">4.</span>
+          <p>
+            Contributed to the <span class="name-highlight">Simunova mtl4</span> project, focused on improving
+            high-level mathematical computations.
+            <span class="highlight"><a class="link-style" href="https://github.com/simunova/mtl4" target="_blank">View
+                Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">5.</span>
+          <p>
+            Developed cryptographic protocols for <span class="name-highlight">Zk-SNARKs using Polynomial
+              Commitments</span> to enhance blockchain security.
+            <span class="highlight"><a class="link-style"
+                href="https://github.com/14vv1A0516/Zk-Snarks-Auth-protocol-conf" target="_blank">View
+                Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">6.</span>
+          <p>
+            Developed a new <span class="name-highlight">Handover Authentication Protocol using FRI ZKPs</span> for
+            secure network transitions.
+            <span class="highlight"><a class="link-style"
+                href="https://github.com/14vv1A0516/FRI_based-ZKP-Auth_VNs_Mn_wiFi" target="_blank">View
+                Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">7.</span>
+          <p>
+            <span class="name-highlight">PDF Utilities</span> for password assignment, modification, removal, image
+            insertion, and merging PDF pages.
+            <span class="highlight"><a class="link-style" href="https://github.com/14vv1A0516/PDF-utilities"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">8.</span>
+          <p>
+            <span class="name-highlight">Encryption and Decryption of a File Using Digital Certificates</span> for
+            secure file handling.
+            <span class="highlight"><a class="link-style"
+                href="https://github.com/14vv1A0516/Encryption-and-Decryption-of-a-file" target="_blank">View
+                Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">9.</span>
+          <p>
+            <span class="name-highlight">Image File Carving from Disk Images</span> project for JPG, PNG, GIF recovery
+            from disk images.
+            <span class="highlight"><a class="link-style"
+                href="https://github.com/14vv1A0516/Images-Jpg-Png-Gif-File-Carving" target="_blank">View
+                Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">10.</span>
+          <p>
+            Developed <span class="name-highlight">Overtaking Test Scenarios for Autonomous Vehicles</span> to test and
+            validate the safety and reliability.
+            <span class="highlight"><a class="link-style"
+                href="https://github.com/shikhariitr2126/Overtaking-Test-Scenarios" target="_blank">View
+                Details</a></span>
+          </p>
+        </div>
+        <div class="details">
+          <span class="s-no">11.</span>
+          <p>
+            Developed the <span class="name-highlight">ZigPage App</span>, showcasing the use of the Zig programming
+            language in practical applications.
+            <span class="highlight"><a class="link-style" href="https://github.com/shikharvashistha/zigpage"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">12.</span>
+          <p>
+            Created <span class="name-highlight">Notes-Wasm-Go</span>, a notes application that uses GitHub as a
+            database, implemented in WebAssembly and Go.
+            <span class="highlight"><a class="link-style" href="https://github.com/shikharvashistha/notes-wasm-go"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">13.</span>
+          <p>
+            Developed <span class="name-highlight">Foodey</span>, a comprehensive bakery dashboard application using C#
+            and .NET.
+            <span class="highlight"><a class="link-style" href="https://github.com/shikharvashistha/foodey"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">14.</span>
+          <p>
+            Implemented <span class="name-highlight">Blockchained</span>, a basic blockchain implementation, written in
+            Rust.
+            <span class="highlight"><a class="link-style" href="https://github.com/shikharvashistha/blockchained"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">15.</span>
+          <p>
+            Developed <span class="name-highlight">Faced</span>, a face recognition system using Go, showcasing
+            biometric identification techniques.
+            <span class="highlight"><a class="link-style" href="https://github.com/shikharvashistha/faced"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">16.</span>
+          <p>
+            Created <span class="name-highlight">Forecaster</span>, a weather forecast command-line interface tool
+            utilizing Rust for efficient data processing.
+            <span class="highlight"><a class="link-style" href="https://github.com/shikharvashistha/forecaster"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">17.</span>
+          <p>
+            Built a web-based <span class="name-highlight">To Do Web App</span> to manage tasks effectively, developed
+            using Rust.
+            <span class="highlight"><a class="link-style" href="https://github.com/shikharvashistha/to_do"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">18.</span>
+          <p>
+            Created a <span class="name-highlight">Basic Shell in C</span>, providing fundamental shell functionalities.
+            <span class="highlight"><a class="link-style" href="https://github.com/shikharvashistha/shell"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">19.</span>
+          <p>
+            Implemented <span class="name-highlight">Shamir's Secret Sharing</span> algorithm in C, a method for
+            distributed control over shared secret information.
+            <span class="highlight"><a class="link-style"
+                href="https://github.com/shikharvashistha/shamir-secret-sharing" target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">20.</span>
+          <p>
+            Developed <span class="name-highlight">StatiX</span>, a basic static file server that delivers files over
+            the web, created in Go.
+            <span class="highlight"><a class="link-style" href="https://github.com/shikharvashistha/statiX"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">21.</span>
+          <p>
+            Developed <span class="name-highlight">Sniffer</span>, a tool for sniffing open ports on an IP address,
+            crafted in Rust to enhance network security.
+            <span class="highlight"><a class="link-style" href="https://github.com/shikharvashistha/sniffer"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">22.</span>
+          <p>
+            Created <span class="name-highlight">HealthURL</span>, a Go-based tool that checks the health status of
+            specified URLs to ensure network reliability.
+            <span class="highlight"><a class="link-style" href="https://github.com/shikharvashistha/healthURL"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">23.</span>
+          <p>
+            Developed <span class="name-highlight">AuthV</span>, a basic user authentication system backend written in
+            Go, providing secure access control.
+            <span class="highlight"><a class="link-style" href="https://github.com/shikharvashistha/authV"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">24.</span>
+          <p>
+            Built <span class="name-highlight">Chatter</span>, a client-server chat application that facilitates
+            real-time messaging, developed using Rust.
+            <span class="highlight"><a class="link-style" href="https://github.com/shikharvashistha/chatter"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="details">
+          <span class="s-no">25.</span>
+          <p>
+            Developed <span class="name-highlight">Bubbles</span>, a graphics project exploring creative coding aspects
+            using Rust.
+            <span class="highlight"><a class="link-style" href="https://github.com/shikharvashistha/bubbles"
+                target="_blank">View Details</a></span>
+          </p>
+        </div>
+
+        <div class="view-more-wrap">
+          <a class="view-more-btn"
+            href="https://github.com/shikharvashistha?language=&page=1&q=&sort=&tab=repositories&type=source"
+            target="_blank">
+            View More Projects on GitHub
+            <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+
+
+
+
+
+        <!-- <div class="details">
+             <span class="s-no">19.</span>
+             <p>
+                <span class="name-highlight">Neetesh Kumar</span> , D.P. Vidhyarthi, “A Novel Energy Efficient
+                Scheduler for Multi-Core Systems” <span class="highlight">DOI:</span> <a class="link-style"
+                   href="https://doi.org/10.1007/s10586-020-03143-w"
+                   target="_blank">10.1007/s10586-020-03143-w</a>.
+                <span class="highlight">in Cluster
+                   Computing, Springer, 2020,SCI (Impact factor:
+                   3.458)</span>
+             </p>
+          </div> -->
+
+
+        <!--    
+         <div class="details">
+            <span class="s-no">21.</span>
+            <p>
+               Rashmi Chaudhry, Shashikala Tapaswi, <span class="name-highlight">Neetesh Kumar</span> , “FZ enabled Multi-objective PSO 
+               for multicasting in IoT based Wireless Sensor Networks”, in <span class="highlight">Information Sciences, Elsevier</span>, 
+               vol. 498, 1-20, <span class="highlight"> September 2019.  [SCI, Q1, IF: 6.79]</span>
+            </p>
+         </div>
+         
+         <div class="details">
+            <span class="s-no">22.</span>
+            <p>
+               <span class="name-highlight"> Neetesh Kumar</span>, D.P. Vidhyarthi , “Multiprocessors Scheduling of Directed 
+               Acyclic Graphs with Communication using Hybrid PSO-GA”, in <span class="highlight">Engineering with Computers, Springer </span> ,
+               </span> 32(1), 35-47,<span class="highlight">January 2016, (IF: 7.963)</span>
+            </p>
+         </div>
+
+         <div class="details">
+            <span class="s-no">23.</span>
+            <p>
+               Anubha Agrawal, <span class="name-highlight"> Neetesh Kumar</span>, D.P. Vidhyarthi and Rajkumar Buyya, “Multi-Attribute Combinatorial 
+               Reverse Auction Model for Resource Procurement in Fog Integrated Cloud Architecture”, in <span class="highlight">Simulation Modelling Practice and Theory, Elsevier </span> ,
+               vol. 109, page 102307,
+               ,<span class="highlight">May 2021. [SCI, Q2, IF: 3.272]</span>
+            </p>
+         </div>
+
+         <div class="details">
+            <span class="s-no">24.</span>
+            <p>
+               <span class="name-highlight"> Neetesh Kumar</span>, D.P. Vidhyarthi , “A Novel Energy Efficient Scheduler for Multi-Core Systems”, in 
+               <span class="highlight"> Cluster Computing, Springer</span> , 24, 643–666, 
+               <span class="highlight">June 2021, (IF: 1.809). [SCI, Q2, IF: 1.809]</span>
+            </p>
+         </div>
+         -->
+
+
+        <hr class="margin-bottom margin-top" />
+      </div>
+    </div>
+  </div>
+
+  <!--============== FOOTER SECTION ====================-->
+         <div id="contact" class="footer-section">
+            <div class="footer-top">
+               <h1 id="footer-heading">Contact Us</h1>
+            </div>
+            <div class="contact-container">
+               <div class="section1">
+                  <!-- <p style="font-weight: bold;">Prof. Neetesh Kumar</p>
+               <p style="font-weight: bold;"> Assistant Professor</p> -->
+                  <div class="footer-address">
+                     <p>W-203,</p>
+                     <p>Department of Computer Science and Engineering, </p>
+                     <p>Indian Institute of Technology,</p>
+                     <p id="state-name">Roorkee- 247667</p>
+                     <P style="margin-top: 3px;">Uttarakhand, India</P>
+                  </div>
+                  <div class="footer-reach">
+                     <p><i class="fa fa-envelope"></i> neetesh@cs.iitr.ac.in</p>
+                     <p><i class="fa fa-phone"></i> 01332-284977</p>
+                  </div>
+               </div>
+               <div class="section2">
+                  <iframe
+                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13839.6311869656!2d77.88688626753348!3d29.866932819020487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eb3d3e44a815f%3A0x874c399a4ee5bb81!2sIIT%20Roorkee!5e0!3m2!1sen!2sin!4v1631692039121!5m2!1sen!2sin"
+                     width="400" height="210" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                  <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query=IIT+Roorkee" target="_blank" rel="noopener">
+                     <i class="fa fa-map-marker"></i>
+                     Get Directions
+                  </a>
+               </div>
+               <div class="section3">
+                  <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13839.6311869656!2d77.88688626753348!3d29.866932819020487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eb3d3e44a815f%3A0x874c399a4ee5bb81!2sIIT%20Roorkee!5e0!3m2!1sen!2sin!4v1631692039121!5m2!1sen!2sin"
+                  width="270" height="150" style="border:0;" 
+                  allowfullscreen="" loading="lazy"></iframe>
+                  <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query=IIT+Roorkee" target="_blank" rel="noopener">
+                     <i class="fa fa-map-marker"></i>
+                     Get Directions
+                  </a>   
+               </div>
+            </div>
+         </div>
+         <button id="backToTopBtn" class="back-to-top" aria-label="Scroll to top" title="Back to top"><i class="fa fa-angle-up"></i></button>
+         <script src="main.js"></script>
+</body>
+
+</html>

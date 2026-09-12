@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Dr Neetesh Kumar</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+   <!-- Google Fonts Links -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+   <!--================== Header + Nav-Bar SECTION ==================-->
+
+  <header class="site-header">
+    <div class="site-header__brand">
+      <!-- UPDATED (header redesign): IIT Roorkee logo - kept same image, spacing/size adjusted to new layout -->
+      <img src="./images/iit-logo-official.jpg" alt="IIT Roorkee" class="site-header__logo">
+    </div>
+    <div class="site-header__titles">
+      <h1 class="site-header__hindi">भारतीय प्रौद्योगिकी संस्थान रुड़की</h1>
+      <h1 class="site-header__english">INDIAN INSTITUTE OF TECHNOLOGY ROORKEE</h1>
+    </div>
+    <div class="site-header__photo">
+      <!-- Header building illustration: line-art sketch of the IIT Roorkee building (images/iit-building2.png). To change it, replace that file (keep the same filename) or update the src below. -->
+      <img src="./images/iit-building2.png" alt="IIT Roorkee Campus">
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="main-nav__brand">
+      <span class="main-nav__name">Dr. Neetesh Kumar</span>
+      <span class="main-nav__title">Associate Professor</span>
+    </div>
+    <label for="btn" class="icon">
+      <span class="fa fa-bars"></span>
+    </label>
+    <input type="checkbox" id="btn" />
+    <ul>
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <label for="btn-1" class="show">About <i class="fa fa-angle-down"></i></label>
+        <a href="#about">About <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-1" />
+        <ul>
+          <li><a href="edu.html">Education</a></li>
+          <li><a href="exp.html">Experience</a></li>
+          <li><a href="awards.html">Awards</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="team.html">Team</a>
+      </li>
+      <li>
+        <label for="btn-2" class="show">Research <i class="fa fa-angle-down"></i></label>
+        <a href="#">Research <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-2" />
+        <ul>
+          <li><a href="postDoc.html">Prospective Researchers</a></li>
+          <li><a href="rarea.html">Research Area</a></li>
+          <li><a href="research_facilities.html">Research Facilities</a></li>
+          <li><a href="S.projects.html">Sponsored Projects</a></li>
+          <li><a href="patents.html">Patents</a></li>
+          <li><a href="prototypes.html">Prototype</a></li>
+          <li><a href="internationalcollab.html">International Collaborations</a></li>
+        </ul>
+      </li>
+      <li>
+        <label for="btn-3" class="show">Publications <i class="fa fa-angle-down"></i></label>
+        <a href="#">Publications <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-3" />
+        <ul>
+          <li><a href="summary.html">Summary</a></li>
+          <li><a href="Rjournal.html">Referred Journal</a></li>
+          <li><a href="cpaper.html">Conference Paper</a></li>
+          <li><a href="book_chapter.html">Books/Book Chapter</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="teach.html">Teaching</a>
+      </li>
+      <li>
+        <a href="os_contri.html">Open Source Contributions</a>
+      </li>
+      <li>
+        <a href="admin.html">Professional Activities</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+ 
+    <script>
+       $('.icon').click(function () {
+          $('span').toggleClass("cancel");
+       }); 
+    </script>
+ 
+<!--============= CONFERENCE PAPER AND POSTER PRESENTED SECTION ==============-->
+
+<div class="publication-container">
+    <div class="main-container">
+
+      <h1 class="title-heading">Conference Paper and Poster Presented</h1>
+
+      
+<div class="pub-year-group">
+<h2 class="pub-year-heading">2026</h2>
+
+
+      <div class="details">
+    <span class="s-no">1.</span>
+    <p>
+        Shikhar Vashistha and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            DAGGER: Dynamic Agentic Graph-Guided Efficient Reasoner for
+            Container Image Dependency Optimization
+        </span>,
+        41st IEEE/ACM International Conference on Automated Software
+        Engineering
+        (<b>ASE 2026</b>),
+        to be held in Munich, Germany, October 2026,
+        Core Rank A*,
+        Publisher: ACM/IEEE.<br>
+
+        DOI:
+        <a
+            class="link-style"
+            href="https://doi.org/10.1145/3832783.3837446"
+            target="_blank">
+            10.1145/3832783.3837446
+        </a>
+    </p>
+</div>
+</div>
+
+<div class="pub-year-group">
+<h2 class="pub-year-heading">2025</h2>
+
+
+      <div class="details">
+    <span class="s-no">2.</span>
+    <p>
+        Shikhar Singh Lodhi,
+        <span class="name-highlight">Neetesh Kumar</span>,
+        and Teena Sharma,
+        <span class="highlight">
+            Deep Deterministic Policy Gradient Method for Autonomous Vehicle
+            Maneuvering through Multimodal LiDAR and RADAR Sensor Fusion
+        </span>,
+        IEEE Intelligent Vehicles Symposium
+        (<b>IEEE-IV 2025</b>),
+        to be held in Romania, June 2025,
+        Core B,
+        Accepted March 2025,
+        Flagship Conference.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">3.</span>
+    <p>
+        Shikhar Singh Lodhi,
+        <span class="name-highlight">Neetesh Kumar</span>,
+        and P. K. Pandey,
+        <span class="highlight">
+            Option Policies for Obstacle Avoidance in Safety Critical Scenarios
+            using Hierarchical Deep Reinforcement Learning
+        </span>,
+        IEEE Intelligent Vehicles Symposium
+        (<b>IEEE-IV 2025</b>),
+        to be held in Romania, June 2025,
+        Core B,
+        Accepted March 2025,
+        Flagship Conference.
+    </p>
+</div>
+            <div class="details">
+                <span class="s-no">4.</span>
+                <p>
+                    I. Mani Varma and
+                    <span class="name-highlight">Neetesh Kumar</span>,
+                    <span class="highlight">
+                        Periodic Identity Verification of RSU using Fiat-Shamir
+                        Non-Interactive ZKP in SDVN
+                    </span>,
+                    IEEE International Conference on Communications
+                    (<b>ICC 2025</b>),
+                    <b>Accepted</b>,
+                    Core B, Qualis A1, Flagship.
+                </p>
+            </div>
+
+            <div class="details">
+                <span class="s-no">5.</span>
+                <p>
+                    Shikhar Vashistha and
+                    <span class="name-highlight">Neetesh Kumar</span>,
+                    <span class="highlight">
+                        Dynamic Graph Learning for Systems using Selective State
+                        Focused Attention Networks
+                    </span>,
+                    <b>CCGrid 2025</b>,
+                    Core A,
+                    Accepted 17 February 2025
+                    (Acceptance Rate &lt; 25%).
+                </p>
+            </div>
+
+            <div class="details">
+                <span class="s-no">6.</span>
+                <p>
+                    <span class="name-highlight">Neetesh Kumar</span>,
+                    Shubhangi Batra,
+                    Shikhar Vashistha,
+                    Tippana Rajesh,
+                    Bolla Nikitha,
+                    P. K. Pandey,
+                    Atluri Guna Sai,
+                    
+                    <span class="highlight">
+                        eCharge: Deep Reinforcement Learning Framework for
+                        Multi-Objective Electric Vehicle Charging Route Planning
+                    </span>,
+                    <b>CCGRID 2025</b>,
+                    Core Rank A,
+                    Accepted.
+                </p>
+            </div>
+</div>
+
+<div class="pub-year-group">
+<h2 class="pub-year-heading">2024</h2>
+
+
+            <div class="details">
+                <span class="s-no">7.</span>
+                <p>
+                    Mohammed Swaned,
+                    Sajid Javid,
+                    Shreyali Humaney,
+                    Anuj Sachan,
+                    Nisha Singh Chauhan and
+                    <span class="name-highlight">Neetesh Kumar</span>,
+                    <span class="highlight">
+                        Enhancing Traffic Management Through Advanced Vehicle
+                        Detection for Congestion Prevention
+                    </span>,
+                    6th IEEE MASS Workshop,
+                    21st IEEE International Conference on Mobile Ad-Hoc and
+                    Smart Systems
+                    (<b>MASS 2024</b>),
+                    September 23-25, 2024,
+                    Seoul, South Korea,
+                    Core and ERA Rank B, Qualis Rank B1,
+                    Accepted.
+                </p>
+            </div>
+
+            <div class="details">
+                <span class="s-no">8.</span>
+                <p>
+                    Vibha Bharilya and
+                    <span class="name-highlight">Neetesh Kumar</span>,
+                    <span class="highlight">
+                        TrajAngleNet: Transformer-based Trajectory Prediction
+                        through Multi-Task Learning with Angle Prediction
+                    </span>,
+                    31st International Conference on Neural Information Processing
+                    (<b>ICONIP 2024</b>),
+                    University of Auckland,
+                    New Zealand,
+                    Core Rank B, ERA Rank A,
+                    Accepted.
+                </p>
+            </div>
+
+            <div class="details">
+                <span class="s-no">9.</span>
+                <p>
+                    Anuj Sachan,
+                    Nisha Singh Chauhan and
+                    <span class="name-highlight">Neetesh Kumar</span>,
+                    <span class="highlight">
+                        Real-time Data-driven Smart Traffic Light Co-operative
+                        Framework for E-SIOV Mobility Management
+                    </span>,
+                    IEEE 100th Vehicular Technology Conference
+                    (<b>VTC 2024-Fall</b>),
+                    Washington DC, USA,
+                    October 2024,
+                    Core Rank B, Flagship,
+                    Accepted.
+                </p>
+            </div>
+</div>
+
+<div class="pub-year-group">
+<h2 class="pub-year-heading">2023</h2>
+
+
+            <div class="details">
+    <span class="s-no">10.</span>
+    <p>
+        Anuj Sachan, Yash Daultani and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            S-Edge: Smart Edge Computing Framework for Real-time
+            Heterogeneous Vehicular Network
+        </span>,
+        15th International Conference on Knowledge and Smart
+        Technology (<b>KST 2023</b>),
+        Accepted.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">11.</span>
+    <p>
+        Anuj Sachan,
+        Nisha Singh Chauhan and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            Congestion Minimization using Fog-deployed DRL-Agent
+            Feedback Enabled Traffic Light Cooperative Framework
+        </span>,
+        <b>CCGRID 2023</b>,
+        Core Rank A,
+        Accepted.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">12.</span>
+    <p>
+        I. Mani Varma and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            ZKP-based Lightweight Authentication Protocol during
+            Handovers in Vehicular Networks
+        </span>,
+        <b>IEEE GLOBECOM 2023</b>,
+        Core B,
+        Qualis A1,
+        Flagship Conference,
+        Accepted.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">13.</span>
+    <p>
+        Ravjot Singh,
+        Naman Jain,
+        Prakhar Gupta,
+        <span class="name-highlight">Neetesh Kumar</span>,
+        Pravendra Singh
+        <span class="highlight">
+            A Host Kernel-Based Approach for Tracing and Analyzing
+            vCPUs in Virtual Machines
+        </span>,
+        <b>IEEE GLOBECOM 2023</b>,
+        Core B,
+        Qualis A1,
+        Flagship Conference,
+        Accepted.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">14.</span>
+    <p>
+        Vibha Bharilya and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            A Survey of the State-of-the-art Reinforcement Learning-Based
+            Techniques for Autonomous Vehicle Trajectory Prediction
+        </span>,
+        IEEE International Conference on Electrical,
+        Electronics, Communication and Computers
+        (<b>IEEE ELEXCOM 2023</b>),
+        Accepted.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">15.</span>
+    <p>
+        Dinesh Soni and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            GWO-Based Workflow Scheduling in Cloud-Fog Environments
+        </span>,
+        IEEE International Conference on Electrical,
+        Electronics, Communication and Computers
+        (<b>IEEE ELEXCOM 2023</b>),
+        Accepted.
+    </p>
+</div>
+</div>
+
+<div class="pub-year-group">
+<h2 class="pub-year-heading">2022</h2>
+
+
+
+<div class="details">
+    <span class="s-no">16.</span>
+    <p>
+        Nisha Singh Chauhan and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            Traffic Flow Forecasting using Attention Enabled Bi-LSTM and
+            GRU Hybrid Model
+        </span>,
+        29th International Conference on Neural Information Processing
+        (<b>ICONIP 2022</b>),
+        Core Rank B, ERA Rank A,
+        Accepted.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">17.</span>
+    <p>
+        Pooja Mishra,
+        W. Wilfred Godfrey and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            Fault-tolerance Aware Green Computing Scheme in
+            Software-Defined Vehicular Social Network
+        </span>,
+        IEEE Conference on Information and Communication Technology
+        (<b>IEEE CICT 2022</b>),
+        Accepted.
+    </p>
+</div>
+</div>
+
+<div class="pub-year-group">
+<h2 class="pub-year-heading">2021</h2>
+
+
+<div class="details">
+    <span class="s-no">18.</span>
+    <p>
+        Pooja Mishra,
+        W. W. Wilfred Godfrey and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            A Meta-heuristic-based Green Routing Algorithm in
+            Software Defined Wireless Sensor Network
+        </span>,
+        <b>ICICT 2021</b>,
+        Presented,
+        20-22 January 2021.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">19.</span>
+    <p>
+        Pooja Mishra,
+        W. W. Wilfred Godfrey and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            A Green Computing-based Algorithm in Software Defined Network
+            with Enhanced Performance
+        </span>,
+        <b>ICCCIS 2021</b>,
+        Accepted,
+        14 December 2020.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">20.</span>
+    <p>
+        Pooja Mishra,
+        <span class="name-highlight">Neetesh Kumar</span> and
+        W. Wilfred Godfrey,
+        <span class="highlight">
+            A Hybrid Meta-heuristic Solution for Energy-Efficient Routing
+            in Software-Defined Wireless Sensor Network
+        </span>,
+        Published.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">21.</span>
+    <p>
+        Anuj Sachan and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            Intelligent Traffic Control System for Emergency Vehicles
+        </span>,
+        <b>ICWSNUCA 2021</b>,
+        DOI: 10.1007/978-981-16-2919-8.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">22.</span>
+    <p>
+        Vaibhav Garg,
+        Anuj Sachan,
+        <span class="name-highlight">Neetesh Kumar</span> and
+        Sarthak Mittal,
+        <span class="highlight">
+            Congestion Control utilizing Software Defined Control
+            Architecture at the Traffic Light Intersection
+        </span>,
+        IEEE 18th International Conference on Mobile Ad Hoc and
+        Smart Systems (<b>MASS 2021</b>),
+        Core and ERA Rank B, Qualis Rank B1,
+        Published.
+    </p>
+</div>
+</div>
+
+<div class="pub-year-group">
+<h2 class="pub-year-heading">2020</h2>
+
+
+<div class="details">
+    <span class="s-no">23.</span>
+    <p>
+        Rajni Jindal,
+        <span class="name-highlight">Neetesh Kumar</span> and
+        Hitesh Nirwan,
+        <span class="highlight">
+            MTFCT: A Task Offloading Approach for Fog Computing and Cloud Computing
+        </span>,
+        IEEE Confluence 2020,
+        Presented.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">24.</span>
+    <p>
+        R. Jindal,
+        <span class="name-highlight">Neetesh Kumar</span> and
+        S. Patidar,
+        <span class="highlight">
+            IoT Stream Data Compression using LDPC Coding
+        </span>,
+        International Conference on Frontiers of Intelligent Computing:
+        Theory and Applications
+        (<b>FICTA 2020</b>),
+        Presented.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">25.</span>
+    <p>
+        Aishwarya Karmarkar,
+        Prasenjit Chanak and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            An Optimized SVM-Based Fault Diagnosis Scheme
+            for Wireless Sensor Networks
+        </span>,
+        IEEE SCEECS 2020,
+        Accepted.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">26.</span>
+    <p>
+        Sanjay Patidar,
+        Rajni Jindal and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            Streamed Covid-19 Data Analysis using LSTM:
+            A Deep Learning Technique
+        </span>,
+        10th International Conference on Soft Computing
+        for Problem Solving
+        (<b>SocProS 2020</b>),
+        IIT Indore,
+        <b>Best Paper Award</b>.
+    </p>
+</div>
+</div>
+
+<div class="pub-year-group">
+<h2 class="pub-year-heading">2019</h2>
+
+
+<div class="details">
+    <span class="s-no">27.</span>
+    <p>
+        Anuj Sachan and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            Light Weighted Mutual Authentication and Dynamic Key Encryption
+            for IoT Device Applications
+        </span>,
+        International Conference on Issues and Challenges in Intelligent Computing,
+        2019,
+        Published.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">28.</span>
+    <p>
+        <span class="name-highlight">Neetesh Kumar</span> and
+        S. Rahman,
+        <span class="highlight">
+            Deep Reinforcement Learning with Vehicle Heterogeneity
+            Based Traffic Light Control for Intelligent Transportation System
+        </span>,
+        IEEE ICII 2019,
+        Orlando, USA,
+        Presented.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">29.</span>
+    <p>
+        Pratyush Ranjan,
+        Shubhanker Srivastava,
+        Vidit Gupta,
+        Shashikala Tapaswi and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            Decentralized and Distributed System for Organ/Tissue Donation
+        </span>,
+        IEEE CICT 2019,
+        IIIT Allahabad,
+        Presented.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">30.</span>
+    <p>
+        Swarup Padhy,
+        Juhi Tiwari,
+        Shivam Rathore and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            Emergency Signal Classification for the Hearing Impaired
+            using Multi-channel Audio
+        </span>,
+        IEEE CICT 2019,
+        IIIT Allahabad,
+        <b>Best Paper Award</b>.
+    </p>
+</div>
+</div>
+
+<div class="pub-year-group">
+<h2 class="pub-year-heading">2018</h2>
+
+
+<div class="details">
+    <span class="s-no">31.</span>
+    <p>
+        Rashika Bangroo,
+        <span class="name-highlight">Neetesh Kumar</span> and
+        Reya Sharma,
+        <span class="highlight">
+            A Model for Multi-Processor Task Scheduling Problem
+            using Quantum Genetic Algorithm
+        </span>,
+        Hybrid Intelligent Systems,
+        2018,
+        Published.
+    </p>
+</div>
+</div>
+
+<div class="pub-year-group">
+<h2 class="pub-year-heading">2017</h2>
+
+
+<div class="details">
+    <span class="s-no">32.</span>
+    <p>
+        Y. Lu,
+        L. Yang,
+        V. C. Bhavsar and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            Tree-Structured Data Processing on GPUs
+        </span>,
+        7th IEEE International Conference on Cloud Computing,
+        Data Science and Engineering (Confluence),
+        2017,
+        Published.
+    </p>
+</div>
+
+<div class="details">
+    <span class="s-no">33.</span>
+    <p>
+        Reya Sharma,
+        Rashika Bangroo,
+        Manoj Kumar and
+        <span class="name-highlight">Neetesh Kumar</span>,
+        <span class="highlight">
+            A Model for Resource Constraint Project Scheduling Problem
+            using Quantum Inspired PSO
+        </span>,
+        NGCT 2017,
+        Published.
+    </p>
+</div>
+</div>
+
+<div class="pub-year-group">
+<h2 class="pub-year-heading">2016</h2>
+
+
+<div class="details">
+    <span class="s-no">34.</span>
+    <p>
+        <span class="name-highlight">Neetesh Kumar</span> and
+        Chandresh Kumar Maurya,
+        <span class="highlight">
+            DR: A Novel and Practical Non-Comparison Based Sorting Algorithm
+        </span>,
+        Research Colloquia,
+        XRCI Open 2016,
+        Poster Presentation,
+        <b>Special Mention Award</b>.
+    </p>
+</div>
+</div>
+
+<div class="pub-year-group">
+<h2 class="pub-year-heading">2015</h2>
+
+
+<div class="details">
+    <span class="s-no">35.</span>
+    <p>
+        <span class="name-highlight">Neetesh Kumar</span> and
+        D. P. Vidhyarthi,
+        <span class="highlight">
+            Improved Scheduler for Multi-Core Many-Core Systems
+        </span>,
+        IEEE IPDPS 2015,
+        Poster Presentation,
+        Qualis Rank A1, ERA Rank A, Core Rank A,
+        <b>Travel Grant Award</b>.
+    </p>
+</div>
+
+</div>
+</div>
+</div>
+
+  <!--============== FOOTER SECTION ====================-->
+         <div id="contact" class="footer-section">
+            <div class="footer-top">
+               <h1 id="footer-heading">Contact Us</h1>
+            </div>
+            <div class="contact-container">
+               <div class="section1">
+                  <!-- <p style="font-weight: bold;">Prof. Neetesh Kumar</p>
+               <p style="font-weight: bold;"> Assistant Professor</p> -->
+                  <div class="footer-address">
+                     <p>W-203,</p>
+                     <p>Department of Computer Science and Engineering, </p>
+                     <p>Indian Institute of Technology,</p>
+                     <p id="state-name">Roorkee- 247667</p>
+                     <P style="margin-top: 3px;">Uttarakhand, India</P>
+                  </div>
+                  <div class="footer-reach">
+                     <p><i class="fa fa-envelope"></i> neetesh@cs.iitr.ac.in</p>
+                     <p><i class="fa fa-phone"></i> 01332-284977</p>
+                  </div>
+               </div>
+               <div class="section2">
+                  <iframe
+                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13839.6311869656!2d77.88688626753348!3d29.866932819020487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eb3d3e44a815f%3A0x874c399a4ee5bb81!2sIIT%20Roorkee!5e0!3m2!1sen!2sin!4v1631692039121!5m2!1sen!2sin"
+                     width="400" height="210" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                  <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query=IIT+Roorkee" target="_blank" rel="noopener">
+                     <i class="fa fa-map-marker"></i>
+                     Get Directions
+                  </a>
+               </div>
+               <div class="section3">
+                  <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13839.6311869656!2d77.88688626753348!3d29.866932819020487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eb3d3e44a815f%3A0x874c399a4ee5bb81!2sIIT%20Roorkee!5e0!3m2!1sen!2sin!4v1631692039121!5m2!1sen!2sin"
+                  width="270" height="150" style="border:0;" 
+                  allowfullscreen="" loading="lazy"></iframe>
+                  <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query=IIT+Roorkee" target="_blank" rel="noopener">
+                     <i class="fa fa-map-marker"></i>
+                     Get Directions
+                  </a>   
+               </div>
+            </div>
+         </div>
+         <button id="backToTopBtn" class="back-to-top" aria-label="Scroll to top" title="Back to top"><i class="fa fa-angle-up"></i></button>
+         <script src="main.js"></script>
+</body>
+        
+        </html>

@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr Neetesh Kumar</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="team.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Google Fonts Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--================== Header + Nav-Bar SECTION ==================-->
+
+  <header class="site-header">
+    <div class="site-header__brand">
+      <!-- UPDATED (header redesign): IIT Roorkee logo - kept same image, spacing/size adjusted to new layout -->
+      <img src="./images/iit-logo-official.jpg" alt="IIT Roorkee" class="site-header__logo">
+    </div>
+    <div class="site-header__titles">
+      <h1 class="site-header__hindi">भारतीय प्रौद्योगिकी संस्थान रुड़की</h1>
+      <h1 class="site-header__english">INDIAN INSTITUTE OF TECHNOLOGY ROORKEE</h1>
+    </div>
+    <div class="site-header__photo">
+      <!-- Header building illustration: line-art sketch of the IIT Roorkee building (images/iit-building2.png). To change it, replace that file (keep the same filename) or update the src below. -->
+      <img src="./images/iit-building2.png" alt="IIT Roorkee Campus">
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="main-nav__brand">
+      <span class="main-nav__name">Dr. Neetesh Kumar</span>
+      <span class="main-nav__title">Associate Professor</span>
+    </div>
+    <label for="btn" class="icon">
+      <span class="fa fa-bars"></span>
+    </label>
+    <input type="checkbox" id="btn" />
+    <ul>
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <label for="btn-1" class="show">About <i class="fa fa-angle-down"></i></label>
+        <a href="#about">About <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-1" />
+        <ul>
+          <li><a href="edu.html">Education</a></li>
+          <li><a href="exp.html">Experience</a></li>
+          <li><a href="awards.html">Awards</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="team.html">Team</a>
+      </li>
+      <li>
+        <label for="btn-2" class="show">Research <i class="fa fa-angle-down"></i></label>
+        <a href="#">Research <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-2" />
+        <ul>
+          <li><a href="postDoc.html">Prospective Researchers</a></li>
+          <li><a href="rarea.html">Research Area</a></li>
+          <li><a href="research_facilities.html">Research Facilities</a></li>
+          <li><a href="S.projects.html">Sponsored Projects</a></li>
+          <li><a href="patents.html">Patents</a></li>
+          <li><a href="prototypes.html">Prototype</a></li>
+          <li><a href="internationalcollab.html">International Collaborations</a></li>
+        </ul>
+      </li>
+      <li>
+        <label for="btn-3" class="show">Publications <i class="fa fa-angle-down"></i></label>
+        <a href="#">Publications <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-3" />
+        <ul>
+          <li><a href="summary.html">Summary</a></li>
+          <li><a href="Rjournal.html">Referred Journal</a></li>
+          <li><a href="cpaper.html">Conference Paper</a></li>
+          <li><a href="book_chapter.html">Books/Book Chapter</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="teach.html">Teaching</a>
+      </li>
+      <li>
+        <a href="os_contri.html">Open Source Contributions</a>
+      </li>
+      <li>
+        <a href="admin.html">Professional Activities</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+    <script>
+      $(".icon").click(function () {
+        $("span").toggleClass("cancel");
+      });
+    </script>
+
+    <!--============== TEAM SECTION ====================-->
+    <div class="row">
+      <!-- <div class="column">
+      <div class="card">
+        <img src="images/blank-men.jpg" alt="image">
+        <h1 class="card-heading"">Sanjay Patidar</h1>
+         <div class=" card-detils">
+          <p>Ph.D Scholar</p>
+          <p>Internet of Things(IoT)</p>
+      </div>
+      <a href=" #"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-github"></i></a>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="images/blank-men.jpg" alt="image">
+      <h1 class="card-heading">Pooja Mishra</h1>
+      <div class="card-detils">
+        <p>Ph.D Scholar</p>
+        <p>Internet of Things(IoT)</p>
+      </div>
+      <a href=" #"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-github"></i></a>
+    </div>
+  </div> -->
+
+ <!-- ======================= RESEARCH TEAM ======================= -->
+
+<section class="research-team-section">
+
+    <h1 class="research-team-heading">Research Team</h1>
+
+    <div class="team-grid">
+
+        <!-- ===================== Dinesh Soni ===================== -->
+
+        <div class="team-card">
+
+            <img src="images/danish.jpg" alt="Dinesh Soni" class="team-image" loading="lazy">
+
+            <h2 class="card-heading">
+                Dinesh Soni
+            </h2>
+
+            <div class="card-detils">
+                <p>Ph.D. Scholar</p>
+                <p>Cloud Computing</p>
+            </div>
+
+            <button class="read-btn">
+                <span>Read More</span>
+            </button>
+
+            <div class="card-hidden">
+
+                <a href="https://scholar.google.co.in/citations?user=cdfoRIMAAAAJ&hl=en" target="_blank">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <p class="about-text">
+                    I am currently pursuing a Ph.D. in Computer Science and Engineering at
+                    the Indian Institute of Technology Roorkee as a QIP Research Scholar
+                    under the AICTE QIP Scheme. I have more than 13 years of teaching and
+                    research experience and currently serve as an Assistant Professor in the
+                    Department of Computer Science and Engineering at Government Engineering
+                    College, Kota (RTU, Rajasthan). I completed my Master's in Computer
+                    Technology from IIT Delhi. My research interests include Cloud
+                    Computing, Internet of Things (IoT), and Machine Learning.
+                </p>
+
+                <div class="research-info">
+                    <p><strong>Status:</strong> Ongoing</p>
+                    <p><strong>Email:</strong> dinesh_s@cs.iitr.ac.in</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ===================== Nisha Singh Chauhan ===================== -->
+
+        <div class="team-card">
+
+            <img src="images/nisha.jpg" alt="Nisha Singh Chauhan" class="team-image" loading="lazy">
+
+            <h2 class="card-heading">
+                Nisha Singh Chauhan
+            </h2>
+
+            <div class="card-detils">
+                <p>Ph.D. Scholar</p>
+                <p>Intelligent Transportation System (ITS)</p>
+            </div>
+
+            <button class="read-btn">
+                <span>Read More</span>
+            </button>
+
+            <div class="card-hidden">
+
+                <a href="https://www.linkedin.com/in/nisha-singh-chauhan-13b547161" target="_blank">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <p class="about-text">
+                    I was a Ph.D. candidate in the Department of Computer Science and
+                    Engineering at the Indian Institute of Technology Roorkee (IITR),
+                    India. My research interests include Intelligent Transportation
+                    Systems (ITS) and Machine Learning (ML). I completed my M.Tech. in
+                    Computer Science and Engineering from IIT Patna. Currently, I am
+                    working on traffic flow prediction using hybrid models.
+                </p>
+
+                <div class="research-info">
+                    <p><strong>Status:</strong> Completed</p>
+                    <p><strong>Email:</strong> nisha_sc@cs.iitr.ac.in</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ===================== Anuj Sachan ===================== -->
+
+        <div class="team-card">
+
+            <img src="images/anuj.jpg" alt="Anuj Sachan" class="team-image" loading="lazy">
+
+            <h2 class="card-heading">
+                Anuj Sachan
+            </h2>
+
+            <div class="card-detils">
+                <p>Ph.D. Scholar</p>
+                <p>Intelligent Transportation System (ITS)</p>
+            </div>
+
+            <button class="read-btn">
+                <span>Read More</span>
+            </button>
+
+            <div class="card-hidden">
+
+                <a href="https://www.linkedin.com/in/anuj-sachan-b66b2630" target="_blank">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <p class="about-text">
+                    I was a Ph.D. candidate in the Department of Computer Science and
+                    Engineering at the Indian Institute of Technology Roorkee, India.
+                    My research interests include Intelligent Transportation Systems
+                    (ITS), Software-Defined Networking (SDN), and Deep Reinforcement
+                    Learning (DRL). I completed my M.Tech. in Information Security
+                    from IIITM Gwalior. Currently, I am working on traffic signal
+                    congestion management using intelligent control techniques.
+                </p>
+
+                <div class="research-info">
+                    <p><strong>Status:</strong> Completed</p>
+                    <p><strong>Email:</strong> anuj_s@cs.iitr.ac.in</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ===================== Shikhar Singh Lodhi ===================== -->
+
+        <div class="team-card">
+
+            <img src="images/shikhar.jpg" alt="Shikhar Singh Lodhi" class="team-image" loading="lazy">
+
+            <h2 class="card-heading">
+                Shikhar Singh Lodhi
+            </h2>
+
+            <div class="card-detils">
+                <p>Ph.D. Scholar</p>
+                <p>Autonomous Vehicular Communication</p>
+            </div>
+
+            <button class="read-btn">
+                <span>Read More</span>
+            </button>
+
+            <div class="card-hidden">
+
+                <a href="https://www.linkedin.com/in/shikhar-singh-lodhi-590aa8193/" target="_blank">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <p class="about-text">
+                    I was a Ph.D. candidate in the Department of Computer Science and
+                    Engineering at the Indian Institute of Technology Roorkee (IITR),
+                    India. My research interests include Autonomous Vehicle Systems,
+                    Deep Learning (DL), and Deep Reinforcement Learning (DRL). I
+                    completed my M.Tech. in Mathematics and Computing from IIT Patna
+                    and my B.Tech. in Computer Science and Engineering from NIT
+                    Arunachal Pradesh. Currently, I am working on autonomous vehicle
+                    driving manoeuvres.
+                </p>
+
+                <div class="research-info">
+                    <p><strong>Status:</strong> Completed</p>
+                    <p><strong>Email:</strong> shikhar_l@cs.iitr.ac.in</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ===================== I. Mani Varma ===================== -->
+
+        <div class="team-card">
+
+            <img src="images/mani.jpeg" alt="I. Mani Varma" class="team-image" loading="lazy">
+
+            <h2 class="card-heading">
+                I. Mani Varma
+            </h2>
+
+            <div class="card-detils">
+                <p>Ph.D. Scholar</p>
+                <p>Security of Vehicular Networks</p>
+            </div>
+
+            <button class="read-btn">
+                <span>Read More</span>
+            </button>
+
+            <div class="card-hidden">
+
+                <a href="https://www.linkedin.com/in/mani-varma-06a96a145/" target="_blank">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <p class="about-text">
+                    I was a Ph.D. student in the Department of Computer Science and
+                    Engineering at the Indian Institute of Technology Roorkee (IITR),
+                    India. My research interests include Networks, Information
+                    Security, Autonomous Vehicular Communications, and
+                    Software-Defined Networking (SDN). I completed my M.Tech. in
+                    Information Security from the University of Hyderabad.
+                </p>
+
+                <div class="research-info">
+                    <p><strong>Status:</strong> Completed</p>
+                    <p><strong>Email:</strong> im_varma@cs.iitr.ac.in</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ===================== Vibha ===================== -->
+
+        <div class="team-card">
+
+            <img src="images/vibha.jpeg"
+                 alt="Vibha"
+                 class="team-image" loading="lazy">
+
+            <h2 class="card-heading">
+                Vibha Bharilya
+            </h2>
+
+            <div class="card-detils">
+                <p>Ph.D. Scholar | PMRF Scholar</p>
+                <p>Autonomous Driving Systems & Machine Learnning</p>
+            </div>
+
+            <button class="read-btn">
+                <span>Read More</span>
+            </button>
+
+            <div class="card-hidden">
+
+                <a href="https://www.linkedin.com/in/vibha-bharilya-59a45715b">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <p class="about-text">
+                    I am a Ph.D. scholar in the *Department of Computer Science and Engineering at the Indian Institute of Technology Roorkee (IIT Roorkee), India.
+                    My research interests include **Autonomous Vehicle Systems, Trajectory Prediction, Multi-Agent Motion Forecasting, Deep Learning, and Robust Autonomous Driving.
+                    I received my **M.Tech. degree in Computer Science and Technology from Jawaharlal Nehru University, New Delhi.
+                    My **M.Sc. degree in Mathematics and Scientific Computing from the National Institute of Technology, Warangal, in 2019
+                </p>
+
+                <div class="research-info">
+                    <p><strong>Status:</strong> Ongoing</p>
+                    <p><strong>Email:</strong> [vibha_b@cs.iitr.ac.in](mailto:vibha_b@cs.iitr.ac.in) </p>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- ===================== Shikhar Vashistha ===================== -->
+
+        <div class="team-card">
+
+            <img src="images/Shikhar Vashistha.jpeg"
+                 alt="Shikhar Vashistha"
+                 class="team-image" loading="lazy">
+
+            <h2 class="card-heading">
+                Shikhar Vashistha
+            </h2>
+
+            <div class="card-detils">
+                <p>Ph.D. Scholar</p>
+                <p>Autonomous Vehicles</p>
+            </div>
+
+            <button class="read-btn">
+                <span>Read More</span>
+            </button>
+
+            <div class="card-hidden">
+
+                <a href="https://www.linkedin.com/in/shikharvashistha/" target="_blank">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <p class="about-text">
+                    Areas: Graph Machine Learning, Agentic AI,
+                    and cloud-native systems for Connected Vehicles
+                    and Over-the-Air Updates.
+                </p>
+
+                <div class="research-info">
+                    <p><strong>Status:</strong> Ongoing</p>
+                    <p><strong>Email:</strong> shikhar_v@cs.iitr.ac.in</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ===================== Vijay Prakash Bijwan ===================== -->
+
+        <div class="team-card">
+
+            <img src="images/vijay.jpg"
+                 alt="Vijay Prakash Bijwan"
+                 class="team-image" loading="lazy">
+
+            <h2 class="card-heading">
+                Vijay Prakash Bijwan
+            </h2>
+
+            <div class="card-detils">
+                <p>Ph.D. Scholar (External)</p>
+                <p>Software-Defined Networking (SDN)</p>
+            </div>
+
+            <button class="read-btn">
+                <span>Read More</span>
+            </button>
+
+            <div class="card-hidden">
+
+                <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <p class="about-text">
+                    I am currently pursuing a Ph.D. in Computer Science and
+                    Engineering at IIT Roorkee as an In-Service External
+                    Research Scholar. I am working as an Assistant Professor
+                    at Hemvati Nandan Bahuguna Garhwal University. My
+                    research interests include Software-Defined Networking
+                    (SDN) and Machine Learning applications in Computer
+                    Networking.
+                </p>
+
+                <div class="research-info">
+                    <p><strong>Status:</strong> Ongoing</p>
+                    <p><strong>Email:</strong> vijay_pb@cs.iitr.ac.in</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ===================== Sanskriti ===================== -->
+
+        <div class="team-card">
+
+            <img src="images/sanskriti.jpeg"
+                 alt="Sanskriti"
+                 class="team-image" loading="lazy">
+
+            <h2 class="card-heading">
+                Sanskriti
+            </h2>
+
+            <div class="card-detils">
+                <p>Ph.D. Scholar</p>
+                <p>Computer Vision & Autonomous Driving</p>
+            </div>
+
+            <button class="read-btn">
+                <span>Read More</span>
+            </button>
+
+            <div class="card-hidden">
+
+                <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <p class="about-text">
+                    I am a Ph.D. candidate in the Department of Computer Science and Engineering at the Indian Institute of Technology Roorkee, India.
+                    My research interests include autonomous driving, cooperative perception, multi-modal sensor fusion, and diffusion models for 3D object detection under adverse weather. 
+                    I completed my B.Tech  in Data Science and Artificial Intelligence from IIIT Naya Raipur and am currently working on weather-robust perception for intelligent transportation systems.
+                </p>
+
+                <div class="research-info">
+                    <p><strong>Status:</strong> Ongoing</p>
+                    <p><strong>sanskriti_c@cs.iitr.ac.in</strong> —</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ===================== Lalit Kumar ===================== -->
+
+        <div class="team-card">
+
+            <img src="images/lalit.jpeg"
+                 alt="Lalit Kumar"
+                 class="team-image" loading="lazy">
+
+            <h2 class="card-heading">
+                Lalit Kumar
+            </h2>
+
+            <div class="card-detils">
+                <p>Ph.D. Scholar</p>
+                <p>Computer Vision & Autonomous Driving</p>
+            </div>
+
+            <button class="read-btn">
+                <span>Read More</span>
+            </button>
+
+            <div class="card-hidden">
+
+                <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <p class="about-text">
+                    I am a Ph.D. candidate in the Department of Computer Science
+                    and Engineering at the Indian Institute of Technology
+                    Roorkee (IITR), India. My research interests include
+                    Computer Vision, Autonomous Driving, Deep Learning (DL),
+                    and Deep Reinforcement Learning (DRL). I completed my
+                    B.Tech. and M.Tech. in Computer Science and Engineering
+                    from the National Institute of Technology Hamirpur.
+                    Currently, I am working on bridging the Sim2Real gap for
+                    autonomous driving systems.
+                </p>
+
+                <div class="research-info">
+                    <p><strong>Status:</strong> Ongoing</p>
+                    <p><strong>Email:</strong> lalit_k@cs.iitr.ac.in</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ===================== Atul Sharma ===================== -->
+
+        <div class="team-card">
+
+            <img src="images/atul.jpg" class="team-image atul-img" alt="Atul Sharma" loading="lazy">
+
+            <h2 class="card-heading">
+                Atul Sharma
+            </h2>
+
+            <div class="card-detils">
+                <p>Ph.D. Scholar</p>
+                <p>Cybersecurity for Connected & Autonomous Vehicles</p>
+            </div>
+
+            <button class="read-btn">
+                <span>Read More</span>
+            </button>
+
+            <div class="card-hidden">
+
+                <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <p class="about-text">
+                    I am a Ph.D. candidate in the Department of Computer Science
+                    and Engineering at IIT Roorkee. My research interests
+                    include Cybersecurity, Authentication Protocols, and Secure
+                    Software Update Mechanisms for Connected and Autonomous
+                    Vehicles (CAVs). I completed my M.Tech. in Computer Science
+                    and Engineering from NIT Hamirpur. Currently, I am working
+                    on secure communication frameworks for autonomous vehicle
+                    ecosystems.
+                </p>
+
+                <div class="research-info">
+                    <p><strong>Status:</strong> Ongoing</p>
+                    <p><strong>Email:</strong> atul_s@cs.iitr.ac.in</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ===================== Gyaneshwar Prasad ===================== -->
+
+        <div class="team-card">
+
+            <img src="images/gyaneshwar.jpg"
+                 alt="Gyaneshwar Prasad"
+                 class="team-image" loading="lazy">
+
+            <h2 class="card-heading">
+                Gyaneshwar Prasad
+            </h2>
+
+            <div class="card-detils">
+                <p>Ph.D. Scholar</p>
+                <p>Post-Quantum Cryptography & Autonomous Vehicles</p>
+            </div>
+
+            <button class="read-btn">
+                <span>Read More</span>
+            </button>
+
+            <div class="card-hidden">
+
+                <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <p class="about-text">
+                    I am a Ph.D. candidate in the Department of Computer Science
+                    and Engineering at IIT Roorkee. My research interests
+                    include Post-Quantum Cryptography (PQC), Zero-Trust
+                    Architecture (ZTA), and Autonomous Vehicles. I completed my
+                    M.Tech. in Computer Science and Engineering from Jawaharlal
+                    Nehru University (JNU), New Delhi. Currently, I am working
+                    on post-quantum security for autonomous vehicles.
+                </p>
+
+                <div class="research-info">
+                    <p><strong>Status:</strong> Ongoing</p>
+                    <p><strong>Email:</strong> gyaneshwar_pk@cs.iitr.ac.in</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ===================== Sumit Sharma ===================== -->
+
+        <div class="team-card">
+
+            <img src="images/sumit.jpg"
+                 alt="Sumit Sharma"
+                 class="team-image" loading="lazy">
+
+            <h2 class="card-heading">
+                Sumit Sharma
+            </h2>
+
+            <div class="card-detils">
+                <p>Ph.D. Scholar</p>
+                <p>Post-Quantum Cryptography & Autonomous Vehicles</p>
+            </div>
+
+            <button class="read-btn">
+                <span>Read More</span>
+            </button>
+
+            <div class="card-hidden">
+
+                <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <p class="about-text">
+                    I am a Ph.D. student in the Department of Computer Science
+                    and Engineering at IIT Roorkee. My research interests
+                    include Post-Quantum Cryptography, Networks, Information
+                    Security, and Autonomous Vehicular Communications. I
+                    completed my M.Tech. in Computer Science and Engineering
+                    from NIT Jamshedpur.
+                </p>
+
+                <div class="research-info">
+                    <p><strong>Status:</strong> Ongoing</p>
+                    <p><strong>Email:</strong> sumit_s@cs.iitr.ac.in</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ===================== Aanchal Bhandari ===================== -->
+
+        <div class="team-card">
+
+            <img src="images/aanchal.jpeg"
+                 alt="Aanchal Bhandari"
+                 class="team-image" loading="lazy">
+
+            <h2 class="card-heading">
+                Aanchal Bhandari
+            </h2>
+
+            <div class="card-detils">
+                <p>Ph.D. Scholar</p>
+                <p>Post-Quantum Cryptography & UAV Security</p>
+            </div>
+
+            <button class="read-btn">
+                <span>Read More</span>
+            </button>
+
+            <div class="card-hidden">
+
+                <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <p class="about-text">
+                    I am a Ph.D. candidate in the Department of Computer
+                    Science and Engineering at the Indian Institute of
+                    Technology Roorkee (IITR), India. My research interests
+                    include Post-Quantum Cryptography (PQC), Network Security,
+                    Autonomous Vehicle Systems, and Deep Learning (DL). I
+                    completed my M.Tech. in Computer Science and Engineering
+                    from NIT Hamirpur and my B.Tech. in Information Technology
+                    from Himachal Pradesh University. My current work focuses
+                    on quantum-resistant security mechanisms for UAV systems.
+                </p>
+
+                <div class="research-info">
+                    <p><strong>Status:</strong> Ongoing</p>
+                    <p><strong>aanchal_b@cs.iitr.ac.in</strong> —</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ===================== Animesh Basak ===================== -->
+
+        <div class="team-card">
+
+            <img src="images/animesh.jpg"
+                 alt="Animesh Basak"
+                 class="team-image" loading="lazy">
+
+            <h2 class="card-heading">
+                Animesh Basak
+            </h2>
+
+            <div class="card-detils">
+                <p>Ph.D. Scholar</p>
+                <p>Autonomous Driving & Deep Reinforcement Learning</p>
+            </div>
+
+            <button class="read-btn">
+                <span>Read More</span>
+            </button>
+
+            <div class="card-hidden">
+
+                <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <p class="about-text">
+                    I am a Ph.D. candidate in the Department of Computer
+                    Science and Engineering at IIT Roorkee. I received my
+                    B.Tech. in Computer Science and Engineering from NIT
+                    Arunachal Pradesh. My research interests include
+                    Autonomous Driving, Deep Reinforcement Learning (DRL),
+                    and Intelligent Decision-Making for Autonomous Systems.
+                </p>
+
+                <div class="research-info">
+                    <p><strong>Status:</strong> Ongoing</p>
+                    <p><strong>Email:</strong> animesh_b@cs.iitr.ac.in</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+</section>
+
+     <!--  ending div -->
+     </div>
+
+    <!-- <div class="column">
+      <div class="card">
+        <img src="images/mani.png" alt="image" />
+        <h1 class="card-heading">Mani</h1>
+        <div class="card-detils">
+          <p>Ph.D Scholar (Project)</p>
+          <p>Autonomous Vehicular Communication</p>
+        </div>
+        <div id="hide4" style="display: none">
+          <a href=" #"><i class="fa fa-linkedin"></i></a>
+          <p
+            id="short-about-text"
+            style="margin-top: 10px; text-align: center"
+          >
+          I am Mani Varma from Andhra Pradesh.  I am a Ph.D. student in Dept. of Computer Science and Engineering, IIT Roorkee. My research interests are Networks and Information Security. I carry out my research on Autonomous Vehicular communications and their security aspects. I completed M-Tech in Information Security from UoH.
+          </p>
+        </div>
+        <div class="button">
+          <div id="btn_4" class="btn">
+            <span class="read-more">Readmore</span>
+          </div>
+        </div>
+      <p>Ph.D. Scholar</p>
+      <p>Computer Vision & Autonomous Driving</p>
+    </div>
+
+    <br />
+
+    <div id="hide7" style="display: none">
+      <a href="#">
+        <i class="fa fa-linkedin"></i>
+      </a>
+
+      <p
+        id="short-about-text"
+        style="margin-top: 10px; text-align: center"
+      >
+        I am a Ph.D. candidate in the Department of Computer Science and
+        Engineering at the Indian Institute of Technology Roorkee (IITR),
+        India. My research interests include Computer Vision, Autonomous
+        Driving, Deep Learning (DL), and Deep Reinforcement Learning (DRL).
+        I completed my B.Tech. and M.Tech. in Computer Science and Engineering
+        from the National Institute of Technology Hamirpur. Currently, I am
+        working on bridging the Sim2Real gap for autonomous driving systems.
+      </p>
+
+      <br />
+
+      <p>Status: <b>Ongoing</b></p>
+      <p>Email: <b>lalit_k@cs.iitr.ac.in</b></p>
+    </div>
+
+    <div class="button">
+      <div id="btn_7" class="btn">
+        <span class="read-more">Read More</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+     
+
+     <!--  ending div -->
+     </div>
+
+    <!-- <div class="column">
+      <div class="card">
+        <img src="images/mani.png" alt="image" />
+        <h1 class="card-heading">Mani</h1>
+        <div class="card-detils">
+          <p>Ph.D Scholar (Project)</p>
+          <p>Autonomous Vehicular Communication</p>
+        </div>
+        <div id="hide4" style="display: none">
+          <a href=" #"><i class="fa fa-linkedin"></i></a>
+          <p
+            id="short-about-text"
+            style="margin-top: 10px; text-align: center"
+          >
+          I am Mani Varma from Andhra Pradesh.  I am a Ph.D. student in Dept. of Computer Science and Engineering, IIT Roorkee. My research interests are Networks and Information Security. I carry out my research on Autonomous Vehicular communications and their security aspects. I completed M-Tech in Information Security from UoH.
+          </p>
+        </div>
+        <div class="button">
+          <div id="btn_4" class="btn">
+            <span class="read-more">Readmore</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  
+      
+      <!-- <div class="column">
+       <div class="card mini-card">
+        <span class="ongoing-highlight">Graduated March 2021</span>
+        <p class="mini-card__name">Sahil Sharma</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card mini-card">
+        <span class="ongoing-highlight">Ongoing</span>
+        <p class="mini-card__name">Neelesh Bodkhe</p>
+      </div>
+    </div> -->
+
+      <!-- <div class="column">
+      <div class="card mini-card">
+        <span class="ongoing-highlight">Ongoing</span>
+        <p class="mini-card__name">Meshram Prabhakar</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card mini-card">
+        <span class="ongoing-highlight">Ongoing</span>
+        <p class="mini-card__name">Shivam Khatri</p>
+      </div>
+    </div> -->
+    </div>
+    <br />
+    <br />
+
+    <!--============== TEAM READ-MORE MODAL ====================-->
+    <div class="team-modal-overlay" id="teamModalOverlay">
+      <div class="team-modal">
+        <button class="team-modal__close" id="teamModalClose" aria-label="Close">&times;</button>
+        <div class="team-modal__body" id="teamModalBody">
+          <!-- populated by main.js -->
+        </div>
+      </div>
+    </div>
+
+     <!--============== FOOTER SECTION ====================-->
+         <div id="contact" class="footer-section">
+            <div class="footer-top">
+               <h1 id="footer-heading">Contact Us</h1>
+            </div>
+            <div class="contact-container">
+               <div class="section1">
+                  <!-- <p style="font-weight: bold;">Prof. Neetesh Kumar</p>
+               <p style="font-weight: bold;"> Assistant Professor</p> -->
+                  <div class="footer-address">
+                     <p>W-203,</p>
+                     <p>Department of Computer Science and Engineering, </p>
+                     <p>Indian Institute of Technology,</p>
+                     <p id="state-name">Roorkee- 247667</p>
+                     <P style="margin-top: 3px;">Uttarakhand, India</P>
+                  </div>
+                  <div class="footer-reach">
+                     <p><i class="fa fa-envelope"></i> neetesh@cs.iitr.ac.in</p>
+                     <p><i class="fa fa-phone"></i> 01332-284977</p>
+                  </div>
+               </div>
+               <div class="section2">
+                  <iframe
+                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13839.6311869656!2d77.88688626753348!3d29.866932819020487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eb3d3e44a815f%3A0x874c399a4ee5bb81!2sIIT%20Roorkee!5e0!3m2!1sen!2sin!4v1631692039121!5m2!1sen!2sin"
+                     width="400" height="210" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                  <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query=IIT+Roorkee" target="_blank" rel="noopener">
+                     <i class="fa fa-map-marker"></i>
+                     Get Directions
+                  </a>
+               </div>
+               <div class="section3">
+                  <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13839.6311869656!2d77.88688626753348!3d29.866932819020487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eb3d3e44a815f%3A0x874c399a4ee5bb81!2sIIT%20Roorkee!5e0!3m2!1sen!2sin!4v1631692039121!5m2!1sen!2sin"
+                  width="270" height="150" style="border:0;" 
+                  allowfullscreen="" loading="lazy"></iframe>
+                  <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query=IIT+Roorkee" target="_blank" rel="noopener">
+                     <i class="fa fa-map-marker"></i>
+                     Get Directions
+                  </a>   
+               </div>
+            </div>
+         </div>
+         <button id="backToTopBtn" class="back-to-top" aria-label="Scroll to top" title="Back to top"><i class="fa fa-angle-up"></i></button>
+         <script src="main.js"></script>
+</body>
+</html>

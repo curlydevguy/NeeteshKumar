@@ -1,0 +1,273 @@
+/*======================== Teaching Section Style =====================*/
+
+.teaching-section {
+  background-color: #f8f8ff;
+  width: auto;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.teaching-section__container #title-heading {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: rgb(22, 21, 21);
+}
+
+.subHeading {
+  font-size: 1.2rem;
+  font-weight: bolder;
+  /* text-transform: capitalize; */
+  letter-spacing: 1.2px;
+  display: block;
+  margin-bottom: 10px;
+  font-family: "poppins", sans-serif;
+}
+
+.teaching-section__container {
+  background-color: #fff;
+  width: 95%;
+  padding: 40px;
+  border-radius: 6px;
+}
+
+.teaching-section__container .sub-heading-title {
+  font-size: 20px;
+  font-weight: bolder;
+  color: gray;
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+  display: block;
+  margin-bottom: 5px;
+  font-family: "poppins", sans-serif;
+}
+
+.teaching-details__container {
+  margin-bottom: 20px;
+}
+
+.teach-card {
+  background: var(--brand-bg-card);
+  border: 1px solid var(--brand-border);
+  border-left: 5px solid var(--brand-navy);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--brand-shadow);
+  padding: 20px 24px;
+  margin-bottom: 18px;
+  transition: 0.25s ease;
+}
+
+.teach-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(13, 59, 102, 0.16);
+  border-left-color: var(--brand-blue);
+}
+
+.sub-details {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+}
+
+.teaching-horizontal-line {
+  width: 100%;
+  border: 1px solid lightgray;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  box-shadow: none;
+  border-radius: 100%;
+}
+
+.extra-details__links {
+  display: block;
+  margin-top: 10px;
+}
+
+.icon {
+  margin-right: 6px;
+  color: var(--brand-blue);
+  cursor: pointer;
+}
+
+.extra-details__links a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--brand-blue);
+  font-weight: 500;
+}
+
+.extra-details__links a:hover {
+  color: var(--brand-navy);
+}
+.research-team-section{
+    width:100%;
+    max-width:1400px;
+    margin:0 auto;
+    padding:35px 3% 15px;
+    background:#fff;
+    font-family:"Poppins",sans-serif;
+}
+
+.research-team-heading{
+    font-size:2rem;
+    font-weight:600;
+    color:var(--text-dark);
+    margin-bottom:22px;
+    text-align:left;
+}
+
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:16px;
+    align-items:start;
+}
+
+.team-card{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.25s;
+}
+
+.team-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.team-image{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    object-position:center top;
+}
+
+.card-heading{
+    text-align:center;
+    margin-top:12px;
+    padding:0 10px;
+    font-size:1.05rem;
+    font-weight:600;
+    color:var(--text-dark);
+}
+
+.card-detils{
+    text-align:center;
+    padding:0 15px;
+    margin-top:8px;
+    color:#666;
+    line-height:1.5;
+    font-size:.83rem;
+    min-height:58px;
+}
+
+.card-detils p{
+    margin:0;
+}
+
+.team-card .read-btn{
+    margin:16px;
+    border:none;
+    border-radius:8px;
+    padding:10px;
+    font-size:13px;
+    color:#fff;
+    background:var(--brand-blue);
+    cursor:pointer;
+}
+
+.team-card .read-btn:hover{
+    background:var(--brand-navy);
+}
+
+.card-hidden{
+    display:none;
+    padding:0 18px 18px;
+}
+
+.about-text{
+    text-align:justify;
+    line-height:1.65;
+    color:#555;
+    font-size:.9rem;
+}
+
+.research-info{
+    margin-top:15px;
+    padding-top:12px;
+    border-top:1px solid #ececec;
+}
+
+.research-info p{
+    margin:6px 0;
+}
+
+/* ====================== STUDENT SECTION ===================== */
+
+.container{
+    margin-top:20px !important;
+    margin-bottom:25px !important;
+}
+
+.title-heading{
+    font-size:1.8rem !important;
+    margin-bottom:20px !important;
+}
+
+.experience-details-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 20px !important;
+    min-height:80px;
+    border-radius:10px;
+}
+
+.experienceSummary-detail1,
+.experienceSummary-detail2,
+.experienceSummary-detail3,
+.experienceSummary-detail4,
+.experienceSummary-detail5{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-family:"Poppins",sans-serif;
+    font-size:.95rem;
+}
+
+.experienceSummary-detail1{width:18%;}
+.experienceSummary-detail2{width:34%;}
+.experienceSummary-detail3{width:25%;}
+.experienceSummary-detail4{width:12%;}
+.experienceSummary-detail5{width:11%;}
+
+.experience-details-container h2{
+    font-size:1.15rem;
+}
+
+.experience-details-container span{
+    font-size:.95rem;
+    line-height:1.5;
+}
+
+@media(max-width:992px){
+    .team-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:650px){
+    .team-grid{
+        grid-template-columns:1fr;
+    }
+
+    .research-team-heading{
+        text-align:center;
+    }
+}

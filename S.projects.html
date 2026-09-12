@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Dr Neetesh Kumar</title>
+   <link rel="stylesheet" href="style.css">
+   <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+   <!-- Google Fonts Links -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+
+   <!--================== Header + Nav-Bar SECTION ==================-->
+
+  <header class="site-header">
+    <div class="site-header__brand">
+      <!-- UPDATED (header redesign): IIT Roorkee logo - kept same image, spacing/size adjusted to new layout -->
+      <img src="./images/iit-logo-official.jpg" alt="IIT Roorkee" class="site-header__logo">
+    </div>
+    <div class="site-header__titles">
+      <h1 class="site-header__hindi">भारतीय प्रौद्योगिकी संस्थान रुड़की</h1>
+      <h1 class="site-header__english">INDIAN INSTITUTE OF TECHNOLOGY ROORKEE</h1>
+    </div>
+    <div class="site-header__photo">
+      <!-- Header building illustration: line-art sketch of the IIT Roorkee building (images/iit-building2.png). To change it, replace that file (keep the same filename) or update the src below. -->
+      <img src="./images/iit-building2.png" alt="IIT Roorkee Campus">
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="main-nav__brand">
+      <span class="main-nav__name">Dr. Neetesh Kumar</span>
+      <span class="main-nav__title">Associate Professor</span>
+    </div>
+    <label for="btn" class="icon">
+      <span class="fa fa-bars"></span>
+    </label>
+    <input type="checkbox" id="btn" />
+    <ul>
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <label for="btn-1" class="show">About <i class="fa fa-angle-down"></i></label>
+        <a href="#about">About <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-1" />
+        <ul>
+          <li><a href="edu.html">Education</a></li>
+          <li><a href="exp.html">Experience</a></li>
+          <li><a href="awards.html">Awards</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="team.html">Team</a>
+      </li>
+      <li>
+        <label for="btn-2" class="show">Research <i class="fa fa-angle-down"></i></label>
+        <a href="#">Research <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-2" />
+        <ul>
+          <li><a href="postDoc.html">Prospective Researchers</a></li>
+          <li><a href="rarea.html">Research Area</a></li>
+          <li><a href="research_facilities.html">Research Facilities</a></li>
+          <li><a href="S.projects.html">Sponsored Projects</a></li>
+          <li><a href="patents.html">Patents</a></li>
+          <li><a href="prototypes.html">Prototype</a></li>
+          <li><a href="internationalcollab.html">International Collaborations</a></li>
+        </ul>
+      </li>
+      <li>
+        <label for="btn-3" class="show">Publications <i class="fa fa-angle-down"></i></label>
+        <a href="#">Publications <i class="fa fa-angle-down"></i></a>
+        <input type="checkbox" id="btn-3" />
+        <ul>
+          <li><a href="summary.html">Summary</a></li>
+          <li><a href="Rjournal.html">Referred Journal</a></li>
+          <li><a href="cpaper.html">Conference Paper</a></li>
+          <li><a href="book_chapter.html">Books/Book Chapter</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="teach.html">Teaching</a>
+      </li>
+      <li>
+        <a href="os_contri.html">Open Source Contributions</a>
+      </li>
+      <li>
+        <a href="admin.html">Professional Activities</a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+
+   <script>
+      $('.icon').click(function () {
+         $('span').toggleClass("cancel");
+      });
+   </script>
+
+   <!--================== RESEARCH PROJECTS ==================-->
+
+
+   <br>
+   <br>
+
+<div class=project>
+    <div class=prohead>
+       <h1>Sponsored Research Projects</h1>
+    </div>
+    <br>
+
+    <div class=prohead>
+       <h2 style="font-size: 1.6rem;">Sponsored Research Funding Summary</h2>
+    </div>
+    <br>
+    <div class=" flex-container-pro wrap">
+
+      <div class="flex-item-pro">
+        <h2 class=detail>Total Sponsored Research Funding</h2>
+        <br>
+        <h2 class=head>Amount : &#8377; 12.00 Cr (approx.)</h2>
+        <h2 class=head>Funding as PI (11 + 3 projects) : &#8377; 5.90 Cr (approx.)</h2>
+        <h2 class=head>Funding as Co-PI (4 projects) : &#8377; 6.12 Cr (approx.)</h2>
+      </div>
+
+      <div class="flex-item-pro">
+        <h2 class=detail>Govt. Research Projects</h2>
+        <br>
+        <h2 class=head>Agencies : MeitY, SERB/ANRF, DST, CSIR, AI4ICPS</h2>
+        <h2 class=head>Amount : INR 4,74,66,554</h2>
+      </div>
+
+      <div class="flex-item-pro">
+        <h2 class=detail>Industry Funded Research Projects</h2>
+        <br>
+        <h2 class=head>Agencies : Google, Qualcomm, Infineon</h2>
+        <h2 class=head>Amount : INR 86,46,871</h2>
+      </div>
+
+      <div class="flex-item-pro">
+        <h2 class=detail>Short Term Projects</h2>
+        <br>
+        <h2 class=head>Agency : BEL</h2>
+        <h2 class=head>Amount : INR 10,30,000</h2>
+      </div>
+
+      <div class="flex-item-pro">
+        <h2 class=detail>Institute Funded Projects</h2>
+        <br>
+        <h2 class=head>Agency : FIG</h2>
+        <h2 class=head>Amount : INR 19,00,000</h2>
+      </div>
+
+      <div class="flex-item-pro">
+        <h2 class=detail>Co-PI Research Projects</h2>
+        <br>
+        <h2 class=head>Agencies : TIH, SERB, AI4ICPS, MeitY</h2>
+        <h2 class=head>Amount : INR 6,62,51,496</h2>
+      </div>
+
+    </div>
+
+    <br>
+    <div class=prohead>
+       <h2 style="font-size: 1.6rem;">Project-wise Details</h2>
+    </div>
+    <br>
+    <div class=" flex-container-pro wrap">
+
+      <div class="flex-item-pro">
+        <h2 class=detail>AI-Driven Security and Resilience for the Cloud-Edge Continuum in Next-Generation IoT (AIRSEN-IoT)</h2>
+        <br>
+        <h2 class=head>Funding Agency : SPARC-DST (As PI)</h2>
+        <h2 class=head>Funding Amount : INR 90,00,000 (approx)</h2>
+        <h2 class=head>Duration : June 2026 - June 2028</h2>
+        <h2 class=head>Status : Processing </h2>
+     </div>
+
+      <div class="flex-item-pro">
+        <h2 class=detail>S2R-SPOAD: Sim2Real-hallucinated Safety-critical and Partially Observed-scenario based Autonomous Driving Testbed</h2>
+        <br>
+        <h2 class=head>Funding Agency : ANRF-ARG, New Delhi (As PI)</h2>
+        <h2 class=head>Funding Amount : INR 1,30,00,000 (approx)</h2>
+        <h2 class=head>Duration : 2025-2028</h2>
+        <h2 class=head>Status : Ongoing </h2>
+     </div>
+
+      <div class="flex-item-pro">
+        <h2 class=detail>A Post-Quantum Secure ZKP-based Authentication Protocol for Connected and Autonomous Vehicles</h2>
+        <br>
+        <h2 class=head>Funding Agency : Ministry of Electronics and Information Technology (MeitY), New Delhi (As PI)</h2>
+        <h2 class=head>Funding Amount : INR 1,13,81,724</h2>
+        <h2 class=head>Duration : 2025-2027</h2>
+        <h2 class=head>Status : Ongoing</h2>
+     </div>
+
+      <div class="flex-item-pro">
+        <h2 class=detail>SafeCAV: Anti-Remote Hijacking and Safety-Driven ADAS for Connected Autonomous Vehicles Through Zero-trust Container Orchestration</h2>
+        <br>
+        <h2 class=head>Funding Agency : ANRF (As PI)</h2>
+        <h2 class=head>Funding Amount : INR 62,76,792</h2>
+        <h2 class=head>Duration : 2025-2028</h2>
+        <h2 class=head>Status : Ongoing</h2>
+     </div>
+
+      <div class="flex-item-pro">
+        <h2 class=detail> Google Research (exploreCSR) Award</h2>
+        <br>
+        <h2 class=head>Funding Agency : Google Research (As PI)</h2>
+        <h2 class=head>Funding Amount : USD 32,000 </h2>
+        <h2 class=head>Duration : Phase-I (2023-2024)</h2>
+        <h2 class=head>Status : Completed</h2>
+     </div>
+
+     <div class="flex-item-pro">
+      <h2 class=detail> Smart Autonomous Weed Detector and  Removal</h2>
+      <br>
+      <h2 class=head>Funding Agency : IIT Kharagpur AI4ICPS I-Hub Foundation (Multi-Institutional project, Role: PI from IIT Roorkee)</h2>
+      <h2 class=head>Funding Amount : 50 Lakhs(approx) </h2>
+      <h2 class=head>Duration : 2023-2025</h2>
+      <h2 class=head>Status : Completed</h2>
+   </div>
+
+   <div class="flex-item-pro">
+    <h2 class=detail> Multi-QoS Parameters Optimized Electric Vehicles Mobility Management at Charging Stations </h2>
+    <br>
+    <h2 class=head>Funding Agency : Infineon Technologies Semiconductor India Private Limited  (As PI)</h2>
+    <h2 class=head>Funding Amount : 05 Lakhs(approx) </h2>
+    <h2 class=head>Duration : Phase-I (2023-2024)</h2>
+    <h2 class=head>Status : Completed</h2>
+ </div>
+
+
+
+     <div class="flex-item-pro">
+        <h2 class=detail>ChaseMe : Heuristic based Scheme for Electric Vehicles Green Mobility
+           Management on Charging Stations in a Smart City Scenario</h2>
+        <br>
+        <h2 class=head>Funding Agency : IIT-Roorkee (As PI)</h2>
+        <h2 class=head>Funding Amount : 20 Lakhs(approx) </h2>
+        <h2 class=head>Duration : 2021-2023</h2>
+        <h2 class=head>Status : Completed</h2>
+     </div>
+
+     <div class="flex-item-pro">
+        <h2 class=detail>Emergency aware Intelligent Dynamic Traffic Signal System for Smart Cities</h2>
+        <br>
+        <h2 class=head>Funding Agency : CSIR (As PI)</h2>
+        <h2 class=head>Funding Amount : 18 Lakhs(approx) </h2>
+        
+        <h2 class=head>Duration : 2019-2022</h2>
+        <h2 class=head>Status : Completed</h2>
+     </div>
+
+     <div class="flex-item-pro">
+        <h2 class=detail>Software-defined controlled and dynamic traffic load balanced scheduling framework for IoT
+           enabled Intelligent Transportation System (ITS)
+        </h2>
+        <br>
+        <h2 class=head>Funding Agency : SERB. DST (As PI)</h2>
+        <h2 class=head>Funding Amount : 33 Lakhs(approx) </h2>
+        
+        <h2 class=head>Duration : 2019-2022</h2>
+        <h2 class=head>Status : Completed</h2>
+     </div>
+
+  
+
+ <div class="flex-item-pro">
+  <h2 class=detail>IoT based automated, Real Time and Effective Traffic Signal Scheduling for Smart City
+  </h2>
+  <br>
+  <h2 class=head>Funding Agency : ICPS, DST (As PI)</h2>
+  <h2 class=head>Funding Amount : 15 Lakhs(approx) </h2>
+  
+  <h2 class=head>Duration : 2019-2022</h2>
+  <h2 class=head>Status : Completed</h2>
+</div>
+
+<div class="flex-item-pro">
+<h2 class=detail>Software Defined Networking enabled Secure Vehicular Communication
+</h2>
+<br>
+<h2 class=head>Funding Agency : Qualcomm (As PI)</h2>
+<h2 class=head>Funding Amount : 60,000 USD (INR 50 Lakhs approx) </h2>
+
+<h2 class=head>Duration : 2023-2025</h2>
+<h2 class=head>Status : Completed</h2>
+</div>
+
+<div class="flex-item-pro">
+<h2 class=detail> Intelligent Predictive and Prescriptive Systems for Traffic and Pavement
+   Condition Management in a Smart City</h2>
+<br>
+<h2 class=head>Funding Agency: iHub Divyasamapark, Technology Innovation Hub(TIH) at IIT Roorkee (As Co-PI)</h2>
+<h2 class=head>Funding Amount : 80 Lakhs(approx) </h2>
+
+<h2 class=head>Duration : 2021-2024</h2>
+<h2 class=head>Status : Completed</h2>
+</div>
+
+<div class="flex-item-pro">
+<h2 class=detail>Machine Learning Framework for the Development of an Interactive Pedestrian Crossing to Enhance Pedestrian Safety</h2>
+<br>
+<h2 class=head>Funding Agency : SERB CRG (As Co-PI)</h2>
+<h2 class=head>Funding Amount : INR 33,61,980</h2>
+<h2 class=head>Duration : 2024-2026</h2>
+<h2 class=head>Status : Ongoing</h2>
+</div>
+
+<div class="flex-item-pro">
+<h2 class=detail>Information Security Education and Awareness (ISEA), Phase-III</h2>
+<br>
+<h2 class=head>Funding Agency : MeitY, New Delhi (As Co-PI)</h2>
+<h2 class=head>Funding Amount : INR 4,67,00,000 (approx)</h2>
+<h2 class=head>Duration : 2024-2029</h2>
+<h2 class=head>Status : Ongoing</h2>
+</div>
+
+
+  </div>
+    <div id="contact" class="footer-section">
+      <div class="footer-top">
+        <h1 id="footer-heading">Contact Us</h1>
+            </div>
+      <div class="contact-container">
+        <div class="section1">
+          <!-- <p style="font-weight: bold;">Prof. Neetesh Kumar</p>
+         <p style="font-weight: bold;"> Assistant Professor</p> -->
+          <div class="footer-address">
+            <p>W-203,</p>
+            <p>Department of Computer Science and Engineering, </p>
+            <p>Indian Institute of Technology,</p>
+            <p id="state-name">Roorkee- 247667</p>
+            <p style="margin-top: 3px;">Uttarakhand, India</p>
+          </div>
+          <div class="footer-reach">
+            <p><i class="fa fa-envelope"></i> neetesh@cs.iitr.ac.in</p>
+            <p><i class="fa fa-phone"></i> 01332-284977</p>
+          </div>
+        </div>
+        <div class="section2">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13839.6311869656!2d77.88688626753348!3d29.866932819020487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eb3d3e44a815f%3A0x874c399a4ee5bb81!2sIIT%20Roorkee!5e0!3m2!1sen!2sin!4v1631692039121!5m2!1sen!2sin"
+            width="400"
+            height="210"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+          <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query=IIT+Roorkee" target="_blank" rel="noopener">
+            <i class="fa fa-map-marker"></i>
+            Get Directions
+          </a>
+        </div>
+        <div class="section3">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13839.6311869656!2d77.88688626753348!3d29.866932819020487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eb3d3e44a815f%3A0x874c399a4ee5bb81!2sIIT%20Roorkee!5e0!3m2!1sen!2sin!4v1631692039121!5m2!1sen!2sin"
+            width="270"
+            height="150"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+          <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query=IIT+Roorkee" target="_blank" rel="noopener">
+            <i class="fa fa-map-marker"></i>
+            Get Directions
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <button id="backToTopBtn" class="back-to-top" aria-label="Scroll to top" title="Back to top"><i class="fa fa-angle-up"></i></button>
+    <script src="main.js"></script>
+  </body>
+
+</html>
