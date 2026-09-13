@@ -579,6 +579,8 @@ header {
   width: 100%;
   height: 350px;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
   scrollbar-width: none;       /* Firefox: hides the scrollbar, scrolling still works */
   -ms-overflow-style: none;    /* old Edge / IE */
   /* Real fade mask at both edges (the old ::after trick didn't render

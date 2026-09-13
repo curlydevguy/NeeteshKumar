@@ -163,7 +163,7 @@
                     <div class="news-ticker__item"> ... </div> block.
                     ====================================================================== -->
 
-               <div class="news-ticker" id="newsTicker">
+                <div class="news-ticker" id="newsTicker" data-lenis-prevent>
                  <div class="news-ticker__track" id="newsTrack">
                    <div class="news-ticker__item">
                      <p> Heartfelt Congratulations to <span class="work-container__main__highlight">Mani Varma</span>  on the Successful Completion of His Ph.D. .</p>
@@ -224,11 +224,12 @@
                </div>
 
                 <script>
-                  // Continuous smooth News & Events auto-scroll
-                  // - Smoothly glides items upward using requestAnimationFrame
-                  // - Seamless infinite loop by cloning items without visual jumps
-                  // - Pauses on mouse hover and touch so visitors can read or manually scroll
-                  // - Resumes smoothly when the cursor leaves or touch ends
+                  // News & Events ticker:
+                  // - Auto-scrolls smoothly upward when idle
+                  // - STOPS immediately whenever mouse hovers/moves over it (not scrolling continuously)
+                  // - Supports manual mouse wheel scrolling UP and DOWN while hovered
+                  // - Seamless infinite wrap-around in both directions
+                  // - Pauses on mobile touch contact and resumes smoothly
                   (function () {
                     var ticker = document.getElementById('newsTicker');
                     var track = document.getElementById('newsTrack');
@@ -245,7 +246,7 @@
 
                     var isPaused = false;
                     var resumeTimeout = null;
-                    var speed = 0.65; // gentle, comfortable reading speed
+                    var speed = 0.65; // gentle reading speed
                     var currentScroll = ticker.scrollTop;
 
                     function step() {
@@ -256,32 +257,68 @@
                           currentScroll -= trackHeight;
                         }
                         ticker.scrollTop = currentScroll;
-                      } else {
-                        currentScroll = ticker.scrollTop;
                       }
                       requestAnimationFrame(step);
                     }
 
-                    ticker.addEventListener('mouseenter', function () {
-                      isPaused = true;
-                    });
-                    ticker.addEventListener('mouseleave', function () {
-                      isPaused = false;
-                    });
-                    ticker.addEventListener('touchstart', function () {
+                    function pause() {
                       isPaused = true;
                       if (resumeTimeout) clearTimeout(resumeTimeout);
+                    }
+
+                    function resume() {
+                      if (resumeTimeout) clearTimeout(resumeTimeout);
+                      resumeTimeout = setTimeout(function () {
+                        isPaused = false;
+                        currentScroll = ticker.scrollTop;
+                      }, 400);
+                    }
+
+                    // Hover stops auto-scroll completely
+                    ticker.addEventListener('mouseenter', pause);
+                    ticker.addEventListener('mouseover', pause);
+                    ticker.addEventListener('mousemove', pause);
+                    ticker.addEventListener('mouseleave', resume);
+
+                    // Mouse wheel: scroll up or down when mouse is over it
+                    ticker.addEventListener('wheel', function (e) {
+                      pause();
+                      e.stopPropagation();
+                      e.preventDefault();
+
+                      ticker.scrollTop += e.deltaY;
+                      var trackHeight = track.offsetHeight;
+                      if (trackHeight > 0) {
+                        if (ticker.scrollTop >= trackHeight) {
+                          ticker.scrollTop -= trackHeight;
+                        } else if (ticker.scrollTop < 0) {
+                          ticker.scrollTop += trackHeight;
+                        }
+                      }
+                      currentScroll = ticker.scrollTop;
+                    }, { passive: false });
+
+                    // Mobile touch interactions
+                    ticker.addEventListener('touchstart', function () {
+                      pause();
                     }, { passive: true });
                     ticker.addEventListener('touchend', function () {
                       if (resumeTimeout) clearTimeout(resumeTimeout);
                       resumeTimeout = setTimeout(function () {
                         isPaused = false;
-                      }, 1800);
-                    });
-                    ticker.addEventListener('scroll', function () {
-                      if (isPaused) {
                         currentScroll = ticker.scrollTop;
-                      }
+                      }, 2000);
+                    });
+                    ticker.addEventListener('touchcancel', function () {
+                      if (resumeTimeout) clearTimeout(resumeTimeout);
+                      resumeTimeout = setTimeout(function () {
+                        isPaused = false;
+                        currentScroll = ticker.scrollTop;
+                      }, 2000);
+                    });
+
+                    ticker.addEventListener('scroll', function () {
+                      currentScroll = ticker.scrollTop;
                     }, { passive: true });
 
                     requestAnimationFrame(step);
