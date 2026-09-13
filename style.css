@@ -456,6 +456,24 @@ header {
   .news-ticker__item:hover {
     transform: translateY(-2px);
   }
+  .news-ticker__start-marker {
+    padding: 2px 2px 6px 2px;
+  }
+  .news-ticker__start-badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+  .news-ticker__end-marker {
+    padding: 14px 10px 16px 10px;
+    margin-top: 4px;
+  }
+  .news-ticker__end-text {
+    font-size: 0.75rem;
+  }
+  .news-ticker__top-btn {
+    font-size: 0.72rem;
+    padding: 5px 12px;
+  }
 }
 
 @media screen and (min-width: 1400px) {
@@ -581,25 +599,122 @@ header {
   overflow-y: auto;
   overscroll-behavior: contain;
   touch-action: pan-y;
-  scrollbar-width: none;       /* Firefox: hides the scrollbar, scrolling still works */
-  -ms-overflow-style: none;    /* old Edge / IE */
-  /* Real fade mask at both edges (the old ::after trick didn't render
-     reliably inside a scrolling flex box). The bottom fade signals more
-     content below; the top fade matters just as much now that the
-     auto-scroll animates smoothly between items - mid-transition it can
-     briefly show a partial line at the top edge, and this fade blends
-     that into the card instead of a hard, glitchy-looking cut. */
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24px, #000 calc(100% - 40px), transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0, #000 24px, #000 calc(100% - 40px), transparent 100%);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(25, 82, 141, 0.28) transparent;
+  padding: 4px 6px;
+  box-sizing: border-box;
 }
 
 .news-ticker::-webkit-scrollbar {
-  display: none;
+  width: 6px;
+}
+
+.news-ticker::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+}
+
+.news-ticker::-webkit-scrollbar-thumb {
+  background: rgba(25, 82, 141, 0.28);
+  border-radius: 8px;
+}
+
+.news-ticker:hover::-webkit-scrollbar-thumb {
+  background: rgba(25, 82, 141, 0.55);
 }
 
 .news-ticker__track {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  padding: 4px 2px 14px 2px;
+}
+
+.news-ticker__start-marker {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4px 2px 8px 2px;
+}
+
+.news-ticker__start-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--brand-blue, #19528d);
+  background: rgba(25, 82, 141, 0.08);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(25, 82, 141, 0.18);
+}
+
+.news-ticker__end-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 14px 20px 14px;
+  margin-top: 6px;
+  background: #f8fafc;
+  border: 1px dashed rgba(25, 82, 141, 0.25);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.news-ticker__end-divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+}
+
+.news-ticker__end-divider span:first-child,
+.news-ticker__end-divider span:last-child {
+  flex: 1;
+  height: 1px;
+  background: rgba(25, 82, 141, 0.2);
+}
+
+.news-ticker__end-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #4a5568;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.news-ticker__end-text i {
+  color: #10b981;
+  font-size: 0.9rem;
+}
+
+.news-ticker__top-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: #fff;
+  background: var(--brand-blue, #19528d);
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(25, 82, 141, 0.25);
+}
+
+.news-ticker__top-btn:hover {
+  background: #0f3d6d;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(25, 82, 141, 0.35);
 }
 
 /* REDESIGNED: each item is now a row (colored left accent + inline "New"
