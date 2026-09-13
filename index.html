@@ -223,53 +223,70 @@
                  </div>
                </div>
 
-               <script>
-                 // News & Events auto-scroll (self-contained - does not depend on
-                 // main.js). Advances one whole item at a time with a smooth
-                 // animated scroll, loops back to the first item after the
-                 // last, and pauses on hover/touch so visitors can read or
-                 // scroll manually. Because it always targets a specific
-                 // item's exact position, it can never stop mid-line.
-                 (function () {
-                   var ticker = document.getElementById('newsTicker');
-                   var track = document.getElementById('newsTrack');
-                   if (!ticker || !track) return;
+                <script>
+                  // Continuous smooth News & Events auto-scroll
+                  // - Smoothly glides items upward using requestAnimationFrame
+                  // - Seamless infinite loop by cloning items without visual jumps
+                  // - Pauses on mouse hover and touch so visitors can read or manually scroll
+                  // - Resumes smoothly when the cursor leaves or touch ends
+                  (function () {
+                    var ticker = document.getElementById('newsTicker');
+                    var track = document.getElementById('newsTrack');
+                    if (!ticker || !track) return;
 
-                   var items = track.querySelectorAll('.news-ticker__item');
-                   if (!items.length) return;
+                    var items = track.querySelectorAll('.news-ticker__item');
+                    if (!items.length) return;
 
-                   var isPaused = false;
-                   var resumeTimeout = null;
-                   var currentIndex = 0;
-                   var INTERVAL_MS = 3500; // time spent on each item before advancing
+                    // Clone track items for seamless infinite scroll
+                    var clone = track.cloneNode(true);
+                    clone.id = 'newsTrackClone';
+                    clone.setAttribute('aria-hidden', 'true');
+                    ticker.appendChild(clone);
 
-                   function goToItem(index) {
-                     ticker.scrollTo({ top: items[index].offsetTop, behavior: 'smooth' });
-                   }
+                    var isPaused = false;
+                    var resumeTimeout = null;
+                    var speed = 0.65; // gentle, comfortable reading speed
+                    var currentScroll = ticker.scrollTop;
 
-                   function advance() {
-                     if (isPaused) return;
-                     currentIndex = (currentIndex + 1) % items.length;
-                     goToItem(currentIndex);
-                   }
+                    function step() {
+                      if (!isPaused) {
+                        currentScroll += speed;
+                        var trackHeight = track.offsetHeight;
+                        if (trackHeight > 0 && currentScroll >= trackHeight) {
+                          currentScroll -= trackHeight;
+                        }
+                        ticker.scrollTop = currentScroll;
+                      } else {
+                        currentScroll = ticker.scrollTop;
+                      }
+                      requestAnimationFrame(step);
+                    }
 
-                   ticker.addEventListener('mouseenter', function () {
-                     isPaused = true;
-                   });
-                   ticker.addEventListener('mouseleave', function () {
-                     isPaused = false;
-                   });
-                   ticker.addEventListener('touchstart', function () {
-                     isPaused = true;
-                     if (resumeTimeout) clearTimeout(resumeTimeout);
-                   }, { passive: true });
-                   ticker.addEventListener('touchend', function () {
-                     resumeTimeout = setTimeout(function () { isPaused = false; }, 1500);
-                   });
+                    ticker.addEventListener('mouseenter', function () {
+                      isPaused = true;
+                    });
+                    ticker.addEventListener('mouseleave', function () {
+                      isPaused = false;
+                    });
+                    ticker.addEventListener('touchstart', function () {
+                      isPaused = true;
+                      if (resumeTimeout) clearTimeout(resumeTimeout);
+                    }, { passive: true });
+                    ticker.addEventListener('touchend', function () {
+                      if (resumeTimeout) clearTimeout(resumeTimeout);
+                      resumeTimeout = setTimeout(function () {
+                        isPaused = false;
+                      }, 1800);
+                    });
+                    ticker.addEventListener('scroll', function () {
+                      if (isPaused) {
+                        currentScroll = ticker.scrollTop;
+                      }
+                    }, { passive: true });
 
-                   setInterval(advance, INTERVAL_MS);
-                 })();
-               </script>
+                    requestAnimationFrame(step);
+                  })();
+                </script>
             </div>
          </div>
       </div> 
@@ -371,6 +388,7 @@
             </div>
          </div>
          <button id="backToTopBtn" class="back-to-top" aria-label="Scroll to top" title="Back to top"><i class="fa fa-angle-up"></i></button>
+         <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
          <script src="main.js"></script>
 </body>
 

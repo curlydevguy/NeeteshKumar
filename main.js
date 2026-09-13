@@ -1,4 +1,54 @@
 /* ==========================================================
+   LENIS INERTIA SMOOTH SCROLLING (Workshop-Style)
+   ----------------------------------------------------------
+   Provides buttery smooth inertia scrolling matching
+   curlydevguy/Workshop_website, using duration: 1.15 and
+   exponential deceleration. Automatically disabled when user
+   requests reduced motion, and keeps touch scrolling native (1:1)
+   on mobile devices for maximum responsiveness.
+========================================================== */
+function initLenis() {
+    if (window._lenisInitialized) return;
+    if (window.Lenis && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        window._lenisInitialized = true;
+
+        const lenis = new Lenis({
+            duration: 1.15,
+            easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+            smoothWheel: true,
+            smoothTouch: false,
+            wheelMultiplier: 1,
+        });
+
+        window.lenisInstance = lenis;
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+    }
+}
+
+if (typeof window !== "undefined") {
+    if (window.Lenis) {
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initLenis);
+        } else {
+            initLenis();
+        }
+    } else if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const lenisScript = document.createElement("script");
+        lenisScript.src = "https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js";
+        lenisScript.async = true;
+        lenisScript.onload = () => {
+            initLenis();
+        };
+        document.head.appendChild(lenisScript);
+    }
+}
+
+/* ==========================================================
                 RESEARCH TEAM (Read More Modal)
 ========================================================== */
 
@@ -107,7 +157,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const target = document.querySelector(hash);
             if (target) {
                 e.preventDefault();
-                target.scrollIntoView({ behavior: "smooth", block: "start" });
+                if (window.lenisInstance) {
+                    window.lenisInstance.scrollTo(target, { offset: -20, duration: 1.15 });
+                } else {
+                    target.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
                 if (window.history.pushState) {
                     window.history.pushState(null, "", hash);
                 }
@@ -160,7 +214,11 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", updatePosition);
 
     backToTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (window.lenisInstance) {
+            window.lenisInstance.scrollTo(0, { duration: 1.15 });
+        } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
     });
 
     handleScroll(); // set correct initial state on load (e.g. page refreshed mid-scroll)
@@ -181,6 +239,9 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
 
     const REVEAL_SELECTORS = [
+        ".reveal",
+        ".image-container",
+        ".work-container",
         ".team-card",
         ".flex-item-pro",
         ".flex-item",
@@ -237,7 +298,14 @@ document.addEventListener("DOMContentLoaded", () => {
         { threshold: 0.05, rootMargin: "0px 0px -20px 0px" }
     );
 
-    targets.forEach((el) => observer.observe(el));
+    targets.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            el.classList.add("is-visible");
+        } else {
+            observer.observe(el);
+        }
+    });
 
 });
 
@@ -272,3 +340,37 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+
+/* ==========================================================
+   Smooth Page Navigation Transitions (Workshop-Style)
+   ----------------------------------------------------------
+   Applies a gentle fade-out when clicking internal navigation
+   links for a cohesive, modern app-like experience.
+========================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"])').forEach((link) => {
+        link.addEventListener("click", (e) => {
+            const href = link.getAttribute("href");
+            if (!href || href.startsWith("javascript:") || href.startsWith("#")) return;
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+            try {
+                const targetUrl = new URL(link.href, window.location.origin);
+                if (targetUrl.origin === window.location.origin) {
+                    e.preventDefault();
+                    document.body.classList.add("is-leaving");
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 220);
+                }
+            } catch (_) {}
+        });
+    });
+
+    window.addEventListener("pageshow", (e) => {
+        if (e.persisted) {
+            document.body.classList.remove("is-leaving");
+        }
+    });
+});
+

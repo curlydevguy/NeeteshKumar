@@ -405,12 +405,13 @@ header {
      your request - swap to "cover" here if a future photo looks warped.
      =================================================================== */
   width: 100%;
-  height: 380px;
-  padding: 10px;
+  aspect-ratio: 16 / 9;
+  height: auto;
   box-sizing: border-box;
   background-image: url(./images/profile2.jpg);
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 10px;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -434,9 +435,6 @@ header {
 }
 
 @media all and (max-width: 968px) {
-  .image-container {
-    height: 220px;
-  }
 }
 
 /* UPDATED: responsive sizing for individual News & Events items - smaller
@@ -469,9 +467,6 @@ header {
   }
 }
 @media screen and (min-width: 1400px) {
-  .image-container {
-    height: 460px;
-  }
   .bio-container {
     /* was capped at max-width: 980px - same fix as above, kept full width
        on large screens too so it stays consistent with the photo. */
@@ -2377,6 +2372,23 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Lenis smooth scroll engine integration (Workshop-style inertia scroll) */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 /* Respect users who've asked for less motion - turns every animation/
    transition on the site into an instant, no-motion version. */
 @media (prefers-reduced-motion: reduce) {
@@ -2391,20 +2403,10 @@ html {
   }
 }
 
-/* ---- Page load: soft fade, whole page ----
-   FIXED: this used to also animate `transform: translateY(...)` on
-   <body>. Any element with a transform (even a settled translateY(0)
-   left behind by "animation-fill-mode: forwards") becomes the
-   containing block for any `position: fixed` descendant - so the
-   team "Read More" modal (which is a direct child of <body>) was
-   centering itself against the whole tall <body> element instead of
-   the actual viewport, making it land in the middle of the page
-   instead of centered on-screen wherever the user had scrolled to.
-   Dropped the transform/rise and kept only the opacity fade so
-   <body> never has a transform, fixing the modal along with it. */
+/* ---- Page load: soft fade, whole page ---- */
 body {
   opacity: 0;
-  animation: pageFadeIn 0.7s ease forwards;
+  animation: pageFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes pageFadeIn {
@@ -2412,28 +2414,35 @@ body {
   to   { opacity: 1; }
 }
 
+/* Smooth page-leaving transition */
+body.is-leaving {
+  opacity: 0;
+  transition: opacity 0.22s ease-in-out;
+}
+
 /* ---- Scroll-reveal targets ----
-   main.js finds elements matching .reveal-up / .reveal-fade / .reveal-zoom
+   main.js finds elements matching .reveal / .reveal-up / .reveal-fade / .reveal-zoom
    (added automatically to common content blocks) and flips on
    .is-visible when they scroll into view. */
-.reveal-up, .reveal-fade, .reveal-zoom {
+.reveal, .reveal-up, .reveal-fade, .reveal-zoom {
   transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
               transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 
-.reveal-up {
+.reveal, .reveal-up {
   opacity: 0;
-  transform: translateY(34px);
+  transform: translateY(32px);
 }
 .reveal-fade {
   opacity: 0;
 }
 .reveal-zoom {
   opacity: 0;
-  transform: scale(0.92);
+  transform: scale(0.94);
 }
 
+.reveal.is-visible,
 .reveal-up.is-visible,
 .reveal-fade.is-visible,
 .reveal-zoom.is-visible {
