@@ -405,7 +405,7 @@ header {
      your request - swap to "cover" here if a future photo looks warped.
      =================================================================== */
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1000 / 475;
   height: auto;
   box-sizing: border-box;
   background-image: url(./images/profile2.jpg);
