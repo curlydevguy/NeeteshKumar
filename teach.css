@@ -263,6 +263,23 @@
 }
 
 @media(max-width:650px){
+    .teaching-section{
+        padding:20px 8px;
+    }
+    .teaching-section__container{
+        padding:20px 14px;
+        width:100%;
+    }
+    .teaching-section__container #title-heading{
+        font-size:1.8rem;
+    }
+    .teach-card{
+        padding:16px 14px;
+    }
+    .sub-details{
+        font-size:0.95rem;
+        letter-spacing:0.5px;
+    }
     .team-grid{
         grid-template-columns:1fr;
     }

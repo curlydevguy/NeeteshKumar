@@ -57,50 +57,63 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================================
-   News & Events auto-scroll (index.html "News & Events" box)
+   Mobile Navigation & Smooth In-Page Scrolling
    ----------------------------------------------------------
-   Replaces the old <marquee> tag. Auto-scrolls the box down
-   (looping back to the top) on its own. While the mouse is
-   hovering over the box, auto-scrolling PAUSES and the box is
-   left as a normal scrollable element (it already has
-   overflow-y: auto in CSS) so the visitor can scroll it by
-   hand with the mouse wheel / trackpad. Moving the mouse away
-   resumes auto-scrolling from wherever it was left.
-
-   This only runs on pages that actually have the ticker
-   (currently just index.html) - on every other page
-   newsTicker is null and the block below simply does nothing.
+   - Automatically closes the mobile menu when any nav link is tapped
+   - Toggles the hamburger icon between bars and times (close)
+   - Smoothly scrolls to target anchor links without obscuring headers
 ========================================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
+    const navBtn = document.getElementById("btn");
+    const navIconSpan = document.querySelector(".main-nav .icon span");
 
-    const newsTicker = document.getElementById("newsTicker");
-    if (!newsTicker) return;
+    if (navBtn) {
+        // Auto-close menu when tapping any navigation link
+        document.querySelectorAll(".main-nav ul li a").forEach((link) => {
+            link.addEventListener("click", () => {
+                if (navBtn.checked) {
+                    navBtn.checked = false;
+                    if (navIconSpan) {
+                        navIconSpan.classList.remove("fa-times");
+                        navIconSpan.classList.add("fa-bars");
+                    }
+                    // Collapse any open submenus
+                    document.querySelectorAll('.main-nav [id^="btn-"]').forEach((sub) => {
+                        sub.checked = false;
+                    });
+                }
+            });
+        });
 
-    let isHovering = false;
-    const SCROLL_STEP_PX = 0.6;   // how far it moves per tick - lower = slower/smoother
-    const TICK_MS = 30;           // how often it moves
+        // Sync hamburger icon state
+        navBtn.addEventListener("change", () => {
+            if (!navIconSpan) return;
+            if (navBtn.checked) {
+                navIconSpan.classList.remove("fa-bars");
+                navIconSpan.classList.add("fa-times");
+            } else {
+                navIconSpan.classList.remove("fa-times");
+                navIconSpan.classList.add("fa-bars");
+            }
+        });
+    }
 
-    const autoScrollTimer = setInterval(() => {
-        if (isHovering) return; // paused while the user is hovering / manually scrolling
+    // Smooth scrolling for internal anchor links (#about, #contact, etc.)
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+            const hash = this.getAttribute("href");
+            if (!hash || hash === "#") return;
 
-        const atBottom = newsTicker.scrollTop + newsTicker.clientHeight >= newsTicker.scrollHeight - 1;
-
-        if (atBottom) {
-            newsTicker.scrollTop = 0; // loop back to the top
-        } else {
-            newsTicker.scrollTop += SCROLL_STEP_PX;
-        }
-    }, TICK_MS);
-
-    newsTicker.addEventListener("mouseenter", () => {
-        isHovering = true;
+            const target = document.querySelector(hash);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+                if (window.history.pushState) {
+                    window.history.pushState(null, "", hash);
+                }
+            }
+        });
     });
-
-    newsTicker.addEventListener("mouseleave", () => {
-        isHovering = false;
-    });
-
 });
 
 /* ==========================================================
@@ -158,15 +171,12 @@ document.addEventListener("DOMContentLoaded", () => {
    SITE-WIDE SCROLL-REVEAL ENGINE
    ----------------------------------------------------------
    Runs on every page (main.js is loaded everywhere). Finds the
-   common repeating content blocks already used across the site
-   (cards, team members, publication groups, experience rows,
-   research info blocks, the slideshow, footer map panels, etc.)
+   common repeating content blocks across the site:
+   cards, team members, publication groups, experience rows,
+   teaching cards, book cards, research areas, etc.
    and tags them with the .reveal-up / .reveal-fade classes
    defined in style.css, then uses an IntersectionObserver to
    flip on .is-visible as each one scrolls into the viewport.
-   Nothing here needs per-page markup - it just looks for the
-   class names/selectors that already exist on the page and
-   quietly no-ops for anything not found.
 ========================================================== */
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -182,7 +192,17 @@ document.addEventListener("DOMContentLoaded", () => {
         ".facgal-wrapper",
         ".contact-container .section1",
         ".contact-container .section2",
-        ".contact-container .section3"
+        ".contact-container .section3",
+        ".rarea-card",
+        ".edu-card",
+        ".teach-card",
+        ".book-card",
+        ".pubx-card",
+        ".info-card",
+        ".details",
+        ".postdoc-position__content",
+        ".postdoc-position__information",
+        ".bio-box"
     ];
 
     const targets = [];
@@ -214,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         },
-        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+        { threshold: 0.05, rootMargin: "0px 0px -20px 0px" }
     );
 
     targets.forEach((el) => observer.observe(el));

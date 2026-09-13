@@ -11,8 +11,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <!-- Google Fonts Links -->
@@ -112,11 +110,6 @@
     </ul>
   </nav>
 
-    <script>
-      $(".icon").click(function () {
-        $("span").toggleClass("cancel");
-      });
-    </script>
 
     <br />
 
@@ -255,7 +248,12 @@
       const media = document.createElement("div");
       media.className = "proto-media";
 
-      if (protoIsLocalVideo(slide.src)) {
+      if (!slide.src) {
+        const placeholder = document.createElement("div");
+        placeholder.style.cssText = "display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;min-height:260px;background:#f0f4f9;color:#555;border-radius:10px;text-align:center;padding:20px;";
+        placeholder.innerHTML = '<i class="fa fa-video-camera" style="font-size:2.4rem;color:#0d3b66;margin-bottom:12px;"></i><p style="font-weight:600;font-size:1.1rem;margin:0;">Video Demonstration Coming Soon</p><p style="font-size:0.85rem;color:#777;margin-top:6px;">Hardware testing in progress</p>';
+        media.appendChild(placeholder);
+      } else if (protoIsLocalVideo(slide.src)) {
         const video = document.createElement("video");
         video.src = slide.src;
         video.controls = true;

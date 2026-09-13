@@ -141,3 +141,25 @@
     font-size: 1.25rem;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .postdoc-position__information {
+    flex-direction: column;
+    text-align: center;
+    padding-left: 0;
+  }
+  .postdoc-position__information .postdoc-position__information__details {
+    margin-left: 0;
+    margin-top: 14px;
+    align-items: center;
+  }
+  .postdoc-photo-frame {
+    margin: 0 auto;
+    width: 140px;
+    height: 140px;
+  }
+  .postdoc-position__content {
+    padding: 16px 14px;
+    font-size: 0.95rem;
+  }
+}
