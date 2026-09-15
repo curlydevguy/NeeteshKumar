@@ -16,26 +16,55 @@
 
 const facgalSlides = [
   {
-    src: "images/facilities/placeholder-server.svg",
-    title: "Server Rack",
-    caption: "Replace with a photo of the lab's server rack — swap the file at images/facilities/placeholder-server.svg (or point this slide's \"src\" at a new file)."
+    src: "images/facilities/lab1.jpg",
+    title: "Autonomous Systems & Intelligent Transportation Lab",
+    caption: "Active collaborative research space at IIT Roorkee equipped with high-end multi-display workstations, edge hardware development setups, and project displays."
   },
   {
-    src: "images/facilities/placeholder-drone.svg",
-    title: "Drone Test Rig",
-    caption: "Replace with a photo of the drone platform used for GPS-denied navigation testing."
+    src: "images/facilities/server_rig1.jpg",
+    title: "High-Performance GPU Computing Cluster",
+    caption: "Dedicated multi-GPU rackmount and tower server cluster accelerating deep learning, reinforcement learning models, and complex vehicular network simulations."
   },
   {
-    src: "images/facilities/placeholder-orin.svg",
-    title: "Jetson Orin Nano",
-    caption: "Replace with a photo of the Orin Nano edge-compute unit."
+    src: "images/facilities/agx1.jpg",
+    title: "NVIDIA Jetson AGX Edge-AI Platform",
+    caption: "Embedded edge-computing system running real-time LiDAR point-cloud processing, sensor fusion, and low-latency computer vision algorithms for autonomous mobility."
   },
   {
-    src: "images/facilities/placeholder-machine.svg",
-    title: "Lab Equipment",
-    caption: "Replace with a photo of any other machine or piece of lab equipment — duplicate this object in the array for each additional item."
+    src: "images/facilities/RSU_rig1.jpg",
+    title: "C-V2X / DSRC Roadside Unit (RSU) Testbed",
+    caption: "Unex V2X transceiver hardware module with high-gain dual antennas in a custom enclosure for Vehicle-to-Infrastructure (V2I) and Vehicle-to-Vehicle (V2V) field experiments."
+  },
+  {
+    src: "images/facilities/drone_rig1.jpg",
+    title: "Autonomous Depth-Sensing Research Drone",
+    caption: "Custom heavy-lift quadcopter integrated with an Intel RealSense depth camera and companion computer for real-time 3D mapping and GPS-denied navigation."
+  },
+  {
+    src: "images/facilities/drone_rig2.jpg",
+    title: "Pixhawk Cube Autopilot Aerial Platform",
+    caption: "S500 quadcopter airframe equipped with a Pixhawk Cube flight controller and telemetry unit for precise autonomous waypoint mission execution."
+  },
+  {
+    src: "images/facilities/drone_rig3.jpg",
+    title: "Heavy-Payload Industrial Hexacopter UAV",
+    caption: "Heavy-duty multi-rotor aerial platform with Hobbywing X8 high-thrust propulsion systems for large sensor payloads and aerial surveillance experiments."
+  },
+  {
+    src: "images/facilities/fpv_rig2.jpg",
+    title: "High-Agility Custom FPV Research Quadcopter",
+    caption: "Ultra-lightweight carbon-fiber multi-rotor racing platform engineered for agile maneuvering, rapid obstacle avoidance, and dynamic aerial tracking."
+  },
+  {
+    src: "images/facilities/fpv_rig1.jpg",
+    title: "Low-Latency FPV Pilot Station & Goggle Interface",
+    caption: "First-Person View (FPV) pilot headset and remote telemetry controller enabling real-time low-latency video feed and manual flight validation."
+  },
+  {
+    src: "images/facilities/3d_printer.jpg",
+    title: "Bambu Lab 3D Rapid Prototyping Station",
+    caption: "High-precision Bambu Lab 3D printer with multi-filament AMS for on-demand fabrication of custom drone mounts, sensor brackets, and robotic enclosures."
   }
-  // Add more facilities here, following the same { src, title, caption } shape.
 ];
 
 (function initFacilitiesGallery() {
@@ -184,5 +213,11 @@ const facgalSlides = [
     wrapper.querySelectorAll(".facgal-hit").forEach((h) => (h.style.display = "none"));
   }
 
+  window.goToFacgalSlide = function (index) {
+    goTo(index, true);
+    wrapper.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
   restartProgress();
 })();
+
