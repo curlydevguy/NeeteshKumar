@@ -209,342 +209,509 @@
   font-family: "Poppins", sans-serif;
 }
 /* ===========================================================
-                    PUBLICATION SECTION V2
+                    PUBLICATION SECTION V3 - CLEAN & MODERN
    =========================================================== */
 
-.pubx-wrapper{
-    width:90%;
-    max-width:1150px;
-    margin:70px auto;
-    font-family:"Poppins",sans-serif;
+.pubx-wrapper {
+    width: 92%;
+    max-width: 1200px;
+    margin: 50px auto 70px auto;
+    font-family: "Poppins", sans-serif;
 }
 
-.pubx-header{
-    text-align:center;
-    margin-bottom:45px;
+.pubx-header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.pubx-header h1{
-    font-size:2.8rem;
-    color:#0d3b66;
-    margin-bottom:10px;
-    font-weight:700;
+.pubx-header h1 {
+    font-size: 2.5rem;
+    color: #0d3b66;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
-.pubx-header p{
-    color:#666;
-    font-size:1rem;
-    max-width:700px;
-    margin:auto;
-    line-height:1.7;
+.pubx-header p {
+    color: #555;
+    font-size: 1rem;
+    max-width: 720px;
+    margin: auto;
+    line-height: 1.6;
 }
 
-/* ================= Cards ================= */
-
-.pubx-card{
-
-    background:#ffffff;
-
-    border-radius:16px;
-
-    margin-bottom:35px;
-
-    overflow-x:auto;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-    transition:.3s ease;
-
+/* ================= Quick Navigation Bar ================= */
+.pubx-quicknav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 35px;
 }
 
-.pubx-card:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 18px 35px rgba(0,0,0,.12);
-
+.pubx-quicknav__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    background: #ffffff;
+    border: 1px solid #d4e2ed;
+    border-radius: 30px;
+    color: #0d3b66;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s ease;
 }
 
-.pubx-card-header{
-
-    background:#0d3b66;
-
-    color:white;
-
-    padding:18px 30px;
-
+.pubx-quicknav__btn:hover {
+    background: #0d3b66;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(13, 59, 102, 0.15);
+    border-color: #0d3b66;
 }
 
-.pubx-card-header h2{
-
-    font-size:1.45rem;
-
-    font-weight:600;
-
+/* ================= Modern Stat KPI Grid ================= */
+.pubx-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 35px;
 }
 
-/* ================= Summary Table ================= */
-
-.pubx-summary{
-
-    width:100%;
-
-    border-collapse:collapse;
-
+.pubx-stat-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 22px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e8f0f6;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.pubx-summary td{
-
-    padding:20px 30px;
-
-    border-bottom:1px solid #ececec;
-
-    font-size:16px;
-
+.pubx-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(13, 59, 102, 0.1);
 }
 
-.pubx-summary td:last-child{
-
-    text-align:right;
-
-    font-weight:700;
-
-    color:#0d3b66;
-
+.pubx-stat-card__icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: #eef4f9;
+    color: #0d3b66;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
 }
 
-.pubx-summary tr:hover{
-
-    background:#f8fbff;
-
+.pubx-stat-card__icon--teal {
+    background: #e6f7f5;
+    color: #0f766e;
 }
 
-.pubx-total{
-
-    background:#eef6ff;
-
-    font-size:17px;
-
-    font-weight:700;
-
+.pubx-stat-card__icon--blue {
+    background: #ebf5ff;
+    color: #1d4ed8;
 }
 
-/* ================= Journal Table ================= */
-
-.pubx-journal{
-
-    width:100%;
-
-    border-collapse:collapse;
-
+.pubx-stat-card__icon--indigo {
+    background: #ede9fe;
+    color: #6d28d9;
 }
 
-.pubx-journal th{
-
-    background:#f4f7fb;
-
-    padding:18px;
-
-    color:#0d3b66;
-
-    font-size:15px;
-
-    border-bottom:2px solid #e2e2e2;
-
+.pubx-stat-card__icon--amber {
+    background: #fef3c7;
+    color: #b45309;
 }
 
-.pubx-journal td{
-
-    padding:18px;
-
-    border-bottom:1px solid #ececec;
-
-    font-size:15px;
-
+.pubx-stat-card__icon--slate {
+    background: #f1f5f9;
+    color: #475569;
 }
 
-.pubx-journal td:nth-child(2),
-
-.pubx-journal td:nth-child(3){
-
-    text-align:center;
-
-    font-weight:600;
-
+.pubx-stat-card__body {
+    display: flex;
+    flex-direction: column;
 }
 
-.pubx-journal tbody tr:hover{
-
-    background:#f7fbff;
-
+.pubx-stat-card__num {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #0d3b66;
+    line-height: 1.1;
 }
 
-/* ================= Trend ================= */
-
-.pubx-bars{
-
-    padding:30px;
-
+.pubx-stat-card__label {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #222222;
+    margin-top: 4px;
 }
 
-.pubx-bar{
-
-    display:grid;
-
-    grid-template-columns:70px 1fr 50px;
-
-    align-items:center;
-
-    gap:18px;
-
-    margin-bottom:18px;
-
+.pubx-stat-card__sub {
+    font-size: 0.78rem;
+    color: #666666;
+    margin-top: 2px;
 }
 
-.pubx-bar span{
-
-    font-weight:600;
-
-    color:#444;
-
+/* ================= Two Column Detailed Breakdown ================= */
+.pubx-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 35px;
 }
 
-.pubx-progress{
-
-    width:100%;
-
-    height:14px;
-
-    background:#dfe6ef;
-
-    border-radius:50px;
-
-    overflow:hidden;
-
+/* Cards */
+.pubx-card {
+    background: #ffffff;
+    border-radius: 16px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e8f0f6;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
 }
 
-.pubx-progress div{
-
-    height:100%;
-
-    background:linear-gradient(90deg,#0d6efd,#5fa8ff);
-
-    border-radius:50px;
-
+.pubx-two-col .pubx-card {
+    margin-bottom: 0;
 }
 
-.pubx-bar strong{
-
-    text-align:right;
-
-    color:#0d3b66;
-
+.pubx-card:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* ================= Responsive ================= */
-
-@media(max-width:900px){
-
-.pubx-header h1{
-
-font-size:2.2rem;
-
+.pubx-card-header {
+    background: #0d3b66;
+    color: #ffffff;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.pubx-summary td,
-
-.pubx-journal td,
-
-.pubx-journal th{
-
-padding:14px;
-
-font-size:14px;
-
+.pubx-card-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+/* Ratio Bar */
+.pubx-ratio-box {
+    padding: 16px 22px;
+    background: #f8fafc;
+    border-bottom: 1px solid #edf2f7;
 }
 
-@media(max-width:650px){
-
-.pubx-wrapper{
-
-width:95%;
-
+.pubx-ratio-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.84rem;
+    color: #475569;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
-.pubx-bar{
-
-grid-template-columns:55px 1fr 35px;
-
-gap:10px;
-
+.pubx-ratio-header strong {
+    color: #0d3b66;
 }
 
-.pubx-card-header{
-
-padding:15px 20px;
-
+.pubx-ratio-bar {
+    height: 9px;
+    background: #fef3c7;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
 }
 
-.pubx-summary td{
-
-padding:15px;
-
+.pubx-ratio-bar__fill {
+    height: 100%;
+    background: #0d3b66;
+    border-radius: 10px 0 0 10px;
 }
 
-.pubx-journal td{
-
-padding:12px;
-
+/* Journal & Conference Tables inside Cards */
+.pubx-journal {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.pubx-header h1{
-
-font-size:1.8rem;
-
+.pubx-journal th {
+    background: #f8fafc;
+    padding: 12px 20px;
+    color: #0d3b66;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
 }
 
-.pubx-header p{
-
-font-size:.9rem;
-
+.pubx-journal td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.88rem;
+    color: #334155;
+    line-height: 1.45;
 }
 
+.pubx-journal tbody tr:hover {
+    background: #f8fbff;
+}
+
+.pubx-journal td:nth-child(2) {
+    font-weight: 600;
+    color: #0d3b66;
+}
+
+/* Badges */
+.badge-q1 {
+    display: inline-block;
+    background: #e6f7f5;
+    color: #0f766e;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 6px;
+    border: 1px solid #bbf7d0;
+}
+
+.badge-q2 {
+    display: inline-block;
+    background: #fef3c7;
+    color: #92400e;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 6px;
+    border: 1px solid #fde68a;
+}
+
+.badge-core-astar {
+    display: inline-block;
+    background: #fef3c7;
+    color: #b45309;
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 2px 7px;
+    border-radius: 6px;
+    border: 1px solid #fcd34d;
+}
+
+.badge-core-a {
+    display: inline-block;
+    background: #ebf5ff;
+    color: #1d4ed8;
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 2px 7px;
+    border-radius: 6px;
+    border: 1px solid #bfdbfe;
+}
+
+.badge-core-b {
+    display: inline-block;
+    background: #e0f2fe;
+    color: #0369a1;
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 2px 7px;
+    border-radius: 6px;
+    border: 1px solid #bae6fd;
+}
+
+/* Pill Tag Cloud */
+.pubx-pill-section {
+    padding: 18px 22px;
+    background: #ffffff;
+    border-top: 1px solid #edf2f7;
+    flex-grow: 1;
+}
+
+.pubx-pill-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #0d3b66;
+    margin-bottom: 10px;
+}
+
+.pubx-pill-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.pubx-pill {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 5px 10px;
+    font-size: 0.77rem;
+    color: #334155;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s ease;
+}
+
+.pubx-pill:hover {
+    background: #eef6ff;
+    border-color: #bfdbfe;
+    color: #0d3b66;
+    transform: translateY(-1px);
+}
+
+.pubx-pill-if {
+    font-size: 0.7rem;
+    background: #0d3b66;
+    color: #ffffff;
+    padding: 1px 5px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Honors list */
+.pubx-award-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pubx-award-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: #334155;
+    line-height: 1.45;
+}
+
+.pubx-award-item i {
+    margin-top: 2px;
+    font-size: 0.95rem;
+}
+
+/* Card Footer */
+.pubx-card-footer {
+    padding: 14px 22px;
+    background: #f8fafc;
+    border-top: 1px solid #edf2f7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.82rem;
+}
+
+.pubx-footer-note {
+    color: #64748b;
+}
+
+.pubx-footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #0d3b66;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.pubx-footer-link:hover {
+    color: #1f7a8c;
+    text-decoration: underline;
+}
+
+/* ================= Publication Trend Grid ================= */
+.pubx-trend-container {
+    padding: 24px 28px;
+}
+
+.pubx-trend-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 35px;
+}
+
+.pubx-bar {
+    display: grid;
+    grid-template-columns: 65px 1fr 70px;
+    align-items: center;
+    gap: 14px;
+}
+
+.pubx-bar span {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: #334155;
+}
+
+.pubx-progress {
+    width: 100%;
+    height: 11px;
+    background: #e2e8f0;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.pubx-progress div {
+    height: 100%;
+    background: linear-gradient(90deg, #0d3b66, #1f7a8c);
+    border-radius: 50px;
+}
+
+.pubx-bar strong {
+    text-align: right;
+    font-size: 0.85rem;
+    color: #0d3b66;
+    white-space: nowrap;
 }
 
 /* ================= Google Scholar Card ================= */
-
 .pubx-scholar-card {
     background: #ffffff;
     border-radius: 16px;
-    padding: 30px 36px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    padding: 28px 34px;
+    margin-top: 35px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    transition: 0.3s ease;
     border-left: 6px solid #0d3b66;
+    border-top: 1px solid #e8f0f6;
+    border-right: 1px solid #e8f0f6;
+    border-bottom: 1px solid #e8f0f6;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .pubx-scholar-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(13, 59, 102, 0.12);
 }
 
 .pubx-scholar-card__icon {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     background: #eef4f9;
     color: #0d3b66;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     flex-shrink: 0;
 }
 
@@ -553,14 +720,14 @@ font-size:.9rem;
 }
 
 .pubx-scholar-card__content h3 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     color: #0d3b66;
     font-weight: 600;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
 }
 
 .pubx-scholar-card__content p {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     color: #555555;
     margin: 0;
     line-height: 1.5;
@@ -570,10 +737,10 @@ font-size:.9rem;
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 13px 26px;
+    padding: 12px 24px;
     background: #0d3b66;
     color: #ffffff !important;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     font-weight: 500;
     border-radius: 8px;
     text-decoration: none;
@@ -587,15 +754,40 @@ font-size:.9rem;
     transform: translateY(-2px);
 }
 
-@media(max-width: 768px) {
+/* ================= Responsive Rules ================= */
+@media(max-width: 992px) {
+    .pubx-stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pubx-two-col {
+        grid-template-columns: 1fr;
+    }
+    .pubx-trend-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 650px) {
+    .pubx-wrapper {
+        width: 94%;
+        margin: 30px auto;
+    }
+    .pubx-header h1 {
+        font-size: 2rem;
+    }
+    .pubx-stat-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
     .pubx-scholar-card {
         flex-direction: column;
         text-align: center;
-        padding: 24px 20px;
+        padding: 24px 18px;
     }
     .pubx-scholar-card__btn {
         width: 100%;
         justify-content: center;
     }
 }
+
 
