@@ -291,20 +291,16 @@ document.addEventListener("DOMContentLoaded", () => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("is-visible");
-                    observer.unobserve(entry.target);
+                } else {
+                    entry.target.classList.remove("is-visible");
                 }
             });
         },
-        { threshold: 0.05, rootMargin: "0px 0px -20px 0px" }
+        { threshold: 0.06, rootMargin: "0px 0px -25px 0px" }
     );
 
     targets.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-            el.classList.add("is-visible");
-        } else {
-            observer.observe(el);
-        }
+        observer.observe(el);
     });
 
 });
