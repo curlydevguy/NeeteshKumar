@@ -244,6 +244,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ".work-container",
         ".team-card",
         ".flex-item-pro",
+        ".patent-card",
+        ".patent-stat-item",
         ".flex-item",
         ".pub-year-group",
         ".experience-details-container",
