@@ -18,7 +18,7 @@ const facgalSlides = [
   {
     src: "images/facilities/lab1.jpg",
     title: "ICCN Lab — Research Workspace",
-    caption: "Active collaborative research space of the ICCN Lab at IIT Roorkee under Dr. Neetesh Kumar and Dr. Pardumen Pandey, equipped with high-end multi-display workstations and edge hardware testbenches."
+    caption: "Active collaborative research space of the Intelligent Computing and Complex Networks Lab (ICCN Lab) at IIT Roorkee under Dr. Neetesh Kumar and Dr. Pardumen Pandey, equipped with high-end multi-display workstations and edge hardware testbenches."
   },
   {
     src: "images/facilities/server_rig1.jpg",
@@ -79,7 +79,6 @@ const facgalSlides = [
 
   let current = 0;
   let timer = null;
-  let progressStart = null;
   let paused = false;
 
   // ---- Build slides ----
@@ -152,23 +151,19 @@ const facgalSlides = [
 
     renderCaption(current);
     restartProgress();
-
-    if (userInitiated) {
-      // give the user a beat of full-speed viewing before auto-advancing again
-      restartProgress();
-    }
   }
 
   // ---- Autoplay + progress bar ----
   function restartProgress() {
     clearTimeout(timer);
+    timer = null;
     progressBar.classList.remove("animating");
+    progressBar.style.transition = "none";
     progressBar.style.width = "0%";
 
     if (facgalSlides.length <= 1 || paused) return;
 
-    // Force reflow so the width reset above actually takes effect before
-    // we re-enable the transition and animate to 100%.
+    // Force reflow so the width reset above actually takes effect
     void progressBar.offsetWidth;
 
     progressBar.style.transition = `width ${AUTOPLAY_MS}ms linear`;
@@ -181,23 +176,39 @@ const facgalSlides = [
   }
 
   function pause() {
+    if (paused) return;
     paused = true;
     clearTimeout(timer);
+    timer = null;
+
+    // Freeze the progress bar visually at its exact current position
+    const computedWidth = window.getComputedStyle(progressBar).width;
     progressBar.classList.remove("animating");
+    progressBar.style.transition = "none";
+    progressBar.style.width = computedWidth;
+
+    wrapper.classList.add("is-paused");
   }
 
   function resume() {
     if (!paused) return;
     paused = false;
+    wrapper.classList.remove("is-paused");
     restartProgress();
   }
 
+  // Pause when cursor/pointer is over the gallery or dots, resume on leave
   wrapper.addEventListener("mouseenter", pause);
   wrapper.addEventListener("mouseleave", resume);
+  wrapper.addEventListener("pointerenter", pause);
+  wrapper.addEventListener("pointerleave", resume);
   wrapper.addEventListener("touchstart", pause, { passive: true });
   wrapper.addEventListener("touchend", resume);
   wrapper.addEventListener("focusin", pause);
   wrapper.addEventListener("focusout", resume);
+
+  dotsContainer.addEventListener("mouseenter", pause);
+  dotsContainer.addEventListener("mouseleave", resume);
 
   // Keyboard support on the hit zones (Enter / Space)
   wrapper.addEventListener("keydown", (e) => {
