@@ -17,8 +17,8 @@
 const facgalSlides = [
   {
     src: "images/facilities/lab1.jpg",
-    title: "Autonomous Systems & Intelligent Transportation Lab",
-    caption: "Active collaborative research space at IIT Roorkee equipped with high-end multi-display workstations, edge hardware development setups, and project displays."
+    title: "ICCN Lab — Research Workspace",
+    caption: "Active collaborative research space of the ICCN Lab at IIT Roorkee under Dr. Neetesh Kumar and Dr. Pardumen Pandey, equipped with high-end multi-display workstations and edge hardware testbenches."
   },
   {
     src: "images/facilities/server_rig1.jpg",
@@ -33,7 +33,7 @@ const facgalSlides = [
   {
     src: "images/facilities/RSU_rig1.jpg",
     title: "C-V2X / DSRC Roadside Unit (RSU) Testbed",
-    caption: "Unex V2X transceiver hardware module with high-gain dual antennas in a custom enclosure for Vehicle-to-Infrastructure (V2I) and Vehicle-to-Vehicle (V2V) field experiments."
+    caption: "Unex C-V2X / DSRC transceiver hardware rig with high-gain dual antennas in a custom enclosure for Vehicle-to-Infrastructure (V2I) and Vehicle-to-Vehicle (V2V) field experiments."
   },
   {
     src: "images/facilities/drone_rig1.jpg",
