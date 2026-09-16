@@ -1,4 +1,153 @@
 /* ==========================================================
+                PRINCIPAL INVESTIGATOR BANNER
+========================================================== */
+.pi-banner{
+    width:100%;
+    max-width:1400px;
+    margin:0 auto 30px;
+    background:#fff;
+    border-radius:14px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.25s;
+    font-family:"Poppins",sans-serif;
+    overflow:hidden;
+}
+
+.pi-banner:hover{
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.pi-banner__main{
+    display:flex;
+    align-items:center;
+    gap:32px;
+    padding:34px 4%;
+}
+
+.pi-banner__photo img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:center top;
+    display:block;
+    flex-shrink:0;
+    box-shadow:0 4px 14px rgba(0,0,0,.12);
+}
+
+.pi-banner__info{
+    flex:1;
+    min-width:0;
+}
+
+.pi-banner__name{
+    font-size:1.8rem;
+    font-weight:600;
+    color:var(--text-dark);
+    margin:0 0 6px;
+}
+
+.pi-banner__role{
+    font-size:1rem;
+    font-weight:600;
+    color:var(--brand-blue);
+    margin:0 0 6px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+.pi-banner__designation{
+    font-size:1rem;
+    color:#555;
+    margin:0 0 12px;
+}
+
+.pi-banner__focus{
+    font-size:.9rem;
+    color:#777;
+    line-height:1.7;
+    margin:0;
+}
+
+.pi-banner__btn{
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    border:none;
+    border-radius:8px;
+    padding:12px 26px;
+    font-size:14px;
+    font-weight:600;
+    color:#fff;
+    background:var(--brand-blue);
+    cursor:pointer;
+    white-space:nowrap;
+    transition:.25s;
+}
+
+.pi-banner__btn:hover{
+    background:var(--brand-navy);
+}
+
+.pi-banner__btn i{
+    transition:transform .25s;
+}
+
+.pi-banner__btn[aria-expanded="true"] i{
+    transform:rotate(180deg);
+}
+
+.pi-banner__details{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s ease;
+}
+
+.pi-banner__details.open{
+    max-height:320px;
+}
+
+.pi-banner__details-inner{
+    padding:20px 4% 28px;
+    border-top:1px solid #ececec;
+    margin:0 4%;
+}
+
+.pi-banner__about{
+    text-align:justify;
+    line-height:1.7;
+    color:#555;
+    font-size:.95rem;
+    margin:0 0 14px;
+}
+
+.pi-banner__contact p{
+    margin:0;
+    font-size:.9rem;
+    color:#555;
+}
+
+.pi-banner__contact a{
+    color:var(--brand-blue);
+    text-decoration:none;
+}
+
+@media(max-width:768px){
+    .pi-banner__main{
+        flex-direction:column;
+        text-align:center;
+        padding:30px 6%;
+    }
+    .pi-banner__focus{
+        text-align:center;
+    }
+    .pi-banner__details-inner{
+        margin:0 6%;
+    }
+}
+
+/* ==========================================================
                     RESEARCH TEAM SECTION
 ========================================================== */
 .research-team-section{
