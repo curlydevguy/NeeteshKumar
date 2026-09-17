@@ -128,20 +128,20 @@
       <!-- Top 3 KPI Cards -->
       <div class="funding-kpis">
         <div class="funding-kpi-card">
-          <span class="funding-kpi-label">Total Project Funding</span>
-          <span class="funding-kpi-value">&#8377; 11.90 Cr</span>
-          <span class="funding-kpi-sub">18 Sponsored Projects (PI + Co-PI)</span>
+          <span class="funding-kpi-label">Total Sponsored Research Funding</span>
+          <span class="funding-kpi-value">&#8377; 12.00 Cr <span style="font-size: 1rem; font-weight: normal; color: #64748b;">(approx.)</span></span>
+          <span class="funding-kpi-sub">18 Projects &bull; PI (~ &#8377; 5.90 Cr) + Co-PI (~ &#8377; 6.12 Cr)</span>
         </div>
 
         <div class="funding-kpi-card funding-kpi-card--pi">
           <span class="funding-kpi-label">Funding as Principal Investigator (PI)</span>
-          <span class="funding-kpi-value">&#8377; 5.78 Cr</span>
+          <span class="funding-kpi-value">&#8377; 5.90 Cr <span style="font-size: 1rem; font-weight: normal; color: #64748b;">(approx.)</span></span>
           <span class="funding-kpi-sub">14 Projects (Govt, Industry, BEL, FIG)</span>
         </div>
 
         <div class="funding-kpi-card funding-kpi-card--copi">
           <span class="funding-kpi-label">Funding as Co-Principal Investigator (Co-PI)</span>
-          <span class="funding-kpi-value">&#8377; 6.12 Cr</span>
+          <span class="funding-kpi-value">&#8377; 6.12 Cr <span style="font-size: 1rem; font-weight: normal; color: #64748b;">(approx.)</span></span>
           <span class="funding-kpi-sub">04 Projects (MeitY, TIH, SERB, AI4ICPS)</span>
         </div>
       </div>
@@ -149,177 +149,251 @@
       <!-- Detailed Breakdown Table Card -->
       <div class="funding-table-card">
         <div class="funding-table-banner">
-          Project Funding [PI (INR ~ 5.78 Cr) + Co-PI (INR ~ 6.12 Cr) = INR ~ 11.90 Cr]
+          Project Funding Summary: PI (~ INR 5.90 Cr) + Co-PI (~ INR 6.12 Cr) = Total ~ INR 12.00 Cr
         </div>
         <div class="funding-table-wrapper">
           <table class="funding-table">
             <thead>
               <tr>
-                <th>Category / Particulars</th>
-                <th>Funding Agency</th>
-                <th class="text-center">Quantity</th>
+                <th>Funding Agency / Scheme</th>
                 <th class="text-center">Role</th>
+                <th class="text-center">Projects</th>
                 <th class="text-center">Status</th>
-                <th class="text-right">Funding [INR]</th>
+                <th class="text-right">Funding Amount [INR]</th>
               </tr>
             </thead>
             <tbody>
               <!-- Group 1: Govt. Research Projects -->
-              <tr class="funding-category-row">
-                <td colspan="5">Govt. Research Projects</td>
-                <td class="text-right">&#8377; 4,52,79,914</td>
+              <tr class="funding-cat-header">
+                <td colspan="4">
+                  <span class="cat-title">🏛️ Government Research Projects</span>
+                  <span class="cat-count">6 Projects (PI)</span>
+                </td>
+                <td class="text-right cat-subtotal">&#8377; 4,52,79,914</td>
               </tr>
               <tr>
-                <td style="padding-left: 28px;">Ministry of Electronics and Information Technology</td>
-                <td>MeitY</td>
-                <td class="text-center">01</td>
+                <td>
+                  <div class="agency-cell">
+                    <strong>MeitY</strong>
+                    <span class="agency-desc">Ministry of Electronics &amp; Information Technology</span>
+                  </div>
+                </td>
                 <td class="text-center"><span class="funding-badge funding-badge--pi">PI</span></td>
-                <td class="text-center"><span class="funding-badge funding-badge--ongoing">Ongoing</span></td>
-                <td class="text-right">&#8377; 1,13,81,724</td>
-              </tr>
-              <tr>
-                <td style="padding-left: 28px;">Scheme for Promotion of Academic and Research Collaboration</td>
-                <td>SPARC-DST</td>
                 <td class="text-center">01</td>
-                <td class="text-center"><span class="funding-badge funding-badge--pi">PI</span></td>
                 <td class="text-center"><span class="funding-badge funding-badge--ongoing">Ongoing</span></td>
-                <td class="text-right">&#8377; 89,86,000</td>
+                <td class="text-right amount-cell">&#8377; 1,13,81,724</td>
               </tr>
               <tr>
-                <td style="padding-left: 28px;">Science and Engineering Research Board / ANRF</td>
-                <td>SERB / ANRF</td>
+                <td>
+                  <div class="agency-cell">
+                    <strong>SPARC-DST</strong>
+                    <span class="agency-desc">Scheme for Promotion of Academic &amp; Research Collaboration</span>
+                  </div>
+                </td>
+                <td class="text-center"><span class="funding-badge funding-badge--pi">PI</span></td>
+                <td class="text-center">01</td>
+                <td class="text-center"><span class="funding-badge funding-badge--ongoing">Ongoing</span></td>
+                <td class="text-right amount-cell">&#8377; 89,86,000</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="agency-cell">
+                    <strong>SERB / ANRF</strong>
+                    <span class="agency-desc">Science and Engineering Research Board / ANRF</span>
+                  </div>
+                </td>
+                <td class="text-center"><span class="funding-badge funding-badge--pi">PI</span></td>
                 <td class="text-center">03</td>
-                <td class="text-center"><span class="funding-badge funding-badge--pi">PI</span></td>
                 <td class="text-center"><span class="funding-badge funding-badge--ongoing">Ongoing (2) / Completed (1)</span></td>
-                <td class="text-right">&#8377; 1,98,84,392</td>
+                <td class="text-right amount-cell">&#8377; 1,98,84,392</td>
               </tr>
               <tr>
-                <td style="padding-left: 28px;">Department of Science and Technology</td>
-                <td>DST</td>
-                <td class="text-center">01</td>
+                <td>
+                  <div class="agency-cell">
+                    <strong>DST</strong>
+                    <span class="agency-desc">Department of Science and Technology</span>
+                  </div>
+                </td>
                 <td class="text-center"><span class="funding-badge funding-badge--pi">PI</span></td>
+                <td class="text-center">01</td>
                 <td class="text-center"><span class="funding-badge funding-badge--completed">Completed</span></td>
-                <td class="text-right">&#8377; 13,70,600</td>
+                <td class="text-right amount-cell">&#8377; 13,70,600</td>
               </tr>
               <tr>
-                <td style="padding-left: 28px;">Council of Scientific and Industrial Research</td>
-                <td>CSIR</td>
-                <td class="text-center">01</td>
+                <td>
+                  <div class="agency-cell">
+                    <strong>CSIR</strong>
+                    <span class="agency-desc">Council of Scientific and Industrial Research</span>
+                  </div>
+                </td>
                 <td class="text-center"><span class="funding-badge funding-badge--pi">PI</span></td>
+                <td class="text-center">01</td>
                 <td class="text-center"><span class="funding-badge funding-badge--completed">Completed</span></td>
-                <td class="text-right">&#8377; 18,57,198</td>
+                <td class="text-right amount-cell">&#8377; 18,57,198</td>
               </tr>
               <tr>
-                <td style="padding-left: 28px;">Artificial Intelligence and Interdisciplinary Cyber-Physical Systems Hub</td>
-                <td>AI4ICPS</td>
-                <td class="text-center">01</td>
+                <td>
+                  <div class="agency-cell">
+                    <strong>AI4ICPS</strong>
+                    <span class="agency-desc">Artificial Intelligence &amp; Cyber-Physical Systems Hub (IIT KGP)</span>
+                  </div>
+                </td>
                 <td class="text-center"><span class="funding-badge funding-badge--pi">PI</span></td>
+                <td class="text-center">01</td>
                 <td class="text-center"><span class="funding-badge funding-badge--ongoing">Ongoing</span></td>
-                <td class="text-right">&#8377; 18,00,000</td>
+                <td class="text-right amount-cell">&#8377; 18,00,000</td>
               </tr>
 
               <!-- Group 2: Industry Funded Research Projects -->
-              <tr class="funding-category-row">
-                <td colspan="5">Industry Funded Research Projects</td>
-                <td class="text-right">&#8377; 97,38,871</td>
+              <tr class="funding-cat-header">
+                <td colspan="4">
+                  <span class="cat-title">🏢 Industry Funded Research Projects</span>
+                  <span class="cat-count">3 Projects (PI)</span>
+                </td>
+                <td class="text-right cat-subtotal">&#8377; 97,38,871</td>
               </tr>
               <tr>
-                <td style="padding-left: 28px;">Google Research Award</td>
-                <td>Google</td>
-                <td class="text-center">01</td>
+                <td>
+                  <div class="agency-cell">
+                    <strong>Google</strong>
+                    <span class="agency-desc">Google Research Award</span>
+                  </div>
+                </td>
                 <td class="text-center"><span class="funding-badge funding-badge--pi">PI</span></td>
+                <td class="text-center">01</td>
                 <td class="text-center"><span class="funding-badge funding-badge--completed">Completed</span></td>
-                <td class="text-right">$32,000 (&#8377; 30,38,640)</td>
+                <td class="text-right amount-cell">$32,000 <span class="inr-sub">(&#8377; 30,38,640)</span></td>
               </tr>
               <tr>
-                <td style="padding-left: 28px;">Qualcomm Faculty Award</td>
-                <td>Qualcomm</td>
-                <td class="text-center">01</td>
+                <td>
+                  <div class="agency-cell">
+                    <strong>Qualcomm</strong>
+                    <span class="agency-desc">Qualcomm Faculty Award</span>
+                  </div>
+                </td>
                 <td class="text-center"><span class="funding-badge funding-badge--pi">PI</span></td>
+                <td class="text-center">01</td>
                 <td class="text-center"><span class="funding-badge funding-badge--ongoing">Ongoing</span></td>
-                <td class="text-right">$60,000 (&#8377; 57,00,231)</td>
+                <td class="text-right amount-cell">$60,000 <span class="inr-sub">(&#8377; 57,00,231)</span></td>
               </tr>
               <tr>
-                <td style="padding-left: 28px;">Infineon Technologies Research Grant</td>
-                <td>Infineon</td>
-                <td class="text-center">01</td>
+                <td>
+                  <div class="agency-cell">
+                    <strong>Infineon</strong>
+                    <span class="agency-desc">Infineon Technologies Research Grant</span>
+                  </div>
+                </td>
                 <td class="text-center"><span class="funding-badge funding-badge--pi">PI</span></td>
+                <td class="text-center">01</td>
                 <td class="text-center"><span class="funding-badge funding-badge--ongoing">Ongoing</span></td>
-                <td class="text-right">&#8377; 10,00,000</td>
+                <td class="text-right amount-cell">&#8377; 10,00,000</td>
               </tr>
 
               <!-- Group 3: Short Term Projects -->
-              <tr class="funding-category-row">
-                <td colspan="5">Short Term Projects</td>
-                <td class="text-right">&#8377; 10,30,000</td>
+              <tr class="funding-cat-header">
+                <td colspan="4">
+                  <span class="cat-title">⚡ Short Term Projects</span>
+                  <span class="cat-count">3 Projects (PI)</span>
+                </td>
+                <td class="text-right cat-subtotal">&#8377; 10,30,000</td>
               </tr>
               <tr>
-                <td style="padding-left: 28px;">Bharat Electronics Limited Training &amp; Consultancy</td>
-                <td>BEL</td>
-                <td class="text-center">03</td>
+                <td>
+                  <div class="agency-cell">
+                    <strong>BEL</strong>
+                    <span class="agency-desc">Bharat Electronics Limited (Training &amp; Consultancy)</span>
+                  </div>
+                </td>
                 <td class="text-center"><span class="funding-badge funding-badge--pi">PI</span></td>
+                <td class="text-center">03</td>
                 <td class="text-center"><span class="funding-badge funding-badge--completed">Completed</span></td>
-                <td class="text-right">&#8377; 10,30,000</td>
+                <td class="text-right amount-cell">&#8377; 10,30,000</td>
               </tr>
 
               <!-- Group 4: Institute Funded Projects -->
-              <tr class="funding-category-row">
-                <td colspan="5">Institute Funded Projects</td>
-                <td class="text-right">&#8377; 19,00,000</td>
+              <tr class="funding-cat-header">
+                <td colspan="4">
+                  <span class="cat-title">🎓 Institute Funded Projects</span>
+                  <span class="cat-count">1 Project (PI)</span>
+                </td>
+                <td class="text-right cat-subtotal">&#8377; 19,00,000</td>
               </tr>
               <tr>
-                <td style="padding-left: 28px;">Faculty Initiation Grant (IIT Roorkee)</td>
-                <td>FIG</td>
-                <td class="text-center">01</td>
+                <td>
+                  <div class="agency-cell">
+                    <strong>FIG (IIT Roorkee)</strong>
+                    <span class="agency-desc">Faculty Initiation Grant</span>
+                  </div>
+                </td>
                 <td class="text-center"><span class="funding-badge funding-badge--pi">PI</span></td>
+                <td class="text-center">01</td>
                 <td class="text-center"><span class="funding-badge funding-badge--ongoing">Ongoing</span></td>
-                <td class="text-right">&#8377; 19,00,000</td>
+                <td class="text-right amount-cell">&#8377; 19,00,000</td>
               </tr>
 
               <!-- Group 5: Co-PI Research Projects -->
-              <tr class="funding-category-row">
-                <td colspan="5">Co-PI Research Projects</td>
-                <td class="text-right">&#8377; 6,12,51,496</td>
+              <tr class="funding-cat-header">
+                <td colspan="4">
+                  <span class="cat-title">🤝 Co-PI Research Projects</span>
+                  <span class="cat-count">4 Projects (Co-PI)</span>
+                </td>
+                <td class="text-right cat-subtotal">&#8377; 6,12,51,496</td>
               </tr>
               <tr>
-                <td style="padding-left: 28px;">Technology Innovation Hub (TIH IIT Kharagpur)</td>
-                <td>TIH</td>
-                <td class="text-center">01</td>
+                <td>
+                  <div class="agency-cell">
+                    <strong>TIH (IIT Kharagpur)</strong>
+                    <span class="agency-desc">Technology Innovation Hub</span>
+                  </div>
+                </td>
                 <td class="text-center"><span class="funding-badge funding-badge--copi">Co-PI</span></td>
+                <td class="text-center">01</td>
                 <td class="text-center"><span class="funding-badge funding-badge--ongoing">Ongoing</span></td>
-                <td class="text-right">&#8377; 80,00,000</td>
+                <td class="text-right amount-cell">&#8377; 80,00,000</td>
               </tr>
               <tr>
-                <td style="padding-left: 28px;">Science and Engineering Research Board</td>
-                <td>SERB</td>
-                <td class="text-center">01</td>
+                <td>
+                  <div class="agency-cell">
+                    <strong>SERB</strong>
+                    <span class="agency-desc">Science and Engineering Research Board</span>
+                  </div>
+                </td>
                 <td class="text-center"><span class="funding-badge funding-badge--copi">Co-PI</span></td>
+                <td class="text-center">01</td>
                 <td class="text-center"><span class="funding-badge funding-badge--ongoing">Ongoing</span></td>
-                <td class="text-right">&#8377; 33,61,980</td>
+                <td class="text-right amount-cell">&#8377; 33,61,980</td>
               </tr>
               <tr>
-                <td style="padding-left: 28px;">Artificial Intelligence and Interdisciplinary Cyber-Physical Systems Hub</td>
-                <td>AI4ICPS</td>
-                <td class="text-center">01</td>
+                <td>
+                  <div class="agency-cell">
+                    <strong>AI4ICPS</strong>
+                    <span class="agency-desc">Artificial Intelligence &amp; Cyber-Physical Systems Hub</span>
+                  </div>
+                </td>
                 <td class="text-center"><span class="funding-badge funding-badge--copi">Co-PI</span></td>
+                <td class="text-center">01</td>
                 <td class="text-center"><span class="funding-badge funding-badge--ongoing">Ongoing</span></td>
-                <td class="text-right">&#8377; 31,89,516</td>
+                <td class="text-right amount-cell">&#8377; 31,89,516</td>
               </tr>
               <tr>
-                <td style="padding-left: 28px;">Ministry of Electronics and Information Technology</td>
-                <td>MeitY</td>
-                <td class="text-center">01</td>
+                <td>
+                  <div class="agency-cell">
+                    <strong>MeitY</strong>
+                    <span class="agency-desc">Ministry of Electronics &amp; Information Technology</span>
+                  </div>
+                </td>
                 <td class="text-center"><span class="funding-badge funding-badge--copi">Co-PI</span></td>
+                <td class="text-center">01</td>
                 <td class="text-center"><span class="funding-badge funding-badge--ongoing">Ongoing</span></td>
-                <td class="text-right">&#8377; 4,67,00,000 (Approx.)</td>
+                <td class="text-right amount-cell">&#8377; 4,67,00,000 <span class="inr-sub">(Approx.)</span></td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
-                <td colspan="2">Total Sponsored Research Funding</td>
+                <td>Total Sponsored Research Funding</td>
                 <td class="text-center">18 Projects</td>
-                <td colspan="2" class="text-center">PI: ~ &#8377; 5.78 Cr &bull; Co-PI: ~ &#8377; 6.12 Cr</td>
-                <td class="text-right">&#8377; 11.90 Cr (~ 11,92,00,281)</td>
+                <td colspan="2" class="text-center">PI: ~ &#8377; 5.90 Cr &bull; Co-PI: ~ &#8377; 6.12 Cr</td>
+                <td class="text-right total-amount">&#8377; 12.00 Cr (approx.)</td>
               </tr>
             </tfoot>
           </table>

@@ -49,14 +49,15 @@
 }
 
 .teach-card {
-  background: var(--brand-bg-card);
-  border: 1px solid var(--brand-border);
-  border-left: 5px solid var(--brand-navy);
-  border-radius: 10px;
-  box-shadow: 0 4px 12px var(--brand-shadow);
-  padding: 20px 24px;
-  margin-bottom: 18px;
-  transition: 0.25s ease;
+  background: var(--brand-bg-card, #ffffff);
+  border: 1px solid #e2e8f0;
+  border-left: 6px solid var(--brand-navy, #0d3b66);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(13, 59, 102, 0.07);
+  padding: 26px 32px;
+  margin-bottom: 22px;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease;
+  box-sizing: border-box;
 }
 
 .teach-card--course {
@@ -64,7 +65,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
 }
 
 .teach-card--course .teaching-details__container {
@@ -76,15 +77,19 @@
 }
 
 .teach-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(13, 59, 102, 0.16);
-  border-left-color: var(--brand-blue);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(13, 59, 102, 0.16);
+  border-left-color: #2563eb;
+  border-color: #cbd5e1;
 }
 
 .sub-details {
   font-family: "Open Sans", sans-serif;
-  font-size: 18px;
-  letter-spacing: 0.5px;
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #0f2744;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
 }
 
 .teaching-horizontal-line {
@@ -97,25 +102,36 @@
 }
 
 .extra-details__links {
-  display: block;
-  margin-top: 10px;
+  display: inline-block;
+  margin-top: 0;
 }
 
 .icon {
   margin-right: 6px;
-  color: var(--brand-blue);
-  cursor: pointer;
+  color: inherit;
 }
 
 .extra-details__links a {
-  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: #f0f7ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1d4ed8;
   text-decoration: none;
-  color: var(--brand-blue);
-  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .extra-details__links a:hover {
-  color: var(--brand-navy);
+  background: #0d3b66;
+  color: #ffffff;
+  border-color: #0d3b66;
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 .research-team-section{
     width:100%;
