@@ -1350,20 +1350,20 @@ header {
 
 .funding-kpi-card {
   background: #ffffff;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid #e2e8f0;
-  border-left: 5px solid #0d3b66;
-  box-shadow: 0 3px 10px rgba(13, 59, 102, 0.06);
-  padding: 18px 22px;
+  border-left: 6px solid #0d3b66;
+  box-shadow: 0 4px 14px rgba(13, 59, 102, 0.07);
+  padding: 24px 28px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  gap: 6px;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-left-color 0.28s ease;
 }
 
 .funding-kpi-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(13, 59, 102, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(13, 59, 102, 0.14);
 }
 
 .funding-kpi-card--pi {
@@ -1376,44 +1376,45 @@ header {
 
 .funding-kpi-label {
   font-family: "Poppins", sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: #64748b;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
 }
 
 .funding-kpi-value {
   font-family: "Poppins", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.95rem;
   font-weight: 700;
   color: #0d3b66;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .funding-kpi-sub {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.96rem;
   color: #475569;
+  line-height: 1.4;
 }
 
 .funding-table-card {
   background: #ffffff;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 16px rgba(13, 59, 102, 0.08);
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 6px 24px rgba(13, 59, 102, 0.09);
   overflow: hidden;
 }
 
 .funding-table-banner {
   background: linear-gradient(135deg, #0d3b66, #1f7a8c);
   color: #ffffff;
-  padding: 16px 24px;
+  padding: 18px 26px;
   font-family: "Poppins", sans-serif;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 600;
   text-align: center;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
 }
 
 .funding-table-wrapper {
@@ -1426,19 +1427,19 @@ header {
   width: 100%;
   border-collapse: collapse;
   font-family: "Open Sans", sans-serif;
-  font-size: 0.92rem;
+  font-size: 1.05rem;
 }
 
 .funding-table th {
   background: #f8fafc;
   color: #0d3b66;
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 0.85rem;
+  font-weight: 700;
+  font-size: 0.96rem;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
-  padding: 14px 18px;
-  border-bottom: 2px solid #e2e8f0;
+  letter-spacing: 0.5px;
+  padding: 16px 22px;
+  border-bottom: 2px solid #cbd5e1;
   text-align: left;
   white-space: nowrap;
 }
@@ -1454,92 +1455,130 @@ header {
 }
 
 .funding-table td {
-  padding: 14px 20px;
-  border-bottom: 1px solid #edf2f7;
+  padding: 18px 24px;
+  border-bottom: 1px solid #e2e8f0;
   color: #334155;
   vertical-align: middle;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  transition: background-color 0.22s ease, color 0.22s ease;
 }
 
-.funding-table tbody tr:hover {
-  background: #f8fbff;
+/* Row Hover Animations */
+.funding-table tbody tr {
+  transition: background-color 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.funding-table tbody tr:not(.funding-cat-header):hover {
+  background-color: #f0f7ff;
+  box-shadow: inset 5px 0 0 #1d4ed8, 0 4px 18px rgba(29, 78, 216, 0.07);
+}
+
+.funding-table tbody tr:not(.funding-cat-header):hover td {
+  color: #0f172a;
+}
+
+.funding-table tbody tr:not(.funding-cat-header):hover .agency-cell strong {
+  color: #1d4ed8;
+  transform: translateX(4px);
+}
+
+.funding-table tbody tr:not(.funding-cat-header):hover .funding-badge {
+  transform: translateY(-1px) scale(1.04);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.funding-table tbody tr:not(.funding-cat-header):hover .amount-cell {
+  color: #1d4ed8;
 }
 
 .funding-cat-header td {
   background: #f1f5f9;
-  padding: 14px 20px;
+  padding: 16px 24px;
   border-top: 2px solid #cbd5e1;
-  border-bottom: 1px solid #cbd5e1;
+  border-bottom: 2px solid #cbd5e1;
+  transition: background-color 0.22s ease;
+}
+
+.funding-cat-header:hover td {
+  background: #e6f0fa;
 }
 
 .cat-title {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: 0.98rem;
+  font-size: 1.12rem;
   color: #0f2744;
-  margin-right: 10px;
+  margin-right: 12px;
+  letter-spacing: 0.2px;
 }
 
 .cat-count {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.8rem;
-  color: #64748b;
+  font-size: 0.88rem;
+  color: #475569;
   font-weight: 600;
   background: #ffffff;
-  padding: 2px 8px;
-  border-radius: 4px;
-  border: 1px solid #e2e8f0;
+  padding: 3px 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .cat-subtotal {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: 0.96rem;
+  font-size: 1.12rem;
   color: #0d3b66;
 }
 
 .agency-cell {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
 }
 
 .agency-cell strong {
   font-family: "Poppins", sans-serif;
-  font-size: 0.96rem;
-  font-weight: 600;
+  font-size: 1.12rem;
+  font-weight: 700;
   color: #0d3b66;
+  display: inline-block;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), color 0.22s ease;
 }
 
 .agency-desc {
   font-family: "Open Sans", sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.94rem;
   color: #64748b;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .amount-cell {
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 0.96rem;
+  font-weight: 700;
+  font-size: 1.12rem;
   color: #0f172a;
+  transition: color 0.22s ease;
 }
 
 .inr-sub {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: #64748b;
   font-weight: normal;
   display: block;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 .funding-badge {
   display: inline-block;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 6px;
   font-family: "Poppins", sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.86rem;
   font-weight: 600;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
 }
 
 .funding-badge--pi {
@@ -1570,15 +1609,16 @@ header {
   background: #eef6ff;
   color: #0d3b66;
   font-family: "Poppins", sans-serif;
-  font-size: 0.98rem;
+  font-size: 1.12rem;
   font-weight: 700;
-  padding: 16px 20px;
-  border-top: 2px solid #0d3b66;
+  padding: 20px 24px;
+  border-top: 3px solid #0d3b66;
   border-bottom: none;
 }
 
 .funding-table tfoot .total-amount {
-  font-size: 1.15rem;
+  font-size: 1.35rem;
+  font-weight: 800;
   color: #047857;
 }
 
