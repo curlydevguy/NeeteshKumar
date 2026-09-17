@@ -59,6 +59,22 @@
   transition: 0.25s ease;
 }
 
+.teach-card--course {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.teach-card--course .teaching-details__container {
+  margin-bottom: 0;
+}
+
+.teach-card--course .extra-details__links {
+  margin-top: 0;
+}
+
 .teach-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 22px rgba(13, 59, 102, 0.16);
@@ -68,7 +84,7 @@
 .sub-details {
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.5px;
 }
 
 .teaching-horizontal-line {

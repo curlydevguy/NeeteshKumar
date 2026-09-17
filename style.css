@@ -1332,6 +1332,195 @@ header {
 }
 
 /* ==========================================================================
+   SPONSORED RESEARCH FUNDING SUMMARY TABLE & METRICS
+   ========================================================================== */
+.funding-container {
+  max-width: 1160px;
+  margin: 1.5rem auto 3rem;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.funding-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.funding-kpi-card {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid #0d3b66;
+  box-shadow: 0 3px 10px rgba(13, 59, 102, 0.06);
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.funding-kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(13, 59, 102, 0.12);
+}
+
+.funding-kpi-card--pi {
+  border-left-color: #1d4ed8;
+}
+
+.funding-kpi-card--copi {
+  border-left-color: #7c3aed;
+}
+
+.funding-kpi-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.funding-kpi-value {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0d3b66;
+  line-height: 1.2;
+}
+
+.funding-kpi-sub {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.88rem;
+  color: #475569;
+}
+
+.funding-table-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(13, 59, 102, 0.08);
+  overflow: hidden;
+}
+
+.funding-table-banner {
+  background: linear-gradient(135deg, #0d3b66, #1f7a8c);
+  color: #ffffff;
+  padding: 16px 24px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.funding-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.funding-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.92rem;
+}
+
+.funding-table th {
+  background: #f8fafc;
+  color: #0d3b66;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 14px 18px;
+  border-bottom: 2px solid #e2e8f0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.funding-table th.text-center,
+.funding-table td.text-center {
+  text-align: center;
+}
+
+.funding-table th.text-right,
+.funding-table td.text-right {
+  text-align: right;
+}
+
+.funding-table td {
+  padding: 12px 18px;
+  border-bottom: 1px solid #edf2f7;
+  color: #334155;
+  vertical-align: middle;
+}
+
+.funding-table tbody tr:hover {
+  background: #f8fbff;
+}
+
+.funding-category-row td {
+  background: #f1f5f9;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #0f172a;
+  padding: 12px 18px;
+  border-top: 2px solid #cbd5e1;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.funding-badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.funding-badge--pi {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.funding-badge--copi {
+  background: #f5f3ff;
+  color: #6d28d9;
+  border: 1px solid #ddd6fe;
+}
+
+.funding-badge--ongoing {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.funding-badge--completed {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.funding-table tfoot tr td {
+  background: #eef6ff;
+  color: #0d3b66;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  padding: 16px 18px;
+  border-top: 2px solid #0d3b66;
+  border-bottom: none;
+}
+
+/* ==========================================================================
    PATENTS - CLEAN MINIMAL ACADEMIC PORTFOLIO
    ========================================================================== */
 .patent-container {
