@@ -907,60 +907,75 @@
               var details = document.getElementById("piBannerDetails");
               var teamGroup = document.getElementById("teamGroup");
               var btnSpan = toggleBtn ? toggleBtn.querySelector("span") : null;
-              var isAnimating = false;
+              var isOpen = false;
+              var openScrollY = 0;
+              var scrollCheckTimer = null;
 
               function openDetails() {
-                if (isAnimating) return;
-                isAnimating = true;
+                if (isOpen) return;
+                isOpen = true;
+                openScrollY = window.scrollY || window.pageYOffset;
 
                 // 1. Expand PI banner details
                 details.classList.add("open");
                 toggleBtn.setAttribute("aria-expanded", "true");
                 if (btnSpan) btnSpan.textContent = "Read Less";
 
-                // 2. Slide out the research team heading and team cards
+                // 2. Hide team cards smoothly (preserving their layout space on the page)
                 if (teamGroup) {
-                  var currentHeight = teamGroup.scrollHeight;
-                  teamGroup.style.maxHeight = currentHeight + "px";
-                  void teamGroup.offsetHeight; // Force reflow
-                  teamGroup.classList.add("slide-out");
-                  teamGroup.style.maxHeight = "0px";
+                  teamGroup.classList.add("is-hidden");
                 }
 
-                setTimeout(function () {
-                  isAnimating = false;
-                }, 500);
+                // 3. Attach auto-close on scroll / wheel after a slight delay
+                clearTimeout(scrollCheckTimer);
+                scrollCheckTimer = setTimeout(function () {
+                  window.addEventListener("scroll", handleScrollClose, { passive: true });
+                  window.addEventListener("wheel", handleWheelClose, { passive: true });
+                  window.addEventListener("touchmove", handleScrollClose, { passive: true });
+                }, 150);
               }
 
               function closeDetails() {
-                if (isAnimating) return;
-                isAnimating = true;
+                if (!isOpen) return;
+                isOpen = false;
+
+                // Detach scroll/wheel listeners
+                window.removeEventListener("scroll", handleScrollClose);
+                window.removeEventListener("wheel", handleWheelClose);
+                window.removeEventListener("touchmove", handleScrollClose);
 
                 // 1. Collapse PI banner details
                 details.classList.remove("open");
                 toggleBtn.setAttribute("aria-expanded", "false");
                 if (btnSpan) btnSpan.textContent = "Read More";
 
-                // 2. Slide in the research team heading and team cards
+                // 2. Bring team cards out of hiding with smooth slide-in
                 if (teamGroup) {
-                  teamGroup.classList.remove("slide-out");
-                  var targetHeight = teamGroup.scrollHeight;
-                  teamGroup.style.maxHeight = targetHeight + "px";
+                  teamGroup.classList.remove("is-hidden");
+                }
+              }
 
-                  setTimeout(function () {
-                    if (!teamGroup.classList.contains("slide-out")) {
-                      teamGroup.style.maxHeight = "";
-                    }
-                    isAnimating = false;
-                  }, 500);
-                } else {
-                  isAnimating = false;
+              function handleScrollClose() {
+                if (!isOpen) return;
+                var currentY = window.scrollY || window.pageYOffset;
+                // Close if user scrolls by more than 15px
+                if (Math.abs(currentY - openScrollY) > 15) {
+                  closeDetails();
+                }
+              }
+
+              function handleWheelClose(e) {
+                if (!isOpen) return;
+                // Close on definite wheel movement
+                if (Math.abs(e.deltaY) > 8) {
+                  closeDetails();
                 }
               }
 
               if (toggleBtn && details) {
-                toggleBtn.addEventListener("click", function () {
-                  if (details.classList.contains("open")) {
+                toggleBtn.addEventListener("click", function (e) {
+                  e.stopPropagation();
+                  if (isOpen) {
                     closeDetails();
                   } else {
                     openDetails();
@@ -969,14 +984,15 @@
               }
 
               if (closeBtn) {
-                closeBtn.addEventListener("click", function () {
+                closeBtn.addEventListener("click", function (e) {
+                  e.stopPropagation();
                   closeDetails();
                   setTimeout(function () {
                     var heading = document.querySelector(".research-team-heading");
                     if (heading) {
                       heading.scrollIntoView({ behavior: "smooth", block: "start" });
                     }
-                  }, 300);
+                  }, 250);
                 });
               }
             });

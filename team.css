@@ -198,17 +198,18 @@
 ========================================================== */
 .team-group{
     opacity:1;
+    visibility:visible;
     transform:translateY(0);
-    overflow:hidden;
-    transition:opacity .42s cubic-bezier(0.16, 1, 0.3, 1),
-               transform .42s cubic-bezier(0.16, 1, 0.3, 1),
-               max-height .48s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change:transform, opacity, max-height;
+    transition:opacity .35s cubic-bezier(0.16, 1, 0.3, 1),
+               transform .38s cubic-bezier(0.16, 1, 0.3, 1),
+               visibility .35s;
+    will-change:transform, opacity;
 }
 
-.team-group.slide-out{
+.team-group.is-hidden{
     opacity:0;
-    transform:translateY(40px);
+    visibility:hidden;
+    transform:translateY(35px);
     pointer-events:none;
 }
 
