@@ -150,10 +150,18 @@
                 <div class="pi-banner__contact">
                     <p><i class="fa fa-envelope"></i> <a href="mailto:neetesh@cs.iitr.ac.in">neetesh@cs.iitr.ac.in</a></p>
                 </div>
+                <div class="pi-banner__actions">
+                    <button type="button" class="pi-banner__close-btn" id="piBannerCloseBtn">
+                        <i class="fa fa-angle-up"></i> Show Research Team
+                    </button>
+                </div>
             </div>
         </div>
 
     </div>
+
+    <!-- ===================== RESEARCH TEAM GROUP ===================== -->
+    <div class="team-group" id="teamGroup">
 
     <h1 class="research-team-heading">Research Team</h1>
 
@@ -828,7 +836,11 @@
 
             </div>
 
-        </div>
+        </div> <!-- /.team-card -->
+
+    </div> <!-- /.team-grid -->
+
+    </div> <!-- /.team-group -->
 
 </section>
 
@@ -888,58 +900,87 @@
             </div>
          </div>
          <button id="backToTopBtn" class="back-to-top" aria-label="Scroll to top" title="Back to top"><i class="fa fa-angle-up"></i></button>
-         <script>
-           document.addEventListener("DOMContentLoaded", function () {
-             var toggleBtn = document.getElementById("piBannerToggle");
-             var details = document.getElementById("piBannerDetails");
-             var teamGrid = document.querySelector(".team-grid");
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              var toggleBtn = document.getElementById("piBannerToggle");
+              var closeBtn = document.getElementById("piBannerCloseBtn");
+              var details = document.getElementById("piBannerDetails");
+              var teamGroup = document.getElementById("teamGroup");
+              var btnSpan = toggleBtn ? toggleBtn.querySelector("span") : null;
+              var isAnimating = false;
 
-             function openDetails(){
-               details.classList.add("open");
-               toggleBtn.setAttribute("aria-expanded", "true");
-               if (teamGrid) teamGrid.classList.add("is-hidden");
-             }
+              function openDetails() {
+                if (isAnimating) return;
+                isAnimating = true;
 
-             function closeDetails(){
-               details.classList.remove("open");
-               toggleBtn.setAttribute("aria-expanded", "false");
-               if (teamGrid) {
-                 teamGrid.classList.remove("is-hidden");
-                 teamGrid.classList.remove("is-animating");
-                 void teamGrid.offsetWidth;
-                 teamGrid.classList.add("is-animating");
-               }
-             }
+                // 1. Expand PI banner details
+                details.classList.add("open");
+                toggleBtn.setAttribute("aria-expanded", "true");
+                if (btnSpan) btnSpan.textContent = "Read Less";
 
-             if (toggleBtn && details) {
-               toggleBtn.addEventListener("click", function () {
-                 if (details.classList.contains("open")) {
-                   closeDetails();
-                 } else {
-                   openDetails();
-                 }
-               });
-             }
+                // 2. Slide out the research team heading and team cards
+                if (teamGroup) {
+                  var currentHeight = teamGroup.scrollHeight;
+                  teamGroup.style.maxHeight = currentHeight + "px";
+                  void teamGroup.offsetHeight; // Force reflow
+                  teamGroup.classList.add("slide-out");
+                  teamGroup.style.maxHeight = "0px";
+                }
 
-             window.addEventListener("scroll", function () {
-               if (details && details.classList.contains("open")) {
-                 closeDetails();
-               }
-             }, { passive: true });
+                setTimeout(function () {
+                  isAnimating = false;
+                }, 500);
+              }
 
-             window.addEventListener("wheel", function (e) {
-               if (details && details.classList.contains("open") && e.deltaY > 0) {
-                 closeDetails();
-               }
-             }, { passive: true });
+              function closeDetails() {
+                if (isAnimating) return;
+                isAnimating = true;
 
-             window.addEventListener("touchmove", function () {
-               if (details && details.classList.contains("open")) {
-                 closeDetails();
-               }
-             }, { passive: true });
-           });
-         </script>
+                // 1. Collapse PI banner details
+                details.classList.remove("open");
+                toggleBtn.setAttribute("aria-expanded", "false");
+                if (btnSpan) btnSpan.textContent = "Read More";
+
+                // 2. Slide in the research team heading and team cards
+                if (teamGroup) {
+                  teamGroup.classList.remove("slide-out");
+                  var targetHeight = teamGroup.scrollHeight;
+                  teamGroup.style.maxHeight = targetHeight + "px";
+
+                  setTimeout(function () {
+                    if (!teamGroup.classList.contains("slide-out")) {
+                      teamGroup.style.maxHeight = "";
+                    }
+                    isAnimating = false;
+                  }, 500);
+                } else {
+                  isAnimating = false;
+                }
+              }
+
+              if (toggleBtn && details) {
+                toggleBtn.addEventListener("click", function () {
+                  if (details.classList.contains("open")) {
+                    closeDetails();
+                  } else {
+                    openDetails();
+                  }
+                });
+              }
+
+              if (closeBtn) {
+                closeBtn.addEventListener("click", function () {
+                  closeDetails();
+                  setTimeout(function () {
+                    var heading = document.querySelector(".research-team-heading");
+                    if (heading) {
+                      heading.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  }, 300);
+                });
+              }
+            });
+          </script>
          <script src="main.js"></script>
 </body>
 </html>
