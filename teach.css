@@ -62,18 +62,44 @@
 
 .teach-card--course {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   gap: 16px;
 }
 
-.teach-card--course .teaching-details__container {
-  margin-bottom: 0;
+.course-header-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-.teach-card--course .extra-details__links {
-  margin-top: 0;
+.course-code {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: 0.6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(29, 78, 216, 0.08);
+  min-width: 96px;
+  transition: all 0.25s ease;
+}
+
+.course-name {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #0f2744;
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+  transition: color 0.25s ease;
 }
 
 .teach-card:hover {
@@ -81,6 +107,17 @@
   box-shadow: 0 16px 36px rgba(13, 59, 102, 0.16);
   border-left-color: #2563eb;
   border-color: #cbd5e1;
+}
+
+.teach-card:hover .course-code {
+  background: #1d4ed8;
+  color: #ffffff;
+  border-color: #1d4ed8;
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.2);
+}
+
+.teach-card:hover .course-name {
+  color: #1d4ed8;
 }
 
 .sub-details {
